@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -7,19 +8,29 @@
   </head>
   <body>
     <div>
-      <h2>I freame tag basic without fullscreen</h2>
+      <h2>Basic Iframe Tag Without Fullscreen</h2>
+
       <iframe
         width="560"
         height="315"
         src="https://www.youtube.com/embed/HcOc7P5BMi4?start=49"
         title="HTML Tutorial for Beginners"
-        
-       
       >
       </iframe>
+
+      <p>
+        This is a basic iframe tag used to embed a YouTube video inside
+        the webpage. The width and height attributes define the size of
+        the iframe. The src attribute specifies the URL of the content
+        being embedded, and the title attribute describes the embedded
+        content. Since the allowfullscreen attribute is not used, the
+        fullscreen option is not enabled through this iframe.
+      </p>
     </div>
+
     <div>
-      <h2>I freame tag</h2>
+      <h2>Iframe Tag with Fullscreen</h2>
+
       <iframe
         width="560"
         height="315"
@@ -38,11 +49,42 @@
         allowfullscreen
       >
       </iframe>
+
+      <p>
+        This iframe embeds a YouTube video with additional permissions
+        and fullscreen support. The allow attribute specifies which
+        browser features the embedded content can use. The
+        allowfullscreen attribute allows the video to be displayed in
+        fullscreen mode. The frameborder attribute is an older
+        attribute used to control the iframe border.
+      </p>
     </div>
 
     <div>
-        <h2>Map With iframe</h2>
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14005.057945689832!2d77.192916!3d28.651798350000004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d029c5f402ed3%3A0x942174294c9dd946!2sKarol%20Bagh%2C%20New%20Delhi%2C%20Delhi!5e0!3m2!1sen!2sin!4v1789498121968!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+      <h2>Map with Iframe</h2>
+
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14005.057945689832!2d77.192916!3d28.651798350000004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d029c5f402ed3%3A0x942174294c9dd946!2sKarol%20Bagh%2C%20New%20Delhi%2C%20Delhi!5e0!3m2!1sen!2sin!4v1789498121968!5m2!1sen!2sin"
+        width="600"
+        height="450"
+        style="border:0;"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="strict-origin-when-cross-origin"
+      >
+      </iframe>
+
+      <p>
+        This iframe embeds a Google Maps location inside the webpage.
+        The src attribute contains the Google Maps embed URL. The
+        width and height attributes define the map size, while the
+        style attribute removes the iframe border. The allowfullscreen
+        attribute allows fullscreen viewing, loading="lazy" delays
+        loading until the map is near the visible area, and the
+        referrerpolicy attribute controls how much referrer information
+        is sent when loading the map.
+      </p>
     </div>
   </body>
 </html>
+
