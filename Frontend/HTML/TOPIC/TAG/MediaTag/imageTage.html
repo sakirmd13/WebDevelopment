@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="en">
   <head>
@@ -15,12 +14,17 @@
         src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBB4LQTn0vRq4ydPLp-uTj_lEUHOHYWUU18JlCq5KuMw&s=10"
         alt="Butterfly"
       />
+
+      <p>
+        This image uses an HTTPS link in the src attribute. The browser
+        downloads the image from the specified online URL and displays it
+        on the webpage. The alt attribute provides alternative text that
+        describes the image if it cannot be displayed.
+      </p>
     </div>
 
     <div>
-      <p>
-        Image tag with height and width attributes using an HTTPS link
-      </p>
+      <h2>Image Tag with Height and Width</h2>
 
       <!-- Image using an HTTPS link with height and width -->
       <img
@@ -29,24 +33,34 @@
         height="100"
         width="100"
       />
+
+      <p>
+        This image uses an HTTPS link along with height and width attributes.
+        The height and width attributes set the displayed image dimensions
+        to 100 pixels by 100 pixels. These attributes help control the
+        image size on the webpage.
+      </p>
     </div>
 
     <div>
-      <p>
-        Image tag with height and width attributes using a local image
-      </p>
+      <h2>Image Tag Using a Local Image</h2>
 
       <!-- Local image -->
       <img
         src="./image/localimage.png"
         alt="Local image"
-        
       />
-    </div>
-    <div>
+
       <p>
-        Image tag with height and width attributes using a local image
+        This image uses a local file path in the src attribute. The browser
+        looks for the image inside the image folder, which is located in
+        the current project directory. The alt attribute describes the
+        image if it cannot be displayed.
       </p>
+    </div>
+
+    <div>
+      <h2>Local Image with Height and Width</h2>
 
       <!-- Local image with height and width -->
       <img
@@ -55,6 +69,12 @@
         height="100"
         width="100"
       />
+
+      <p>
+        This image uses a local file path along with height and width
+        attributes. The browser loads the image from the project folder
+        and displays it at 100 pixels wide and 100 pixels high.
+      </p>
     </div>
   </body>
 </html>

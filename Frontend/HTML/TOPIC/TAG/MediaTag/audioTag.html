@@ -1,0 +1,82 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio Tag</title>
+</head>
+<body>
+
+    <div>
+        <h2>Audio tag</h2>
+
+        <audio src="./music/sigmamusicart-no-copyright-music-537751.mp3">
+            play me
+        </audio>
+
+        <p>
+            This is a basic audio tag. The src attribute specifies the
+            location of the audio file. Since the controls attribute is
+            not used, the browser does not display audio playback controls.
+            The text "play me" acts as fallback content for browsers that
+            do not support the audio element.
+        </p>
+    </div>
+
+    <div>
+        <h2>Audio tag with controls</h2>
+
+        <audio
+            src="./music/sigmamusicart-no-copyright-music-537751.mp3"
+            controls>
+            play me
+        </audio>
+
+        <p>
+            This audio tag includes the controls attribute. It displays
+            built-in audio controls, allowing users to play, pause,
+            adjust the volume, and control audio playback.
+        </p>
+    </div>
+
+    <div>
+        <h2>Audio tag with controls and muted</h2>
+
+        <audio
+            src="./music/sigmamusicart-no-copyright-music-537751.mp3"
+            controls
+            muted>
+            play me
+        </audio>
+
+        <p>
+            This audio tag includes both controls and muted attributes.
+            The controls attribute provides playback controls, while
+            muted starts the audio without sound. The user can unmute
+            the audio using the volume control.
+        </p>
+    </div>
+
+    <div>
+        <h2>Audio tag with controls, muted, and loop</h2>
+
+        <audio
+            src="./music/sigmamusicart-no-copyright-music-537751.mp3"
+            controls
+            muted
+            loop>
+            play me
+        </audio>
+
+        <p>
+            This audio tag includes controls, muted, and loop attributes.
+            The controls attribute provides playback controls, muted
+            starts the audio without sound, and loop automatically
+            restarts the audio when it reaches the end.
+        </p>
+    </div>
+
+</body>
+</html>
+

@@ -1,0 +1,86 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Tag</title>
+</head>
+<body>
+
+    <div>
+        <h2>Video tag</h2>
+
+        <video
+            src="./video/370958_medium.mp4"
+            height="500px"
+            width="500px">
+        </video>
+
+        <p>
+            This is a basic video tag. The src attribute specifies the
+            location of the video file. The height and width attributes
+            define the video's dimensions. Since the controls attribute
+            is not used, the browser does not display playback controls.
+        </p>
+    </div>
+
+    <div>
+        <h2>Video tag with controls</h2>
+
+        <video
+            src="./video/370958_medium.mp4"
+            height="500px"
+            width="500px"
+            controls>
+        </video>
+
+        <p>
+            This video tag includes the controls attribute. It allows
+            users to play, pause, adjust the volume, and control the
+            video playback using the browser's built-in controls.
+        </p>
+    </div>
+
+    <div>
+        <h2>Video tag with controls and muted</h2>
+
+        <video
+            src="./video/370958_medium.mp4"
+            height="500px"
+            width="500px"
+            controls
+            muted>
+        </video>
+
+        <p>
+            This video includes both controls and muted attributes.
+            The controls attribute provides playback controls, while
+            muted starts the video without sound. The muted attribute
+            is useful when you want a video to play silently.
+        </p>
+    </div>
+
+    <div>
+        <h2>Video tag with controls, muted, and loop</h2>
+
+        <video
+            src="./video/370958_medium.mp4"
+            height="500px"
+            width="500px"
+            controls
+            muted
+            loop>
+        </video>
+
+        <p>
+            This video includes controls, muted, and loop attributes.
+            The controls attribute provides playback controls, muted
+            starts the video without sound, and loop automatically
+            restarts the video when it reaches the end.
+        </p>
+    </div>
+
+</body>
+</html>
+
