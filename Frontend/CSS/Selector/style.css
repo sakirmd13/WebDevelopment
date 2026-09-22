@@ -1,0 +1,37 @@
+/* Universar selector */
+
+*{
+    color: brown;
+}
+
+/* element selector */
+body{
+    background: rgb(199, 124, 124);
+}
+h1{
+    color: yellow;
+}
+
+h2{
+    color: white;
+    background: #000;
+}
+
+/* Class selector */
+.hello{
+
+    background: white;
+    /* padding-top: 10px; */
+    height: 100px;
+    width: 400px;
+}
+
+/* Id Selector */
+#unique{
+    color: blue;
+}
+#para{
+    color: rgb(226, 43, 76);
+}
+
+
