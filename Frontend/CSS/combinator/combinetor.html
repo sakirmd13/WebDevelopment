@@ -1,0 +1,128 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="./combinetor.css" />
+
+    <title>Combinators</title>
+  </head>
+
+  <body>
+
+    <h1>Combinators</h1>
+
+    <p>
+      Combinators ka use HTML elements ke beech
+      ke relationship ko define karne ke liye kiya jata hai.
+    </p>
+
+
+    <div>
+      <h2>Descendant Combinator</h2>
+
+      <p>
+        Parent ke andar jitne bhi matching child aur
+        nested child elements honge, un sabhi par
+        style apply hoga.
+
+        Example: div p
+      </p>
+
+      <div>
+        <p>
+          Main ek nested p hoon.
+        </p>
+      </div>
+    </div>
+
+
+    <div class="child">
+      <h2>Child Combinator</h2>
+
+      <p>
+        Child combinator sirf direct child element ko
+        select karta hai.
+
+        Nested child ya grandchild par style apply nahi hota.
+
+        Example: .child > p
+      </p>
+
+      <div>
+        <p>
+          Main ek nested p hoon.
+        </p>
+      </div>
+    </div>
+
+
+    <div>
+      <h2 class="sibling">Adjacent Sibling Combinator</h2>
+
+      <p>
+        Ye selector kisi element ke turant baad aane wale
+        sibling element ko select karta hai.
+
+        Example: .sibling + p
+      </p>
+
+      <div>
+        <p>
+          Main ek nested p hoon.
+        </p>
+      </div>
+    </div>
+
+
+    <div>
+      <h2 class="allsibling">General Sibling Combinator</h2>
+
+      <p>
+        Ye selector kisi element ke baad same parent ke andar
+        aane wale sabhi matching sibling elements ko select karta hai.
+
+        Example: .allsibling ~ p
+      </p>
+
+      <div>
+        <p>
+          Main ek nested p hoon.
+        </p>
+      </div>
+    </div>
+
+
+    <div>
+      <h2 class="pseudo">Pseudo-Class</h2>
+
+      <p>
+        Pseudo-class ka use kisi element ki specific
+        state ya position ko target karne ke liye kiya jata hai.
+
+        Example: :hover, :first-child, :last-child
+      </p>
+
+      <div>
+        <p>
+          Main ek nested p hoon.
+        </p>
+      </div>
+    </div>
+
+
+    <div>
+      <h2>My List</h2>
+
+      <ul>
+        <li>List 1</li>
+        <li>List 2</li>
+        <li>List 3</li>
+      </ul>
+    </div>
+
+  </body>
+</html>
+

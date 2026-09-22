@@ -1,0 +1,129 @@
+
+/* =========================================
+   Descendant Selector
+   ========================================= */
+
+/*
+  Parent ke andar jitne bhi matching
+  child aur nested child elements honge,
+  sabhi par style apply hoga.
+
+  Example: div p
+*/
+
+div p {
+  color: rgb(1, 254, 157);
+}
+
+
+/* =========================================
+   Child Selector
+   ========================================= */
+
+/*
+  Sirf direct child ko select karta hai.
+
+  Nested child ya grandchild ko select nahi karta.
+
+  Example: .child > p
+*/
+
+.child > p {
+  background: #000;
+}
+
+
+/* =========================================
+   Adjacent Sibling Selector
+   ========================================= */
+
+/*
+  Kisi element ke turant baad aane wale
+  sibling element ko select karta hai.
+
+  Example: .sibling + p
+*/
+
+.sibling + p {
+  background: red;
+}
+
+
+/* =========================================
+   General Sibling Selector
+   ========================================= */
+
+/*
+  Kisi element ke baad same parent ke andar
+  jitne bhi matching sibling elements aate hain,
+  un sabhi ko select karta hai.
+
+  Example: .allsibling ~ p
+*/
+
+.allsibling ~ p {
+  background: rgb(181, 151, 151);
+}
+
+
+/* =========================================
+   Pseudo-Class
+   ========================================= */
+
+/*
+  Pseudo-class kisi element ki specific
+  state ya position ko target karta hai.
+
+  Example: :hover, :first-child, :last-child
+*/
+
+h2:hover {
+  background-color: red;
+}
+
+
+/* First Child */
+
+li:first-child {
+  color: blueviolet;
+}
+
+
+/* Last Child */
+
+li:last-child {
+  color: rgb(70, 226, 43);
+}
+
+
+/* =========================================
+   Pseudo-Element
+   ========================================= */
+
+/*
+  Pseudo-element kisi element ke
+  specific part ko style karne ya
+  content add karne ke liye use hota hai.
+*/
+
+
+/* Element ke start mein content add karega */
+
+h2::before {
+  content: "Main ek pseudo-element hoon ";
+}
+
+
+/* Element ke end mein content add karega */
+
+h2::after {
+  content: " Kya badal dala na!";
+}
+
+
+/* First Letter */
+
+h1::first-letter {
+  color: brown;
+}
+
