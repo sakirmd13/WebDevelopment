@@ -1,37 +1,79 @@
-/* Universar selector */
 
-*{
-    color: brown;
+/* =========================================
+   Universal Selector
+   ========================================= */
+
+/*
+  Universal selector (*) page ke
+  sabhi elements ko select karta hai.
+*/
+
+* {
+  color: brown;
 }
 
-/* element selector */
-body{
-    background: rgb(199, 124, 124);
-}
-h1{
-    color: yellow;
+
+/* =========================================
+   Element Selector
+   ========================================= */
+
+/*
+  Element selector directly HTML element
+  ko select karta hai.
+
+  Example: body, h1, h2
+*/
+
+body {
+  background: rgb(199, 124, 124);
 }
 
-h2{
-    color: white;
-    background: #000;
+h1 {
+  color: yellow;
 }
 
-/* Class selector */
-.hello{
-
-    background: white;
-    /* padding-top: 10px; */
-    height: 100px;
-    width: 400px;
+h2 {
+  color: white;
+  background: #000;
 }
 
-/* Id Selector */
-#unique{
-    color: blue;
-}
-#para{
-    color: rgb(226, 43, 76);
+
+/* =========================================
+   Class Selector
+   ========================================= */
+
+/*
+  Class selector ko dot (.) ke saath
+  select kiya jata hai.
+
+  Example: .hello
+*/
+
+.hello {
+  background: white;
+  height: 100px;
+  width: 400px;
+
+  /* padding-top: 10px; */
 }
 
+
+/* =========================================
+   ID Selector
+   ========================================= */
+
+/*
+  ID selector ko hash (#) ke saath
+  select kiya jata hai.
+
+  Example: #unique
+*/
+
+#unique {
+  color: blue;
+}
+
+#para {
+  color: rgb(226, 43, 76);
+}
 
