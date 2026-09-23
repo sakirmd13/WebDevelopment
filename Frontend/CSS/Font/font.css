@@ -1,0 +1,171 @@
+
+/* =================================
+   Font Family
+   ================================= */
+
+h1 {
+  font-family: "Pochaevsk", system-ui;
+}
+
+p {
+  font-family: "Pochaevsk", system-ui;
+}
+
+
+/* =================================
+   Google Font - Pochaevsk
+   ================================= */
+
+.pochaevsk-regular {
+  font-family: "Pochaevsk", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+/* =================================
+   Font Size
+   Text ka size control karta hai
+   ================================= */
+
+.one {
+  font-size: 15px;
+}
+
+
+/* =================================
+   Font Weight
+   Text ki thickness control karta hai
+   ================================= */
+
+.two {
+  font-size: 50px;
+  font-weight: 700;
+}
+
+
+/* =================================
+   Font Style
+   Text ko italic ya normal banata hai
+   ================================= */
+
+.three {
+  font-size: 50px;
+  font-weight: 700;
+  font-style: italic;
+}
+
+
+/* =================================
+   Font Variant
+   Text ko small-caps format deta hai
+   ================================= */
+
+.four {
+  font-size: 50px;
+  font-weight: 700;
+  font-style: italic;
+  font-variant: small-caps;
+}
+
+
+/* =================================
+   Line Height
+   Lines ke beech vertical space
+   control karta hai
+   ================================= */
+
+.five {
+  font-size: 50px;
+  font-weight: 700;
+  font-style: italic;
+  font-variant: small-caps;
+  line-height: 3;
+}
+
+
+/* =================================
+   Letter Spacing
+   Letters ke beech ka space
+   control karta hai
+   ================================= */
+
+.six {
+  font-size: 50px;
+  font-weight: 700;
+  font-style: italic;
+  font-variant: small-caps;
+  line-height: 3;
+  letter-spacing: 3px;
+}
+
+
+/* =================================
+   Word Spacing
+   Words ke beech ka space
+   control karta hai
+   ================================= */
+
+.seven {
+  font-size: 50px;
+  font-weight: 700;
+  font-style: italic;
+  font-variant: small-caps;
+  line-height: 3;
+  letter-spacing: 3px;
+  word-spacing: 6px;
+}
+
+
+/* =================================
+   Text Align
+   Text ki horizontal position
+   control karta hai
+   ================================= */
+
+.eight {
+  text-align: center;
+}
+
+
+/* =================================
+   Text Decoration
+   Text par underline add karta hai
+   ================================= */
+
+.nine {
+  text-align: center;
+  text-decoration: underline dashed;
+}
+
+
+/* =================================
+   Text Transform
+   Text ko uppercase me convert karta hai
+   ================================= */
+
+.ten {
+  text-transform: uppercase;
+}
+
+
+/* =================================
+   Text Indent
+   First line ko left side se
+   specific distance deta hai
+   ================================= */
+
+.eleven {
+  text-indent: 200px;
+}
+
+
+/* =================================
+   Text Shadow
+   Text ke peeche shadow effect
+   add karta hai
+   ================================= */
+
+.twelve {
+  text-shadow: 1px 2px 3px red;
+}
