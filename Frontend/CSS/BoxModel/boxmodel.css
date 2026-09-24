@@ -1,0 +1,119 @@
+
+/* =========================================
+   CSS Box Model
+   Content → Padding → Border → Margin
+   ========================================= */
+
+
+/* =========================================
+   Border Width, Color and Style
+   Border ki properties ko alag-alag define kiya
+   ========================================= */
+
+.one {
+    border-width: 5px;
+    border-color: red;
+    border-style: solid;
+}
+
+
+/* =========================================
+   Border Shorthand
+   Width + Style + Color
+   ========================================= */
+
+.two {
+    border: 5px solid yellow;
+}
+
+
+/* =========================================
+   Border Left
+   Sirf left side par border
+   ========================================= */
+
+.three {
+    border-left: 5px solid green;
+}
+
+
+/* =========================================
+   Border Radius - Percentage
+   Corners ko rounded karta hai
+   ========================================= */
+
+.four {
+    border: 5px solid yellow;
+    border-radius: 50%;
+}
+
+
+/* =========================================
+   Border Radius - Pixel
+   ========================================= */
+
+.five {
+    border: 5px solid yellow;
+    border-radius: 10px;
+    text-align: center;
+}
+
+
+/* =========================================
+   Padding
+   Content aur border ke beech ki space
+   ========================================= */
+
+.six {
+    border: 5px solid yellow;
+    border-radius: 10px;
+    text-align: center;
+    padding: 10px;
+}
+
+
+/* =========================================
+   Padding Left
+   Left side se content ko space
+   ========================================= */
+
+.seven {
+    border: 5px solid yellow;
+    border-radius: 10px;
+    padding-left: 10px;
+}
+
+
+/* =========================================
+   Margin
+   Element ke bahar ki space
+   ========================================= */
+
+.eight {
+    border: 5px solid yellow;
+    border-radius: 10px;
+
+    margin: 100px;
+
+    text-align: center;
+    padding: 20px 0;
+}
+
+
+/* =========================================
+   Margin Auto
+   Element ko horizontally center karta hai
+   ========================================= */
+
+.nine {
+    border: 5px solid yellow;
+    border-radius: 10px;
+
+    margin: auto;
+
+    text-align: center;
+    padding: 20px 0;
+
+    width: 100px;
+}
+
