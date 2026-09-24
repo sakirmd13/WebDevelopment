@@ -1,0 +1,165 @@
+
+/* =========================================
+   Background Color
+   Element ke background me color add karta hai
+   ========================================= */
+
+h1 {
+    background-color: red;
+}
+
+
+/* =========================================
+   Linear Gradient
+   ========================================= */
+
+/* 1. Linear Gradient - Top */
+
+.one {
+    background: linear-gradient(to top, red, blue);
+}
+
+
+/* 2. Linear Gradient - Right */
+
+.two {
+    background: linear-gradient(to right, red, blue);
+}
+
+
+/* 3. Linear Gradient - Left */
+
+.three {
+    background: linear-gradient(to left, red, blue);
+}
+
+
+/* 4. Linear Gradient - Bottom */
+
+.four {
+    background: linear-gradient(to bottom, red, blue);
+}
+
+
+/* 5. Linear Gradient - 45 Degree */
+
+.five {
+    background: linear-gradient(45deg, red, blue);
+}
+
+
+/* 6. Linear Gradient - Multiple Colors */
+
+.six {
+    background: linear-gradient(
+        45deg,
+        red,
+        blue,
+        green,
+        yellow
+    );
+}
+
+
+/* =========================================
+   Radial Gradient
+   Center point se colors bahar ki taraf
+   spread hote hain
+   ========================================= */
+
+/* 7. Radial Gradient */
+
+.seven {
+    background: radial-gradient(red, pink);
+}
+
+
+/* 8. Radial Gradient - Circle */
+
+.eight {
+    background: radial-gradient(circle, red, pink);
+    height: 100px;
+}
+
+
+/* =========================================
+   Conic Gradient
+   Circular direction me gradient
+   ========================================= */
+
+.nine {
+    background: conic-gradient(
+        red,
+        yellow,
+        green
+    );
+
+    height: 100px;
+}
+
+
+/* =========================================
+   Background Image
+   Element ke background me image add karta hai
+   ========================================= */
+
+.ten {
+    color: yellow;
+
+    background-image: url(
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzTRLG-iP3zpCxKaDKDD_uHE1JSdXasVWK4GoUC0SOqg&s"
+    );
+
+    height: 100px;
+}
+
+
+/* =========================================
+   Background Position
+   Background image ki position change karta hai
+   ========================================= */
+
+.eleven {
+    background-image: url(
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzTRLG-iP3zpCxKaDKDD_uHE1JSdXasVWK4GoUC0SOqg&s"
+    );
+
+    height: 100px;
+
+    background-position: right;
+}
+
+
+/* =========================================
+   Background Size - Contain
+   Puri image visible rahegi
+   ========================================= */
+
+.twelve {
+    background-image: url(
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzTRLG-iP3zpCxKaDKDD_uHE1JSdXasVWK4GoUC0SOqg&s"
+    );
+
+    height: 100px;
+
+    background-position: right;
+    background-size: contain;
+}
+
+
+/* =========================================
+   Background Size - Cover
+   Pura element image se cover hoga
+   ========================================= */
+
+.thirteen {
+    background-image: url(
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzTRLG-iP3zpCxKaDKDD_uHE1JSdXasVWK4GoUC0SOqg&s"
+    );
+
+    height: 100px;
+
+    background-position: right;
+    background-size: cover;
+}
+
