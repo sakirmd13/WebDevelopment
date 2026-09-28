@@ -1,26 +1,65 @@
+
+/* =========================================
+   Universal Selector
+   Default margin aur padding remove karta hai
+   ========================================= */
+
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.one{
+
+/* =========================================
+   Display: Inline
+   Inline element same line me rehta hai.
+   Width aur height normally apply nahi hote.
+   ========================================= */
+
+.one {
     display: inline;
+
     height: 200px;
     width: 200px;
+
     background: red;
 }
-span{
+
+
+/* =========================================
+   Display: Block
+   Block element new line se start hota hai.
+   Width aur height apply ho sakte hain.
+   ========================================= */
+
+span {
     display: block;
+
     height: 200px;
-    width: 200spx;
+    width: 200px;
+
     border: 2px solid black;
 }
 
-.two{
+
+/* =========================================
+   Display: None
+   Element ko layout se completely remove karta hai.
+   ========================================= */
+
+.two {
     display: none;
 }
 
-.three{
+
+/* =========================================
+   Visibility: Hidden
+   Element invisible hota hai,
+   lekin uski space preserve rehti hai.
+   ========================================= */
+
+.three {
     visibility: hidden;
 }
+
