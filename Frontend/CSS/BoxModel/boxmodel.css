@@ -1,4 +1,8 @@
-
+*{
+   box-sizing: border-box;
+   margin: 0;
+   padding: 0;
+}
 /* =========================================
    CSS Box Model
    Content → Padding → Border → Margin
@@ -116,4 +120,6 @@
 
     width: 100px;
 }
+
+
 
