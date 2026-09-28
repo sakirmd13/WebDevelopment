@@ -1,0 +1,26 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.one{
+    display: inline;
+    height: 200px;
+    width: 200px;
+    background: red;
+}
+span{
+    display: block;
+    height: 200px;
+    width: 200spx;
+    border: 2px solid black;
+}
+
+.two{
+    display: none;
+}
+
+.three{
+    visibility: hidden;
+}
