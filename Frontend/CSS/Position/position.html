@@ -1,0 +1,82 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Position Property</title>
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="./position.css" />
+  </head>
+
+  <body>
+
+    <!-- Position: Static -->
+    <div>
+      <p class="one">
+        Static position element ki default position hoti hai.
+      </p>
+
+      <!-- Position: Relative -->
+      <p class="two">
+        Relative position element ko uski normal position ke relative move
+        karne ki permission deta hai.
+      </p>
+    </div>
+
+
+    <div class="wrapper">
+
+      <!-- Position Examples -->
+      <div class="boxes">
+
+        <!-- Relative -->
+        <span class="box" id="box1">Box 1 - Relative</span>
+
+        <!-- Sticky -->
+        <span class="box" id="box2">Box 2 - Sticky</span>
+
+        <!-- Fixed -->
+        <span class="box" id="box3">Box 3 - Fixed</span>
+
+        <!-- Absolute -->
+        <span class="box" id="box4">Box 4 - Absolute</span>
+
+      </div>
+
+
+      <!-- Relative Parent + Absolute Badge -->
+      <div class="cart">
+        <img src="./img/cart.png" alt="Cart Icon" />
+
+        <p class="cart-count">
+          10
+        </p>
+      </div>
+
+
+      <!-- Fixed Parent + Absolute Badge -->
+      <div class="cart-fixed">
+        <img src="./img/cart.png" alt="Cart Icon" />
+
+        <p class="cart-count-fixed">
+          10
+        </p>
+      </div>
+
+
+      <!-- Extra Content For Scroll Testing -->
+      <h4>
+        Position sticky ko properly test karne ke liye page par enough content
+        hona zaroori hai. Scroll karte waqt sticky element specified position
+        par stick ho sakta hai. Position fixed element viewport ke according
+        fixed rehta hai, jabki absolute element apne nearest positioned parent
+        ke according position hota hai.
+      </h4>
+
+    </div>
+
+  </body>
+</html>
