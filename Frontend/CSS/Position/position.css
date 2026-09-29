@@ -1,4 +1,3 @@
-
 /* =========================================
    Universal Selector
    ========================================= */
@@ -8,7 +7,6 @@
   padding: 0;
   box-sizing: border-box;
 }
-
 
 /* =========================================
    Position: Static
@@ -20,7 +18,6 @@
 
   border: 2px solid rgb(153, 255, 0);
 }
-
 
 /* =========================================
    Position: Relative
@@ -42,7 +39,6 @@
   */
 }
 
-
 /* =========================================
    Common Box Styling
    ========================================= */
@@ -63,7 +59,6 @@
   position: relative;
 }
 
-
 /* =========================================
    Relative Position
    ========================================= */
@@ -71,7 +66,6 @@
 #box1 {
   top: 50px;
 }
-
 
 /* =========================================
    Parent Element
@@ -90,7 +84,6 @@
   position: relative;
 }
 
-
 /* =========================================
    Absolute Position
    Nearest positioned parent ke relative
@@ -104,7 +97,6 @@
   left: 0;
 }
 
-
 /* =========================================
    Relative Parent
    ========================================= */
@@ -112,7 +104,6 @@
 .cart {
   position: relative;
 }
-
 
 /* =========================================
    Absolute Badge
@@ -136,11 +127,10 @@
   padding: 15px;
 
   position: absolute;
-
-  top: -20px;
+  z-index: -1;
+  top: 0px;
   left: 120px;
 }
-
 
 /* =========================================
    Fixed Parent
@@ -150,7 +140,6 @@
 .cart-fixed {
   position: fixed;
 }
-
 
 /* =========================================
    Absolute Badge
@@ -174,11 +163,10 @@
   padding: 15px;
 
   position: absolute;
-
-  top: -20px;
+  z-index: -1;
+  top: 0px;
   left: 120px;
 }
-
 
 /* =========================================
    Position: Fixed
@@ -190,7 +178,6 @@
 
   top: 30px;
 }
-
 
 /* =========================================
    Boxes Container
@@ -204,7 +191,6 @@
   border: 1px solid gray;
 }
 
-
 /* =========================================
    Position: Sticky
    Scroll karne par specified position par
@@ -216,4 +202,3 @@
 
   top: 0;
 }
-
