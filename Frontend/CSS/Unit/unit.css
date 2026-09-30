@@ -1,0 +1,236 @@
+
+/* =========================================
+   Universal Selector
+   ========================================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+/* =========================================
+   Root Font Size
+   REM unit isi font-size ko reference karega
+   ========================================= */
+
+html {
+  font-size: 20px;
+}
+
+
+/* =========================================
+   Pixel Unit (px)
+   Fixed size unit
+   ========================================= */
+
+.wrapper {
+  height: 500px;
+  width: 500px;
+
+  background-color: aqua;
+}
+
+.container {
+  width: 250px;
+  height: 250px;
+
+  background: red;
+}
+
+
+/* =========================================
+   Percentage Unit (%)
+   Parent ke size ke according
+   ========================================= */
+
+.wrapper1 {
+  margin-top: 20px;
+
+  height: 500px;
+
+  background-color: aqua;
+}
+
+.container1 {
+  width: 50%;
+  height: 50%;
+
+  background: red;
+}
+
+
+/* =========================================
+   Percentage + Inline Block
+   ========================================= */
+
+.wrapper2 {
+  margin-top: 20px;
+
+  height: 500px;
+
+  background-color: aqua;
+}
+
+.container2 {
+  display: inline-block;
+
+  width: 50%;
+  height: 40%;
+
+  background: red;
+
+  padding: 10px;
+}
+
+
+/* =========================================
+   Percentage Width & Height
+   ========================================= */
+
+.wrapper3 {
+  margin-top: 20px;
+
+  height: 500px;
+
+  background-color: aqua;
+}
+
+.container3 {
+  display: inline-block;
+
+  width: 40%;
+  height: 50%;
+
+  background: red;
+
+  padding: 10px;
+}
+
+
+/* =========================================
+   Viewport Units
+   vw = Viewport Width
+   vh = Viewport Height
+   ========================================= */
+
+.wrapper4 {
+  margin-top: 20px;
+
+  height: 100vh;
+  width: 100vw;
+
+  background-color: aqua;
+}
+
+.container4 {
+  display: inline-block;
+
+  width: 40vw;
+  height: 70vh;
+
+  background: red;
+
+  padding: 10px;
+}
+
+
+/* =========================================
+   EM Unit
+   EM parent ke font-size ke relative hota hai
+   ========================================= */
+
+.wrapper5 {
+  margin-top: 20px;
+
+  height: 100vh;
+  width: 100vw;
+
+  background-color: aqua;
+
+  font-size: 32px;
+}
+
+.container5 {
+  /*
+    1em = parent ke font-size ke equal
+
+    Parent = 32px
+
+    2em = 32px × 2
+        = 64px
+  */
+
+  font-size: 2em;
+
+  display: inline-block;
+
+  width: 40%;
+  height: 50%;
+
+  padding: 10px;
+}
+
+.container5 p {
+  /*
+    3em = current parent font-size × 3
+
+    Parent font-size = 64px
+
+    3em = 64px × 3
+        = 192px
+  */
+
+  font-size: 3em;
+}
+
+
+/* =========================================
+   REM Unit
+   REM root HTML ke font-size ke relative hota hai
+   ========================================= */
+
+.wrapper6 {
+  margin-top: 20px;
+
+  height: 100vh;
+  width: 100vw;
+
+  background-color: aqua;
+
+  font-size: 32px;
+}
+
+.container6 {
+  /*
+    2em = parent ke font-size × 2
+
+    Parent = 32px
+
+    2em = 64px
+  */
+
+  font-size: 2em;
+
+  display: inline-block;
+
+  width: 40%;
+  height: 50%;
+
+  padding: 10px;
+}
+
+.para {
+  /*
+    HTML root font-size = 20px
+
+    3rem = 20px × 3
+         = 60px
+
+    REM parent ke font-size ko ignore karta hai.
+  */
+
+  font-size: 3rem;
+}
+
