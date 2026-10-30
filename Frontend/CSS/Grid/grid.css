@@ -50,66 +50,30 @@
 #grid .foot {
   grid-column: 1/4;
 }
-#grid2 {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(3, 100px);
-    gap: 13px;
-
-    width: 50%;
-    margin: 10px auto;
-    border: 10px solid red;
+#grid2  {
+  display: grid;
+  width: 50%;
+  min-height: auto;
+  margin: auto;
+  grid-template-columns: repeat(4,1fr);
+  border: 10px solid rgb(255, 0, 0);
+  gap: 10px 20px;
 }
 
 #grid2 div {
     background-color: aqua;
     border: 1px solid black;
+    height: auto;
 }
 
 /* Sidebar */
-#grid2 .sidebar {
-    grid-column: 1 / 2;
-    grid-row: 1 / 4;
-}
-
-/* Header */
 #grid2 .header {
-    grid-column: 2 / 4;
-    grid-row: 1 / 2;
+  grid-row: 1/4;
 }
-
-/* Item 5 */
-#grid2 .item5 {
-    grid-column: 4 / 5;
-    grid-row: 1 / 2;
+#grid2 .sidebar {
+  grid-column: 2/4;
 }
-
-/* Item 1 */
-#grid2 .item1 {
-    grid-column: 2 / 3;
-    grid-row: 2 / 3;
-}
-
-/* Item 2 */
-#grid2 .item2 {
-    grid-column: 3 / 4;
-    grid-row: 2 / 3;
-}
-
-/* Item 3 */
-#grid2 .item3 {
-    grid-column: 4 / 5;
-    grid-row: 2 / 4;
-}
-
-/* Item 4 */
-#grid2 .item4 {
-    grid-column: 2 / 3;
-    grid-row: 3 / 4;
-}
-
-/* Footer */
 #grid2 .foot {
-    grid-column: 3 / 4;
-    grid-row: 3 / 4;
+  grid-row: 2/4;
+  grid-column: 4/5;
 }
