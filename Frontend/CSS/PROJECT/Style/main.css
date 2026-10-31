@@ -1,186 +1,240 @@
+/* Google Fonts import:
+   Space Grotesk = Headings aur display text ke liye
+   Plus Jakarta Sans = Paragraphs aur normal text ke liye */
 @import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700;800&display=swap");
 
+/* ================= UNIVERSAL SELECTOR ================= */
+/* Universal selector sabhi HTML elements ko target karta hai */
 * {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
+  padding: 0; /* Sabhi elements ka default inner spacing remove karta hai */
+  margin: 0; /* Sabhi elements ka default outer spacing remove karta hai */
+  box-sizing: border-box; /* Width aur height mein padding aur border include karta hai */
 }
+
+/* ================= ROOT VARIABLES ================= */
+/* :root mein CSS custom properties define karte hain.
+   In variables ko poori stylesheet mein reuse kar sakte hain. */
 :root {
   /* Brand Theme Colors */
-  --color-primary: #a855f7;
-  --color-primary-glow: rgba(168, 85, 247, 0.25);
-  --color-secondary: #ec4899;
-  --color-secondary-glow: rgba(236, 72, 153, 0.25);
-  --color-accent: #06b6d4;
+  --color-primary: #a855f7; /* Primary purple color */
+  --color-primary-glow: rgba(168, 85, 247, 0.25); /* Purple transparent glow */
+  --color-secondary: #ec4899; /* Secondary pink color */
+  --color-secondary-glow: rgba(236, 72, 153, 0.25); /* Pink transparent glow */
+  --color-accent: #06b6d4; /* Highlight ke liye cyan color */
 
   /* Base & Layout Backgrounds */
-  --color-bg-base: #060709;
-  --color-bg-section: #0c0d14;
-  --color-bg-footer: #161922;
-  --color-surface: #11131a;
-  --color-surface-muted: #1e212f;
+  --color-bg-base: #060709; /* Website ka main background */
+  --color-bg-section: #0c0d14; /* Sections ka background */
+  --color-bg-footer: #161922; /* Footer ka background */
+  --color-surface: #11131a; /* Cards aur content surfaces ka background */
+  --color-surface-muted: #1e212f; /* Muted surface background */
 
   /* Borders */
-  --color-border: rgba(255, 255, 255, 0.07);
+  --color-border: rgba(255, 255, 255, 0.07); /* Subtle transparent border */
 
   /* Typography Text Colors */
-  --white: #ffffff;
-  --color-text-body: #cbd5e1;
-  --color-text-muted: #9fa6b2;
-  --font-display: "Space Grotesk", sans-serif;
-  --font-body: "Plus Jakarta Sans", sans-serif;
-  --radius-sm: 6px;
-  --radius-md: 12px;
-  --radius-lg: 20px;
-  --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.5);
-  --shadow-md: 0 12px 36px rgba(0, 0, 0, 0.7);
-  --shadow-lg: 0 24px 64px rgba(0, 0, 0, 0.9);
+  --white: #ffffff; /* White text color */
+  --color-text-body: #cbd5e1; /* Normal body text color */
+  --color-text-muted: #9fa6b2; /* Secondary / muted text color */
+
+  /* Font Families */
+  --font-display: "Space Grotesk", sans-serif; /* Heading font */
+  --font-body: "Plus Jakarta Sans", sans-serif; /* Paragraph font */
+
+  /* Border Radius */
+  --radius-sm: 6px; /* Small rounded corners */
+  --radius-md: 12px; /* Medium rounded corners */
+  --radius-lg: 20px; /* Large rounded corners */
+
+  /* Box Shadows */
+  --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.5); /* Small shadow */
+  --shadow-md: 0 12px 36px rgba(0, 0, 0, 0.7); /* Medium shadow */
+  --shadow-lg: 0 24px 64px rgba(0, 0, 0, 0.9); /* Large shadow */
+
+  /* Gradient Colors */
   --gradient-accent: linear-gradient(
     135deg,
     var(--color-primary) 0%,
     var(--color-secondary) 100%
-  );
+  ); /* Purple se pink gradient */
+
   --gradient-secondary: linear-gradient(
     135deg,
     var(--color-accent) 0%,
     #3b82f6 100%
-  );
+  ); /* Cyan se blue gradient */
 }
 
+/* ================= GLOBAL TYPOGRAPHY ================= */
+/* Sabhi heading elements par common styling apply hoti hai */
 h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
-  font-family: var(--font-display);
-  font-weight: 700;
-  line-height: 1.1;
-  letter-spacing: -0.02em;
-  color: var(--white);
+  font-family: var(--font-display); /* Display font apply karta hai */
+  font-weight: 700; /* Text ko bold banata hai */
+  line-height: 1.1; /* Heading lines ke beech spacing control karta hai */
+  letter-spacing: -0.02em; /* Letters ke beech spacing kam karta hai */
+  color: var(--white); /* Heading ka text white karta hai */
 }
 
+/* Individual heading sizes */
 h1 {
-  font-size: clamp(2.4rem, 6vw, 5rem);
-}
-h2 {
-  font-size: clamp(1.8rem, 4vw, 3rem);
-}
-h3 {
-  font-size: clamp(1.2rem, 2.5vw, 1.75rem);
-}
-h4 {
-  font-size: 1.125rem;
-  font-weight: 600;
-}
-p {
-  font-size: 1rem;
-  line-height: 1.7;
-  color: var(--color-text-muted);
+  font-size: clamp(2.4rem, 6vw, 5rem); /* Responsive H1 size */
 }
 
-small {
-  font-size: 0.8rem;
-  color: var(--color-text-muted);
+h2 {
+  font-size: clamp(1.8rem, 4vw, 3rem); /* Responsive H2 size */
 }
+
+h3 {
+  font-size: clamp(1.2rem, 2.5vw, 1.75rem); /* Responsive H3 size */
+}
+
+h4 {
+  font-size: 1.125rem; /* H4 ka font size */
+  font-weight: 600; /* H4 ka font weight */
+}
+
+/* Paragraph styling */
+p {
+  font-size: 1rem; /* Normal paragraph font size */
+  line-height: 1.7; /* Paragraph readability improve karta hai */
+  color: var(--color-text-muted); /* Muted text color */
+}
+
+/* Small text styling */
+small {
+  font-size: 0.8rem; /* Small font size */
+  color: var(--color-text-muted); /* Muted color */
+}
+
+/* Strong tag ke andar text ko bold aur white banata hai */
 strong {
   color: var(--white);
   font-weight: 600;
 }
+
+/* Emphasis text ka color */
 em {
   color: var(--color-text-body);
 }
+
+/* List ke default bullets remove karta hai */
 ul {
   list-style: none;
 }
+
+/* Anchor tags ki default underline remove karta hai */
 a {
   text-decoration: none;
-  color: inherit;
+  color: inherit; /* Parent element ka text color inherit karta hai */
 }
 
+/* ================= BODY & HTML ================= */
 body {
-  background: var(--color-bg-base);
-  padding: 0 60px;
+  background: var(--color-bg-base); /* Entire page ka background */
+  padding: 0 60px; /* Left aur right side spacing */
 }
+
+/* Root font size set karta hai */
 html {
   font-size: 16px;
 }
 
+/* ================= HEADER SECTION ================= */
+/* Header ko top par fixed rakhta hai */
 header {
-  position: fixed;
-  background-color: rgba(0, 0, 0, 0.604);
-  backdrop-filter: blur(10px);
-  display: flex;
-  left: 60px;
-  right: 60px;
-  border-bottom: 2px solid var(--color-border);
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 30px;
-  text-transform: uppercase;
-  z-index: 9999;
-}
-header nav ul {
-  display: flex;
-  gap: 10px;
-}
-header h1 {
-  font-family: 2rem;
-  letter-spacing: 0.07 em;
-  background: var(--gradient-accent);
-  background-clip: text;
-  -webkit-background-clip: text;
-  color: transparent;
-  -webkit-text-fill-color: transparent;
+  position: fixed; /* Scroll karne par header apni jagah fixed rahega */
+  background-color: rgba(0, 0, 0, 0.604); /* Transparent black background */
+  backdrop-filter: blur(10px); /* Header ke peeche blur effect */
+  display: flex; /* Logo aur navigation ko flex layout deta hai */
+  left: 60px; /* Left side se distance */
+  right: 60px; /* Right side se distance */
+  border-bottom: 2px solid var(--color-border); /* Bottom border */
+  justify-content: space-between; /* Logo aur nav ke beech space */
+  align-items: center; /* Vertically center align karta hai */
+  padding: 20px 30px; /* Header ke andar spacing */
+  text-transform: uppercase; /* Text ko uppercase karta hai */
+  z-index: 9999; /* Header ko doosre elements ke upar rakhta hai */
 }
 
+/* Header navigation list ko horizontal layout deta hai */
+header nav ul {
+  display: flex;
+  gap: 10px; /* Navigation items ke beech gap */
+}
+
+/* Header ke logo ki styling */
+header h1 {
+  font-family: var(--font-body);
+  font-size: 2rem;
+  letter-spacing: 0.07em;
+  background: var(--gradient-accent); /* Logo par gradient background */
+  background-clip: text; /* Background ko text ke andar clip karta hai */
+  -webkit-background-clip: text;
+  color: transparent; /* Normal text color transparent karta hai */
+  -webkit-text-fill-color: transparent; /* Gradient text effect ke liye */
+}
+
+/* Header navigation links */
 header nav a {
   font-family: var(--font-display);
   color: var(--color-text-muted);
-  padding: 12px 20px;
-  border-radius: var(--radius-sm);
+  padding: 12px 20px; /* Link ke andar spacing */
+  border-radius: var(--radius-sm); /* Rounded corners */
   font-weight: 600;
-  text-wrap: nowrap;
+  text-wrap: nowrap; /* Link text ko next line mein wrap hone se rokta hai */
 }
 
+/* Navigation link hover effect */
 header nav a:hover {
   background-color: rgba(175, 190, 144, 0.605);
   color: var(--white);
 }
 
+/* Navigation ka last item — Cart */
 header nav li:last-child a {
   background-color: var(--color-primary);
   color: var(--white);
 }
 
+/* Cart link ka hover effect */
 header nav li:last-child a:hover {
   background-color: var(--color-secondary);
 }
 
+/* Fixed header ke neeche main content ko spacing deta hai */
 main {
   padding-top: 80px;
 }
 
-/* Hero Section */
+/* ================= HERO SECTION ================= */
 #hero {
-  height: 90vh;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 40px;
+  height: 90vh; /* Hero section viewport height ka 90% lega */
+  display: flex; /* Left aur right content ko side-by-side rakhta hai */
+  justify-content: space-between; /* Dono sides ke beech space */
+  align-items: center; /* Content ko vertically center karta hai */
+  padding: 0 40px; /* Left-right inner spacing */
 }
 
+/* Hero ka left content */
 .left-hero {
   display: flex;
-  flex-direction: column;
-  gap: 10px;
-  max-width: 690px;
+  flex-direction: column; /* Children ko vertical direction mein rakhta hai */
+  gap: 10px; /* Children ke beech spacing */
+  max-width: 690px; /* Content ki maximum width */
 }
+
+/* Hero heading */
 .left-hero h2 {
   font-size: 5rem;
   text-transform: uppercase;
 }
 
+/* Hero heading ke gradient text ki styling */
 #gradient-text {
   background: var(--gradient-accent);
   background-clip: text;
@@ -189,156 +243,201 @@ main {
   -webkit-text-fill-color: transparent;
 }
 
+/* Hero paragraphs */
 #hero p {
   font-size: 1rem;
   font-family: var(--font-body);
 }
+
+/* CTA buttons ka parent container */
 #cta {
-  display: flex;
-  gap: 20px;
-  margin-top: 20px;
+  display: flex; /* Buttons ko horizontal arrange karta hai */
+  gap: 20px; /* Buttons ke beech gap */
+  margin-top: 20px; /* Upar se spacing */
 }
 
+/* CTA ke dono anchor buttons ki common styling */
 #cta a {
   padding: 15px 30px;
   border-radius: var(--radius-sm);
   text-transform: uppercase;
   font-family: var(--font-display);
-  font-weight: 700px;
+  font-weight: 700;
   color: var(--white);
 }
 
+/* Primary CTA button */
 .btn1 {
   background: var(--gradient-accent);
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: center; /* Horizontal center alignment */
+  align-items: center; /* Vertical center alignment */
 }
+
+/* Primary CTA hover effect */
 .btn1:hover {
   box-shadow: 0 8px 20px rgba(223, 71, 190, 0.505);
-  background: linear-gradient(135deg, #a54ef7 0%, #f2459b 100);
+  background: linear-gradient(135deg, #a54ef7 0%, #f2459b 100%);
 }
+
+/* Secondary CTA button */
 .btn2 {
   border: 2px solid rgba(104, 104, 104, 0.926);
 }
+
+/* Secondary CTA hover effect */
 .btn2:hover {
   background-color: rgba(255, 255, 255, 0.07);
   border-color: var(--white);
 }
 
+/* ================= HERO RIGHT IMAGE ================= */
+/* Hero image aur glow effects ka container */
 .right-hero {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 580px;
-  flex: 1;
-  position: relative;
+  flex: 1; /* Available space ka remaining portion leta hai */
+  position: relative; /* Absolute positioned glow elements ka reference */
 }
+
+/* Hero image ki styling */
 .right-hero img {
   height: 400px;
   width: 300px;
-  object-fit: cover;
+  object-fit: cover; /* Image ko container mein crop karke fit karta hai */
   border-radius: var(--radius-sm);
-  z-index: 1;
+  z-index: 1; /* Image ko glow effects ke upar rakhta hai */
   box-shadow: var(--shadow-md);
 }
+
+/* Hero image hover effect */
 .right-hero img:hover {
   box-shadow: var(--shadow-lg);
   border: 1px solid var(--color-primary);
 }
 
+/* Glow elements ki common styling */
 .glow {
   width: 200px;
   height: 200px;
-  border-radius: 50%;
-  position: absolute;
+  border-radius: 50%; /* Square ko circular banata hai */
+  position: absolute; /* Parent ke relative position hota hai */
   /* z-index: -1; */
-  filter: blur(50px);
-  opacity: 0.5;
+  filter: blur(50px); /* Glow ko blur karta hai */
+  opacity: 0.5; /* Transparency control karta hai */
 }
 
+/* Purple glow ki position aur color */
 .orb1 {
   top: 15%;
   left: 5%;
   background-color: var(--color-primary);
 }
+
+/* Pink glow ki position aur color */
 .orb2 {
   bottom: 10%;
   right: 5%;
   background-color: var(--color-secondary);
 }
 
+/* ================= WEEK DROP SECTION ================= */
 #week-drop {
   background-color: var(--color-primary-glow);
   padding: 80px 60px;
 }
+
+/* Week Drop heading */
 #week-drop h2 {
   text-transform: uppercase;
 }
 
-/* Week Drop */
+/* Week Drop section ke direct paragraph ko target karta hai */
 #week-drop > p {
   margin: 20px 0;
   font-family: var(--font-body);
 }
+
+/* Product cards ka parent container */
 .cards {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: wrap; /* Space kam hone par cards next row mein chale jayenge */
   gap: 20px;
   margin-top: 40px;
 }
+
+/* Product cards ki common styling */
 .cards article {
-  flex: 1 1 240px;
+  flex: 1 1 240px; /* Grow, shrink aur base width define karta hai */
   display: flex;
-  flex-direction: column;
+  flex-direction: column; /* Card content ko vertical rakhta hai */
   padding: 10px;
   border-radius: var(--radius-lg);
-  overflow: hidden;
+  overflow: hidden; /* Container ke bahar nikalne wale content ko hide karta hai */
   border: 2px solid var(--color-border);
 }
+
+/* Product image ka wrapper */
 figure {
   overflow: hidden;
   position: relative;
-  aspect-ratio: 3/4;
+  aspect-ratio: 3/4; /* Image container ka width-height ratio */
   padding: 5px;
   border-radius: var(--radius-lg);
   overflow: hidden;
 }
+
+/* Image caption ko hide karta hai */
 figcaption {
   display: none;
 }
 
+/* Product image styling */
 figure img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: cover; /* Image ko crop karke container fill karta hai */
   border-radius: var(--radius-lg);
 }
+
+/* Article ko relative position deta hai */
 article {
   position: relative;
 }
+
+/* Product card heading */
 article h3 {
   padding: 10px 20px 0;
   font-size: 1rem;
 }
+
+/* Card ke first paragraph ki styling */
 article p:first-of-type {
   padding: 0 20px;
   font-family: var(--font-body);
   font-size: 0.85rem;
 }
+
+/* Category ke span element ko style karta hai */
 article p span {
   color: var(--color-primary);
-  font-size: 700;
+  font-weight: 700;
 }
 
+/* Card ke second paragraph — price information */
 article p:nth-of-type(2) {
   padding: 10px 20px;
   font-family: var(--font-body);
 }
+
+/* Price ke strong text ki font family */
 article p:nth-of-type(2) strong {
   font-family: var(--font-display);
 }
 
+/* Discount badge ki styling */
 article p:nth-of-type(3) mark {
   background: var(--gradient-accent);
   padding: 10px 15px;
@@ -346,23 +445,28 @@ article p:nth-of-type(3) mark {
   color: var(--white);
   font-family: var(--font-display);
   font-weight: 600;
-  position: absolute;
+  position: absolute; /* Card ke relative position */
   top: 3%;
   right: 5%;
 }
 
+/* Product details anchor link */
 article > a {
   color: var(--color-accent);
   text-decoration: underline;
   text-transform: uppercase;
   letter-spacing: 0.1rem;
   font-family: var(--font-display);
-  text-underline-offset: 2px;
+  text-underline-offset: 2px; /* Underline aur text ke beech gap */
   padding: 10px 20px;
 }
+
+/* Product details link hover */
 article > a:hover {
   color: var(--color-secondary);
 }
+
+/* Add to cart button */
 article > button {
   margin: 10px 20px;
   padding: 10px 20px;
@@ -373,47 +477,55 @@ article > button {
   font-family: var(--font-display);
 }
 
+/* Add to cart button hover */
 article > button:hover {
   color: var(--white);
   background-color: var(--color-primary);
-  cursor: pointer;
+  cursor: pointer; /* Mouse pointer ko hand icon banata hai */
 }
+
+/* Product card hover effect */
 article:hover {
   border: 1px solid var(--color-primary);
   box-shadow: 0 10px 50px var(--color-primary-glow);
 }
 
-/* best-seller */
+/* ================= BEST SELLER SECTION ================= */
 #best-seller {
   /* background-color: var(--color-accent); */
   padding: 80px 50px;
 }
 
+/* Best Seller heading */
 #best-seller h2 {
   text-transform: uppercase;
   margin-bottom: 10px;
 }
 
+/* Best Seller table */
 #best-seller table {
-  width: 100%;
+  width: 100%; /* Table available width ka 100% lega */
   border-radius: var(--radius-md);
   overflow: hidden;
-  border-collapse: collapse;
+  border-collapse: collapse; /* Table borders ko merge karta hai */
 }
 
+/* Table ki first heading row, jo 5 columns span karti hai */
 #best-seller th[colspan="5"] {
   background: var(--gradient-accent);
   padding: 15px 0;
   font-family: var(--font-display);
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  font-size: 1.1rems;
+  font-size: 1.1rem;
   text-align: center;
   color: white;
 }
+
+/* Table ke sabhi header cells */
 #best-seller th {
   padding: 10px 20px;
-  text-align: start;
+  text-align: start; /* Text ko start side align karta hai */
   background-color: rgba(255, 255, 255, 0.07);
   font-family: var(--font-display);
   text-transform: uppercase;
@@ -421,6 +533,7 @@ article:hover {
   letter-spacing: 0.2rem;
 }
 
+/* Table ke data cells */
 #best-seller td {
   padding: 14px 20px;
   font-family: var(--font-body);
@@ -429,36 +542,43 @@ article:hover {
   border-top: 1px solid var(--color-border);
 }
 
+/* Table row hover effect */
 #best-seller tr:hover td {
   background-color: rgba(255, 255, 255, 0.07);
 }
 
+/* Hover hone par first column ka color change */
 #best-seller tr:hover td:first-child {
   color: var(--color-secondary);
 }
 
-/* why-e-com */
+/* ================= WHY E-COM SECTION ================= */
 #why-e-com {
   padding: 80px 50px;
   color: white;
 }
+
+/* Section heading */
 #why-e-com h2 {
   text-transform: uppercase;
   margin-bottom: 10px;
 }
 
+/* Section ke paragraphs */
 #why-e-com p {
   font-family: var(--font-display);
   margin-bottom: 5px;
 }
 
+/* Brand features ki list ko flex layout deta hai */
 #why-e-com ul {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: wrap; /* Items ko next row mein wrap hone deta hai */
   gap: 20px;
-
   margin: 50px 0;
 }
+
+/* Features list ke individual items */
 #why-e-com ul li {
   flex: 1 1 240px;
   background-color: var(--color-surface);
@@ -470,16 +590,21 @@ article:hover {
   color: var(--color-text-muted);
   font-size: 0.9rem;
 }
+
+/* Feature card hover effect */
 #why-e-com ul li:hover {
   border-left: 3px solid var(--color-accent);
 }
 
+/* Feature card ke strong text ki styling */
 #why-e-com ul li strong {
-  display: block;
+  display: block; /* Strong element ko block element banata hai */
   font-family: var(--font-display);
   margin-bottom: 10px;
-  font-size: 1, 2rem;
+  font-size: 1.2rem;
 }
+
+/* Our Promise heading */
 #why-e-com h3 {
   margin: 10px;
   display: flex;
@@ -488,6 +613,8 @@ article:hover {
   color: white;
   border-bottom: 1px solid var(--color-border);
 }
+
+/* Promise cards ke subheadings */
 #why-e-com section h5 {
   display: flex;
   flex-wrap: wrap;
@@ -495,21 +622,28 @@ article:hover {
   color: var(--color-accent);
 }
 
+/* Promise cards ka parent container */
 #why-e-com > div {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
 }
+
+/* Individual promise cards */
 #why-e-com section {
   flex: 1 1 270px;
   border: 1px solid var(--color-border);
   padding: 24px;
   border-radius: var(--radius-md);
 }
+
+/* Promise card hover effect */
 #why-e-com section:hover {
   background-color: rgba(255, 255, 255, 0.07);
   border: 1px solid var(--color-primary);
 }
+
+/* Why E-Com ke paragraphs ki styling */
 #why-e-com p {
   color: var(--color-accent);
   font-family: var(--font-display);
@@ -517,58 +651,69 @@ article:hover {
   text-transform: uppercase;
 }
 
+/* Promise cards ke andar paragraphs */
 #why-e-com div p {
   font-family: var(--font-body);
   color: var(--color-text-muted);
   font-size: 0.7rem;
 }
-/* #early-drop */
+
+/* ================= EARLY DROP SECTION ================= */
 #early-drop {
   background-color: var(--color-surface);
-  text-align: center;
+  text-align: center; /* Content ko center align karta hai */
   padding: 100px 0;
 }
 
+/* Early Drop heading */
 #early-drop h2 {
   text-transform: uppercase;
   padding: 15px 0;
 }
+
+/* Early Drop description */
 #early-drop p {
   font-family: var(--font-body);
   padding: 15px 0;
-  font-style: 1.1rem;
+  font-size: 1.1rem;
   max-width: 500px;
-  margin: auto;
+  margin: auto; /* Available horizontal space ko equally distribute karta hai */
 }
 
+/* Form label ko visually hide karta hai */
 #early-drop form label {
   display: none;
 }
 
+/* Email form ka layout */
 #early-drop form {
-  display: flex;
+  display: flex; /* Input aur button ko horizontal rakhta hai */
   margin: auto;
-  bottom: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
   border-radius: var(--radius-sm);
   max-width: 520px;
   overflow: hidden;
 }
+
+/* Email input field */
 #early-drop input[type="email"] {
-  flex: 1;
+  flex: 1; /* Available remaining space leta hai */
   padding: 10px 20px;
   background: transparent;
   border: none;
   /* border-radius: 20px; */
-  outline: none;
+  outline: none; /* Focus outline remove karta hai */
   font-family: var(--font-body);
   color: white;
   background-color: #2f31343b;
 }
 
+/* Email input placeholder text */
 #early-drop input[type="email"]::placeholder {
   color: red;
 }
 
+/* Notify Me button */
 #early-drop form button {
   font-family: var(--font-display);
   letter-spacing: 0.2em;
@@ -580,14 +725,18 @@ article:hover {
   font-weight: 700;
 }
 
+/* Form ke neeche additional information */
 #early-drop small {
   font-family: var(--font-body);
 }
 
+/* ================= FOOTER SECTION ================= */
 #footer {
   background-color: var(--color-bg-footer);
   padding: 80px 50px;
 }
+
+/* Footer heading aur gradient text */
 #footer h3 {
   text-transform: uppercase;
   background: var(--gradient-accent);
@@ -598,33 +747,46 @@ article:hover {
   letter-spacing: 0.1em;
   margin-bottom: 10px;
 }
+
+/* Footer tagline */
 #footer p {
   font-size: 1.2rem;
   font-family: var(--font-display);
   margin-top: 30px;
 }
+
+/* Footer navigation list */
 #footer nav ul {
   display: flex;
   gap: 20px;
   margin: 20px 0;
 }
-#footer nav ul li{
+
+/* Footer navigation ke individual items */
+#footer nav ul li {
   border: 1px solid var(--color-border);
-  border-radius: var(--shadow-sm);
+  border-radius: var(--radius-sm);
   padding: 10px 20px;
   font-family: var(--font-body);
   text-transform: uppercase;
 }
-#footer nav ul li a{
+
+/* Footer navigation links */
+#footer nav ul li a {
   color: var(--color-text-body);
 }
-#footer nav ul li:hover{
+
+/* Footer navigation item hover */
+#footer nav ul li:hover {
   border: 1px solid var(--color-primary);
 }
 
-#footer  a {
+/* Footer ke sabhi anchor links */
+#footer a {
   color: var(--color-accent);
 }
-#footer a:hover{
+
+/* Footer links hover effect */
+#footer a:hover {
   color: var(--color-secondary);
 }
