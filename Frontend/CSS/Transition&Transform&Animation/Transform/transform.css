@@ -5,52 +5,76 @@
   box-sizing: border-box;
 }
 
-/* Common styling: teeno boxes par apply hogi */
-.box {
+/* Sabhi transform boxes ki common styling */
+.transform-box {
   width: 300px;
   background-color: rgb(13, 142, 255);
   padding: 20px;
 
-  /* Width aur transform dono par smooth transition */
-  transition: width 2s ease-in 2s, transform 2s ease-in 2s;
+  /* Width aur transform changes ko smooth banata hai */
+  transition: width 2s ease, transform 2s ease;
 }
 
-/* BOX 1: translate-x */
-.translate-x {
+/* BOX 1: TRANSLATE X */
+.transform-translate-x {
   background-color: rgb(13, 142, 255);
 
-  /* X-axis par 100px right side move karega */
+  /* X-axis par 100px right move karega */
   transform: translateX(100px);
 }
 
-/* BOX 2: translate-y */
-.translate-y {
+/* BOX 2: TRANSLATE Y */
+.transform-translate-y {
   background-color: rgb(5, 255, 172);
 
   /* Y-axis par 100px neeche move karega */
   transform: translateY(100px);
 }
 
-/* BOX 3: translate-x-y */
-.translate-x-y {
+/* BOX 3: TRANSLATE X + Y */
+.transform-translate-xy {
   background-color: rgb(255, 104, 4);
 
   /* X-axis par 100px right aur Y-axis par 100px neeche move karega */
   transform: translate(100px, 100px);
 }
 
-/* Container par hover karne se uske direct child divs par effect lagega */
-.container:hover > div {
-  /* Hover par sabhi boxes ki width 500px ho jayegi */
-  width: 500px;
+/* BOX 4: SCALE */
+.transform-scale {
+  background-color: rgb(249, 0, 212);
 
-  /* Hover par sabhi boxes 100px X aur 100px Y move honge
-     aur apne original size se 2 times bade honge.
-  */
-  transform: translate(100px, 100px) scale(2);
+  /* Element ko 1.5 times bada karega */
+  transform: scale(1.5);
 }
 
-.btn {
+/* BOX 5: ROTATE */
+.transform-rotate {
+  background-color: rgb(255, 8, 8);
+
+  /* Element ko 15 degree rotate karega */
+  transform: rotate(15deg);
+}
+
+/* BOX 6: SKEW */
+.transform-skew {
+  background-color: rgb(255, 104, 4);
+
+  /* Element ko X-axis par -15 degree slant karega */
+  transform: skewX(-15deg);
+}
+
+/* Container par hover karne se sabhi direct child boxes par effect lagega */
+.transform-container:hover > div {
+  /* Hover par boxes ki width 500px ho jayegi */
+  width: 500px;
+
+  /* X-axis par 100px aur Y-axis par 50px move karega */
+  /* Element ko 1.1 times bada karega */
+  transform: translate(100px, 50px) scale(1.1);
+}
+
+/* Transform button styling */
+.transform-btn {
   background-color: red;
   padding: 20px 30px;
   border-radius: 30px;
@@ -58,18 +82,15 @@
   margin: 50px;
   cursor: pointer;
 
-  /* Transform aur shadow ke liye smooth transition */
-  transition: transform 2s ease, box-shadow 2s ease;
+  /* Transform aur shadow par smooth transition */
+  transition: transform 1s ease, box-shadow 1s ease;
 }
 
-.btn:hover {
-  /* X-axis par 0px aur Y-axis par 50px move karega
-     Scale 1.1 = 10% bada
-     Rotate = 30 degree rotate
-     Skew = -40 degree slant
-  */
-  transform: translate(0, 50px) scale(1.1) rotate(30deg) skew(-40deg);
+/* Button hover effect */
+.transform-btn:hover {
+  /* Move + Scale + Rotate + Skew */
+  transform: translate(50px, 20px) scale(1.1) rotate(20deg) skew(-10deg);
 
-  /* Shadow create karega */
+  /* Button ke around shadow create karega */
   box-shadow: 10px 10px 10px black;
 }
