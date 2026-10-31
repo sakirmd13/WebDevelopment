@@ -1,0 +1,124 @@
+
+/* Universal Selector: Sabhi HTML elements par default margin aur padding remove karta hai. */
+* {
+  margin: 0;
+  padding: 0;
+
+  /* Width aur height ke andar padding aur border ko include karta hai. */
+  box-sizing: border-box;
+}
+
+/* Common box styling: Sabhi transition boxes par ye properties apply hongi. */
+.box {
+  /* Box ki initial width 300px rakhi gayi hai. */
+  width: 300px;
+
+  /* Box ki height 300px rakhi gayi hai. */
+  height: 300px;
+
+  /* Box ka background color set karta hai. */
+  background-color: aliceblue;
+
+  /* margin: auto; box ko horizontally center karne ke liye use hota hai. */
+  /* margin: auto; */
+
+  /* Step 2: Transition ko normal state mein define karte hain.
+     Isse hover hatane par bhi transition smoothly apply hota hai. */
+
+  /* Transition complete hone mein 2 seconds lagenge. */
+  transition-duration: 2s;
+
+  /* All ka matlab box ki sabhi animatable properties par transition apply hoga. */
+  transition-property: all;
+
+  /* Linear: Transition ek hi speed se complete hota hai. */
+  /* transition-timing-function: linear; */
+
+  /* Ease-in: Transition slow start hota hai aur speed increase karta hai. */
+  /* transition-timing-function: ease-in; */
+
+  /* Ease-out: Transition fast start hota hai aur end mein slow ho jata hai. */
+  /* transition-timing-function: ease-out; */
+
+  /* Transition start hone se pehle 2 seconds ka delay rahega. */
+  transition-delay: 2s;
+}
+
+/* Jab container par hover hoga, uske direct child div ki width change hogi. */
+.container:hover > div {
+  /* Hover karne par box ki width 1300px ho jayegi. */
+  width: 1300px;
+}
+
+/* Linear Timing Function */
+.linear {
+  /* Linear box ka background color. */
+  background-color: rgb(12, 127, 227);
+
+  /* Transition starting se ending tak constant speed maintain karta hai. */
+  transition-timing-function: linear;
+}
+
+/* Ease Timing Function */
+.ease {
+  /* Ease box ka background color. */
+  background-color: rgb(5, 255, 172);
+
+  /* Transition slow start, fast middle aur slow end hota hai. */
+  transition-timing-function: ease;
+}
+
+/* Ease-in Timing Function */
+.ease-in {
+  /* Ease-in box ka background color. */
+  background-color: rgb(255, 8, 8);
+
+  /* Transition slow start hota hai aur dheere-dheere fast hota hai. */
+  transition-timing-function: ease-in;
+}
+
+/* Ease-out Timing Function */
+.ease-out {
+  /* Ease-out box ka background color. */
+  background-color: rgb(255, 104, 4);
+
+  /* Transition fast start hota hai aur dheere-dheere slow hota hai. */
+  transition-timing-function: ease-out;
+}
+
+/* Ease-in-out Timing Function */
+.ease-in-out {
+  /* Ease-in-out box ka background color. */
+  background-color: rgb(10, 141, 255);
+
+  /* Transition slow start aur slow end hota hai, beech mein fast hota hai. */
+  transition-timing-function: ease-in-out;
+}
+
+/* Cubic-Bezier Timing Function */
+.cubic-bezier {
+  /* Cubic-bezier box ka background color. */
+  background-color: rgb(249, 0, 212);
+
+  /* Custom cubic-bezier curve se transition ki speed control hoti hai.
+     Ismein 4 values hoti hain: X1, Y1, X2 aur Y2. */
+  transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Step 1: Ye alternative hover-based transition ka commented example hai. */
+/* .box:hover {
+  background-color: greenyellow;
+
+  /* Step 1: Hover karne par transition apply karne ka example. */
+  /* transition-duration: 10s; */
+
+  /* Sirf background-color property par transition apply hoga.
+     width: 500px; */
+  /* transition-property: background-color;
+    width: 500px; */
+
+  /* All properties par transition apply karne ka example.
+     width: 500px; */
+  /* transition-property: all;
+  width: 500px; */
+/* } */
