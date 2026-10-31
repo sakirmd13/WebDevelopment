@@ -26,10 +26,10 @@
      Isse hover hatane par bhi transition smoothly apply hota hai. */
 
   /* Transition complete hone mein 2 seconds lagenge. */
-  transition-duration: 2s;
+  /* transition-duration: 2s; */
 
   /* All ka matlab box ki sabhi animatable properties par transition apply hoga. */
-  transition-property: all;
+  /* transition-property: all; */
 
   /* Linear: Transition ek hi speed se complete hota hai. */
   /* transition-timing-function: linear; */
@@ -41,7 +41,15 @@
   /* transition-timing-function: ease-out; */
 
   /* Transition start hone se pehle 2 seconds ka delay rahega. */
-  transition-delay: 2s;
+  /* transition-delay: 2s; */
+
+
+
+  /* Short Hand  */
+  /* transition: property duration timing-function delay; */
+  
+  transition: width 2s ease-in 1s;
+
 }
 
 /* Jab container par hover hoga, uske direct child div ki width change hogi. */
