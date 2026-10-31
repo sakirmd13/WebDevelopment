@@ -1,23 +1,46 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flex Box</title>
+
+    <title>CSS Flexbox</title>
+
+    <!-- External CSS file ko HTML ke saath connect kar rahe hain -->
     <link rel="stylesheet" href="./flex.css">
 </head>
+
 <body>
+
+    <!-- =====================================
+         Flex Container
+         ===================================== -->
+
+    <!--
+        Wrapper ko Flex Container banaya gaya hai.
+        Iske andar jitne bhi direct child elements honge,
+        wo Flex Items kehlayenge.
+    -->
+
     <div class="wrapper">
-        <div class="card">card 1</div>
-        <div class="card">card 2</div>
-        <div class="card card2">card 3</div>
-        <div class="card">card 1</div>
-        <div class="card">card 2</div>
-        <div class="card">card 3</div>
-        <div class="card">card 1</div>
-       
-        
+
+        <div class="card">Card 1</div>
+
+        <div class="card">Card 2</div>
+
+        <!-- align-self property ka example -->
+        <div class="card card2">Card 3</div>
+
+        <div class="card">Card 4</div>
+
+        <div class="card">Card 5</div>
+
+        <div class="card">Card 6</div>
+
+        <div class="card">Card 7</div>
+
     </div>
-    
+
 </body>
 </html>
