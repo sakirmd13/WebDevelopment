@@ -1,0 +1,40 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Character encoding UTF-8 set karta hai, jisse different characters properly display hote hain. -->
+    <meta charset="UTF-8" />
+
+    <!-- Responsive design ke liye viewport ki width device ki width ke equal rakhta hai. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Browser tab mein page ka title show hota hai. -->
+    <title>Transition</title>
+
+    <!-- External CSS file ko HTML ke saath connect karta hai. -->
+    <link rel="stylesheet" href="./transition.css" />
+  </head>
+  <body>
+    <!-- Container ke andar saare transition boxes rakhe gaye hain. -->
+    <div class="container">
+
+      <!-- Linear transition timing function wala box. -->
+      <div class="box linear">linear</div>
+
+      <!-- Ease transition timing function wala box. -->
+      <div class="box ease">ease</div>
+
+      <!-- Ease-in transition timing function wala box. -->
+      <div class="box ease-in">ease-in</div>
+
+      <!-- Ease-out transition timing function wala box. -->
+      <div class="box ease-out">ease-out</div>
+
+      <!-- Ease-in-out transition timing function wala box. -->
+      <div class="box ease-in-out">ease-in-out</div>
+
+      <!-- Custom cubic-bezier transition timing function wala box. -->
+      <div class="box cubic-bezier">cubic-bezier</div>
+    </div>
+  </body>
+</html>
