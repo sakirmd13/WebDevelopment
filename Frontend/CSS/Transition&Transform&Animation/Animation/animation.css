@@ -1,0 +1,230 @@
+
+/* Universal selector: sabhi elements ka default margin aur padding remove karta hai */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body ke bahar animation nikalne par horizontal/vertical scroll hide karega */
+body {
+  overflow: hidden;
+}
+
+/* Common box styling */
+.box {
+  width: 300px;
+  background-color: rgb(13, 142, 255);
+  padding: 20px;
+
+  /* Animation ka naam define karta hai */
+  /* animation-name: myAnimation; */
+  animation-name: myAnimation1;
+
+  /* Animation complete hone mein 3 seconds lagenge */
+  animation-duration: 3s;
+
+  /* Animation kitni baar chalega */
+  /* animation-iteration-count: 3; */
+  animation-iteration-count: infinite;
+
+  /* Animation forward aur reverse direction mein chalega */
+  /* animation-direction: reverse; */
+  animation-direction: alternate;
+
+  /* Animation element ko starting aur ending states ke according position mein rakhta hai */
+  position: relative;
+
+  /* Animation ke ending keyframe ki styling retain karta hai */
+  /* Infinite animation mein final state permanently hold nahi hoti */
+  animation-fill-mode: forwards;
+}
+
+/* Simple animation: from se to tak */
+@keyframes myAnimation {
+  from {
+    /* Starting background color */
+    background-color: red;
+  }
+
+  to {
+    /* Ending background color */
+    background-color: yellow;
+
+    /* X-axis par 100px aur Y-axis par 300px move karega */
+    transform: translate(100px, 300px);
+  }
+}
+
+/* Multiple keyframes wali animation */
+@keyframes myAnimation1 {
+  0% {
+    /* Animation ki starting state */
+    background-color: aliceblue;
+
+    /* X-axis aur Y-axis par 500px move karega */
+    transform: translate(500px, 500px);
+
+    height: 100px;
+    width: 200px;
+
+    /* Left position 0% se start hogi */
+    left: 0%;
+  }
+
+  25% {
+    /* Animation 25% complete hone par color change */
+    background-color: aqua;
+
+    transform: translate(400px, 400px);
+
+    height: 200px;
+    width: 400px;
+  }
+
+  50% {
+    /* Animation 50% complete hone par */
+    background-color: blueviolet;
+
+    transform: translate(300px, 300px);
+  }
+
+  75% {
+    /* Animation 75% complete hone par */
+    background-color: brown;
+
+    transform: translate(200px, 200px);
+  }
+
+  100% {
+    /* Animation ki final state */
+    background-color: yellow;
+
+    transform: translate(100px, 100px);
+
+    height: 100px;
+    width: 200px;
+
+    /* Left position 100% ho jayegi */
+    left: 100%;
+  }
+}
+
+/* ITEM 1 styling */
+.item1 {
+  height: 100px;
+  color: pink;
+  padding: 10px;
+  text-align: center;
+
+  /* Text ko vertically center align karta hai */
+  align-content: center;
+
+  margin: 10px;
+}
+
+/* ITEM 2 styling */
+.item2 {
+  height: 100px;
+  color: rgb(0, 123, 255);
+  padding: 10px;
+  text-align: center;
+  align-content: center;
+  margin: 10px;
+}
+
+/* ITEM 3 styling */
+.item3 {
+  height: 100px;
+  color: rgb(255, 0, 0);
+  padding: 10px;
+  text-align: center;
+  align-content: center;
+  margin: 10px;
+}
+
+/* Button styling */
+.btn {
+  background: greenyellow;
+  height: 50px;
+  width: 200px;
+  border-radius: 25px;
+
+  /* Animation shorthand:
+     animation-name: btnAnimation
+     animation-duration: 2s
+     animation-timing-function: linear
+     animation-delay: 0s
+     animation-iteration-count: infinite
+     animation-direction: alternate
+  */
+  animation: btnAnimation 2s linear 0s infinite alternate;
+}
+
+/* Button ki custom animation */
+@keyframes btnAnimation {
+  0% {
+    background-color: aliceblue;
+
+    /* Button 100px X aur 300px Y move karega */
+    /* Scale(0) button ko invisible size tak chhota karega */
+    transform: translate(100px, 300px) scale(0);
+  }
+
+  25% {
+    background-color: aqua;
+
+    /* Button apne normal size se 1.1 times bada hoga */
+    transform: scale(1.1);
+  }
+
+  50% {
+    background-color: black;
+
+    /* Button ka size zero ho jayega */
+    transform: scale(0);
+  }
+
+  75% {
+    background-color: blueviolet;
+
+    /* Button 1.3 times bada hoga */
+    transform: scale(1.3);
+  }
+
+  100% {
+    background-color: brown;
+
+    /* Move + Scale + Rotate */
+    transform: translate(100px, 300px) scale(1.1) rotate(-3deg);
+  }
+}
+/* Spinner button styling */
+.btn1 {
+  background: greenyellow;
+  height: 50px;
+  width: 200px;
+  border-radius: 25px;
+
+  /* Animation shorthand:
+     spenerAnimation = Animation ka naam
+     2s = Animation duration
+     linear = Constant speed
+     0s = Koi delay nahi
+     infinite = Animation continuously chalegi
+  */
+  animation: spenerAnimation 2s linear 0s infinite;
+}
+
+/* Spinner animation ke keyframes */
+@keyframes spenerAnimation {
+  from {
+    /* Animation ki starting position: 0 degree */
+    transform: rotate(0deg);
+  }
+
+  to {
+    /* 360 degree rotate hone ke baad ek complete round hoga */
+    transform: rotate(360deg);
+  }
+}
