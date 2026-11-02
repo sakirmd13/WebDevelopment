@@ -1,0 +1,304 @@
+
+/* =========================================
+   1. UNIVERSAL SELECTOR
+========================================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+/* =========================================
+   2. WRAPPER
+========================================= */
+
+.wrapper {
+  background-color: aquamarine;
+  width: 100%;
+  height: 100vh;
+}
+
+
+/* =========================================
+   3. CONTAINER
+========================================= */
+
+.container {
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+  padding: 20px;
+}
+
+.container div {
+  flex: 1;
+}
+
+.container div img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+
+/* =========================================
+   4. HEADING
+========================================= */
+
+h1 {
+  font-size: clamp(2rem, 5vw, 4rem);
+}
+
+
+/* =========================================
+   5. EXTRA SMALL MOBILE
+   320px - 374px
+========================================= */
+
+@media (min-width: 320px) and (max-width: 374px) {
+
+  .wrapper {
+    background-color: red;
+  }
+
+  .container {
+    padding: 10px;
+    gap: 10px;
+  }
+
+  .container h2 {
+    font-size: 20px;
+  }
+
+  .container p {
+    font-size: 12px;
+  }
+}
+
+
+/* =========================================
+   6. SMALL MOBILE
+   375px - 424px
+========================================= */
+
+@media (min-width: 375px) and (max-width: 424px) {
+
+  .wrapper {
+    background-color: orange;
+  }
+
+  .container {
+    padding: 12px;
+    gap: 12px;
+  }
+
+  .container h2 {
+    font-size: 22px;
+  }
+
+  .container p {
+    font-size: 13px;
+  }
+}
+
+
+/* =========================================
+   7. LARGE MOBILE
+   425px - 575px
+========================================= */
+
+@media (min-width: 425px) and (max-width: 575px) {
+
+  .wrapper {
+    background-color: yellow;
+  }
+
+  .container {
+    padding: 15px;
+    gap: 15px;
+  }
+
+  .container h2 {
+    font-size: 24px;
+  }
+
+  .container p {
+    font-size: 14px;
+  }
+}
+
+
+/* =========================================
+   8. SMALL TABLET
+   576px - 767px
+========================================= */
+
+@media (min-width: 576px) and (max-width: 767px) {
+
+  .wrapper {
+    background-color: lightblue;
+  }
+
+  .container {
+    padding: 20px;
+    gap: 20px;
+  }
+
+  .container h2 {
+    font-size: 28px;
+  }
+
+  .container p {
+    font-size: 15px;
+  }
+}
+
+
+/* =========================================
+   9. TABLET
+   768px - 991px
+========================================= */
+
+@media (min-width: 768px) and (max-width: 991px) {
+
+  .wrapper {
+    background-color: lightgreen;
+  }
+
+  .container {
+    background-color: yellow;
+    flex-direction: row;
+    padding: 25px;
+    gap: 25px;
+  }
+
+  .container h2 {
+    font-size: 30px;
+  }
+
+  .container p {
+    font-size: 15px;
+  }
+}
+
+
+/* =========================================
+   10. SMALL LAPTOP
+   992px - 1199px
+========================================= */
+
+@media (min-width: 992px) and (max-width: 1199px) {
+
+  .wrapper {
+    background-color: pink;
+  }
+
+  .container {
+    background-color: yellow;
+    flex-direction: row;
+    padding: 30px;
+    gap: 30px;
+  }
+
+  .container h2 {
+    font-size: 32px;
+  }
+
+  .container p {
+    font-size: 16px;
+  }
+}
+
+
+/* =========================================
+   11. LAPTOP / DESKTOP
+   1200px - 1399px
+========================================= */
+
+@media (min-width: 1200px) and (max-width: 1399px) {
+
+  .wrapper {
+    background-color: purple;
+  }
+
+  .container {
+    background-color: yellow;
+    flex-direction: row;
+    padding: 40px;
+    gap: 35px;
+  }
+
+  .container h2 {
+    font-size: 36px;
+  }
+
+  .container p {
+    font-size: 17px;
+  }
+}
+
+
+/* =========================================
+   12. LARGE DESKTOP
+   1400px - 1919px
+========================================= */
+
+@media (min-width: 1400px) and (max-width: 1919px) {
+
+  .wrapper {
+    background-color: lightcoral;
+  }
+
+  .container {
+    background-color: yellow;
+    flex-direction: row;
+    padding: 50px;
+    gap: 40px;
+    max-width: 1600px;
+    margin: auto;
+  }
+
+  .container h2 {
+    font-size: 40px;
+  }
+
+  .container p {
+    font-size: 18px;
+  }
+}
+
+
+/* =========================================
+   13. FULL HD / 4K SCREENS
+   1920px AND ABOVE
+========================================= */
+
+@media (min-width: 1920px) {
+
+  .wrapper {
+    background-color: black;
+  }
+
+  .container {
+    background-color: yellow;
+    flex-direction: row;
+    padding: 60px;
+    gap: 50px;
+    max-width: 1800px;
+    margin: auto;
+  }
+
+  .container h2 {
+    font-size: 44px;
+  }
+
+  .container p {
+    font-size: 20px;
+  }
+}
