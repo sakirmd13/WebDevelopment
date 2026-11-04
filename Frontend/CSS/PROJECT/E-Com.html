@@ -39,14 +39,11 @@
     <!-- ================= MAIN SECTION ================= -->
     <!-- Website ka primary content main tag ke andar rakha gaya hai -->
     <main>
-
       <!-- ================= HERO SECTION ================= -->
       <!-- Website ka first banner section: heading, description aur CTA buttons -->
       <section id="hero">
-
         <!-- Hero section ka left content -->
         <div class="left-hero">
-
           <!-- Main heading; br se line break aur span se gradient text -->
           <h2>
             New Drop.<br />
@@ -75,7 +72,6 @@
 
         <!-- Hero section ka right content: image aur background glow effects -->
         <div class="right-hero">
-
           <!-- Decorative purple glow effect -->
           <div class="glow orb1"></div>
 
@@ -83,14 +79,15 @@
           <div class="glow orb2"></div>
 
           <!-- Hero banner image -->
-          <img src="./images/product 1.jpg" alt="" />
+          <div class="right-hero-image">
+            <img src="./images/product 1.jpg" alt="" />
+          </div>
         </div>
       </section>
 
       <!-- ================= WEEK DROP SECTION ================= -->
       <!-- Is section mein latest products display kiye gaye hain -->
       <section id="week-drop">
-
         <!-- Section heading -->
         <h2><strong>This Week's Drop</strong></h2>
 
@@ -99,7 +96,6 @@
 
         <!-- Products ko cards ke form mein arrange karne ke liye container -->
         <div class="cards">
-
           <!-- Product Card 1 -->
           <article>
             <!-- Product image aur uska caption -->
@@ -195,85 +191,83 @@
       <!-- ================= BEST SELLER SECTION ================= -->
       <!-- Is section mein monthly best-selling products ki table hai -->
       <section id="best-seller">
-
         <!-- Section heading -->
         <h2>BestSellers This Month</h2>
 
         <!-- Product information ko tabular format mein show karne ke liye table -->
-        <table>
+        <div class="table-scroll">
+          <table>
+            <!-- Table heading section -->
+            <thead>
+              <tr>
+                <!-- colspan="5": heading ko 5 columns ki width deta hai -->
+                <th colspan="5">&#127942; E-Com Top Picks - October 2025</th>
+              </tr>
 
-          <!-- Table heading section -->
-          <thead>
-            <tr>
-              <!-- colspan="5": heading ko 5 columns ki width deta hai -->
-              <th colspan="5">&#127942; E-Com Top Picks - October 2025</th>
-            </tr>
+              <!-- Table ke column names -->
+              <tr>
+                <th scope="col">Rank</th>
+                <th scope="col">Product Name</th>
+                <th scope="col">Category</th>
+                <th scope="col">Price</th>
+                <th scope="col">Rating</th>
+              </tr>
+            </thead>
 
-            <!-- Table ke column names -->
-            <tr>
-              <th scope="col">Rank</th>
-              <th scope="col">Product Name</th>
-              <th scope="col">Category</th>
-              <th scope="col">Price</th>
-              <th scope="col">Rating</th>
-            </tr>
-          </thead>
+            <!-- Table ka actual data -->
+            <tbody>
+              <!-- Product row 1 -->
+              <tr>
+                <td>1</td>
+                <td>Wireless Headphones</td>
+                <td>Electronics</td>
+                <td>₹2,499</td>
+                <td>4.8 &#9733;&#9733;&#9733;&#9733;&#9734;</td>
+              </tr>
 
-          <!-- Table ka actual data -->
-          <tbody>
+              <!-- Product row 2 -->
+              <tr>
+                <td>2</td>
+                <td>Running Shoes</td>
+                <td>Fashion</td>
+                <td>₹1,999</td>
+                <td>4.6 &#9733;&#9733;&#9733;&#9733;&#9734;</td>
+              </tr>
 
-            <!-- Product row 1 -->
-            <tr>
-              <td>1</td>
-              <td>Wireless Headphones</td>
-              <td>Electronics</td>
-              <td>₹2,499</td>
-              <td>4.8 &#9733;&#9733;&#9733;&#9733;&#9734;</td>
-            </tr>
+              <!-- Product row 3 -->
+              <tr>
+                <td>3</td>
+                <td>Smart Watch</td>
+                <td>Electronics</td>
+                <td>₹3,499</td>
+                <td>4.5 &#9733;&#9733;&#9733;&#9733;&#9734;</td>
+              </tr>
 
-            <!-- Product row 2 -->
-            <tr>
-              <td>2</td>
-              <td>Running Shoes</td>
-              <td>Fashion</td>
-              <td>₹1,999</td>
-              <td>4.6 &#9733;&#9733;&#9733;&#9733;&#9734;</td>
-            </tr>
+              <!-- Product row 4 -->
+              <tr>
+                <td>4</td>
+                <td>Backpack</td>
+                <td>Accessories</td>
+                <td>₹899</td>
+                <td>4.4 &#9733;&#9733;&#9733;&#9733;&#9734;</td>
+              </tr>
 
-            <!-- Product row 3 -->
-            <tr>
-              <td>3</td>
-              <td>Smart Watch</td>
-              <td>Electronics</td>
-              <td>₹3,499</td>
-              <td>4.5 &#9733;&#9733;&#9733;&#9733;&#9734;</td>
-            </tr>
-
-            <!-- Product row 4 -->
-            <tr>
-              <td>4</td>
-              <td>Backpack</td>
-              <td>Accessories</td>
-              <td>₹899</td>
-              <td>4.4 &#9733;&#9733;&#9733;&#9733;&#9734;</td>
-            </tr>
-
-            <!-- Product row 5 -->
-            <tr>
-              <td>5</td>
-              <td>Cotton T-Shirt</td>
-              <td>Clothing</td>
-              <td>₹599</td>
-              <td>4.3 &#9733;&#9733;&#9733;&#9733;&#9734;</td>
-            </tr>
-          </tbody>
-        </table>
+              <!-- Product row 5 -->
+              <tr>
+                <td>5</td>
+                <td>Cotton T-Shirt</td>
+                <td>Clothing</td>
+                <td>₹599</td>
+                <td>4.3 &#9733;&#9733;&#9733;&#9733;&#9734;</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </section>
 
       <!-- ================= WHY E-COM SECTION ================= -->
       <!-- Is section mein brand ki qualities aur promises explain kiye gaye hain -->
       <section id="why-e-com">
-
         <!-- Section heading aur introduction -->
         <h2>Why E-Com ?</h2>
         <p>
@@ -311,7 +305,6 @@
 
         <!-- Teen promise cards ka parent container -->
         <div>
-
           <!-- Quality card -->
           <section>
             <h5>Quality</h5>
@@ -344,7 +337,6 @@
       <!-- ================= EARLY DROP SECTION ================= -->
       <!-- User se email collect karke early product launch notifications dene ke liye -->
       <section id="early-drop">
-
         <!-- Newsletter section heading -->
         <h2>Get Early Drop Access</h2>
 
@@ -356,7 +348,6 @@
 
         <!-- Email subscription form -->
         <form action="">
-
           <!-- Label email input ko identify karta hai -->
           <label for="email">Email</label>
 
@@ -381,7 +372,6 @@
     <!-- ================= FOOTER SECTION ================= -->
     <!-- Website ke bottom mein copyright, navigation aur social links -->
     <footer id="footer">
-
       <!-- Copyright information -->
       <h3>&copy;2025 E-Com. All rights reserved.</h3>
 
@@ -400,8 +390,7 @@
       </nav>
 
       <!-- Social media profile links -->
-      <a href="">Instagram </a> |
-      <a href="">Twitter </a> |
+      <a href="">Instagram </a> | <a href="">Twitter </a> |
       <a href="">YouTube</a>
     </footer>
   </body>
