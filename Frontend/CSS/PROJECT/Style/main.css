@@ -471,6 +471,7 @@ article p:nth-of-type(3) mark {
   position: absolute; /* Card ke relative position */
   top: 3%;
   right: 5%;
+  font-size: 0.8rem;
 }
 
 /* Product details anchor link */
@@ -514,19 +515,19 @@ article:hover {
 }
 
 /* ================= BEST SELLER SECTION ================= */
-#best-seller {
+#best-seller-month {
   /* background-color: var(--color-accent); */
   padding: 80px 50px;
 }
 
 /* Best Seller heading */
-#best-seller h2 {
+.best-seller h2 {
   text-transform: uppercase;
   margin-bottom: 10px;
 }
 
 /* Best Seller table */
-#best-seller table {
+.best-seller table {
   width: 100%; /* Table available width ka 100% lega */
   border-radius: var(--radius-md);
   overflow: hidden;
@@ -534,7 +535,7 @@ article:hover {
 }
 
 /* Table ki first heading row, jo 5 columns span karti hai */
-#best-seller th[colspan="5"] {
+.best-seller th[colspan="5"] {
   background: var(--gradient-accent);
   padding: 15px 0;
   font-family: var(--font-display);
@@ -546,7 +547,7 @@ article:hover {
 }
 
 /* Table ke sabhi header cells */
-#best-seller th {
+.best-seller th {
   padding: 10px 20px;
   text-align: start; /* Text ko start side align karta hai */
   background-color: rgba(255, 255, 255, 0.07);
@@ -557,7 +558,7 @@ article:hover {
 }
 
 /* Table ke data cells */
-#best-seller td {
+.best-seller td {
   padding: 14px 20px;
   font-family: var(--font-body);
   color: var(--color-text-muted);
@@ -566,12 +567,12 @@ article:hover {
 }
 
 /* Table row hover effect */
-#best-seller tr:hover td {
+.best-seller tr:hover td {
   background-color: rgba(255, 255, 255, 0.07);
 }
 
 /* Hover hone par first column ka color change */
-#best-seller tr:hover td:first-child {
+.best-seller tr:hover td:first-child {
   color: var(--color-secondary);
 }
 
@@ -849,13 +850,12 @@ article:hover {
   #best-seller {
     /* background-color: var(--color-accent); */
     padding: 60px 10px;
-    
   }
 
- .table-scroll{
-  overflow-x: auto;
-  scrollbar-width: none;
- }
+  .table-scroll {
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
 }
 @media (max-width: 480px) {
   header {
@@ -864,4 +864,181 @@ article:hover {
   #cta {
     flex-direction: column;
   }
+}
+
+/* Products details */
+
+nav[aria-level="breadcrumb"] {
+  padding: 30px 30px;
+  display: inline-block;
+  color: white;
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+}
+nav[aria-level="breadcrumb"] a {
+  display: inline-block;
+  padding: 0 3px;
+  color: var(--color-primary);
+}
+nav[aria-level="breadcrumb"] a:hover {
+  color: var(--color-secondary);
+}
+
+#product-detail {
+  display: flex;
+  padding: 30px 30px;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+}
+
+#product-detail figure {
+  flex: 0 0 50%;
+}
+#product-detail div {
+  flex: 1;
+}
+
+.product-detail-left h2 {
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+.product-detail-left p {
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+}
+.product-detail-left mark {
+  background: var(--gradient-accent);
+  padding: 8px 16px;
+  border-radius: var(--radius-lg);
+  color: var(--white);
+  font-family: var(--font-display);
+  font-weight: 600;
+  top: 3%;
+  right: 5%;
+  font-size: 0.8rem;
+}
+
+.product-detail-left p:nth-of-type(2) {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+.product-detail-left p:nth-of-type(2) strong {
+  font-size: 2.5rem;
+  font-family: var(--font-display);
+}
+.product-detail-left label {
+  display: block;
+  color: white;
+  text-transform: uppercase;
+  font-family: var(--font-display);
+  letter-spacing: 0.1em;
+  font-size: 0.9rem;
+}
+.product-detail-left input[type="number"],
+.product-detail-left select {
+  background-color: rgba(255, 255, 255, 0.07);
+  border: 1px solid var(--color-border);
+  outline: none;
+  padding: 10px 20px;
+  margin: 10px 0;
+  width: 100%;
+  max-width: 200px;
+  color: white;
+  border-radius: var(--radius-sm);
+}
+.product-detail-left a {
+  margin-left: 10px;
+  font-family: var(--font-body);
+  text-decoration: underline;
+  color: var(--color-accent);
+  font-size: 0.9rem;
+  text-underline-offset: 4px;
+}
+.prodct-detail-btns {
+  display: flex;
+  gap: 10px;
+}
+.prodct-detail-btns button {
+  flex: 1;
+  pad: 10px;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  font-family: var(--font-display);
+  border: none;
+  border-radius: var(--radius-sm);
+  color: white;
+  font-weight: 500;
+  cursor: pointer; 
+}
+.prodct-detail-btns button:first-child{
+  background: var(--gradient-accent);
+  flex: 1.5;
+}
+
+.prodct-detail-btns button:nth-of-type(2){
+  background-color: transparent;
+  border: 1px solid white
+
+}
+.prodct-detail-btns button:nth-of-type(2):hover {
+  background-color: white;
+  color: black;
+}
+
+.product-detail-left ul{
+  color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding:  30px;
+  border-left:  2px solid var(--color-primary);
+  background-color: var(--color-surface);
+  margin-top: 20px;
+  border-radius: var(--radius-md);
+}
+.product-detail-left ul li{
+  color: var(--color-text-muted);
+  font-family: var(--font-body);
+}
+
+#size-chart{
+  padding: 70px;
+  background-color: var(--color-surface-muted);
+  
+}
+
+#size-chart h2{
+  text-transform: uppercase;
+  margin: 20px 0;
+}
+#size-chart p{
+  font-family: var(--font-body);
+}
+#size-chart caption{
+  color: var(--color-text-muted);
+  margin-top: 30px;
+  margin-bottom: 10px;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+}
+#size-chart table tr:first-child th{
+  background-color: black;
+  color: white;
+  text-align: center;
+   border-radius: 10px 10px 0px 0px; 
+ 
+}
+#size-chart table tr:nth-of-type(2) th{
+  
+  color: white;
+  
+}
+#size-chart table tr th,#size-chart table tr td{
+  background-color: #11141B;
+}
+#size-chart table tr:hover th,#size-chart table tr:hover td{
+  background-color: #11141b81;
 }

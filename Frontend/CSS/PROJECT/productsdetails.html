@@ -4,11 +4,17 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Products Deta</title>
+    <link rel="stylesheet" href="./Style/main.css">
   </head>
   <body>
-    <header>
+     <header>
+      <!-- Website ka brand name / logo -->
       <h1>E-Com</h1>
-      <p><strong>Wear the code</strong>. <em>live the Street</em></p>
+
+      <!-- Brand tagline (currently commented out) -->
+      <!-- <p><strong>Wear the code</strong>. <em>live the Street</em></p> -->
+
+      <!-- Navigation menu: website ke different pages par navigate karne ke liye -->
       <nav>
         <ul>
           <li><a href="./E-Com.html">Home</a></li>
@@ -20,64 +26,64 @@
       </nav>
     </header>
     <main>
-      <section>
-        <p>
-          <a href="">Home</a> > <a href="">Products</a> > Oversized Drop Tee
-          Vol.3
-        </p>
-        <article>
+      <nav aria-level="breadcrumb">
+        <a href="./E-Com.html">Home</a> > <a href="./products.html">Products</a> > Oversized Drop Tee
+        Vol.3
+      </nav>
+      <section id="product-detail"  class="best-seller" >
           <figure>
-            <img src="./images/product 4.jpg" alt="Tshirt" />
+            <img src="./images/product 1.jpg" alt="Tshirt" />
             <figcaption>Oversized Drop Tee Vol.3</figcaption>
           </figure>
-          <h3>Oversized Drop Tee Vol.3</h3>
-          <p>
-            The Vol.3 drops harder than the ones before it. Heavyweight 240 GSM
-            cotton, a chest graphic designed by
-            <strong>Delhi-based artist Arjun Mehra</strong>, and a boxy cut that
-            pairs with everything.
-            <em>This is the one everyone is waiting for.</em>
-          </p>
-          <p>
-            &#8377; <strong>300</strong>&nbsp;&nbsp;&nbsp;&nbsp;
-            <s>&#8377; <strong>599</strong></s
-            >&nbsp;&nbsp;&nbsp;<mark>33% OFF</mark>
-          </p>
-          <small>Inclusive of all taxes. Free delivery above ₹ 499.</small>
-          <br />
-          <br />
-          <label for="Subject">Select Size: </label>
-          <select name="Subject" id="Subject">
-            <option value="">---Choice your size--</option>
-            <option value="">X</option>
-            <option value="">XL</option>
-            <option value="">XXL</option>
-          </select>
-          <a href="#">Size Guide </a>
-          <br /><br />
+        <div class="product-detail-left">
+              <h3>Oversized Drop Tee Vol.3</h3>
+            <p>
+              The Vol.3 drops harder than the ones before it. Heavyweight 240 GSM
+              cotton, a chest graphic designed by
+              <strong>Delhi-based artist Arjun Mehra</strong>, and a boxy cut that
+              pairs with everything.
+              <em>This is the one everyone is waiting for.</em>
+            </p>
+            <p>
+              &#8377; <strong>300</strong>&nbsp;&nbsp;&nbsp;&nbsp;
+              <s>&#8377; 599</s
+              >&nbsp;&nbsp;&nbsp;<mark>33% OFF</mark>
+            </p>
+<p>            <small>Inclusive of all taxes. Free delivery above ₹ 499.</small>
+</p>            <label for="Subject">Select Size: </label>
+            <select name="Subject" id="Subject">
+              <option value="">---Choice your size--</option>
+              <option value="">X</option>
+              <option value="">XL</option>
+              <option value="">XXL</option>
+            </select>
+            <a href="#">Size Guide </a>
+            <br /><br />
 
-          <label for="number">Quantity:</label>
-          <input type="number" min="1" max="10" name="number" placeholder="1" />
-          <br /><br />
-          <button>Add to cart</button> &nbsp; &nbsp; &nbsp;
-          <button>Buy Now</button>
-        </article>
+            <label for="number">Quantity:</label>
+            <input type="number" min="1" max="10" name="number" placeholder="1" />
+            <br /><br />
+            <div class="prodct-detail-btns">
+              <button>Add to cart</button> 
+              <button>Buy Now</button>
+            </div>
 
-        <ul>
-          <li>&#10003; Free delivery on orders above ₹ 499</li>
-          <li>&#10003; Ships within 48 hours</li>
-          <li>&#10003; Free returns within 7 days</li>
-          <li>&#10003; Cash on delivery available</li>
-        </ul>
+          <ul>
+            <li>&#10003; Free delivery on orders above ₹ 499</li>
+            <li>&#10003; Ships within 48 hours</li>
+            <li>&#10003; Free returns within 7 days</li>
+            <li>&#10003; Cash on delivery available</li>
+          </ul>
+        </div>
       </section>
-      <section>
+      <section id="size-chart"  class="best-seller">
         <h2>Size Guide</h2>
         <p>
           ThreadCo tees run oversized by design. If you prefer a fitted look,
           size down.
         </p>
-
-        <table border="1">
+<div class="table-scroll">
+   <table >
           <caption>
             ThreadCo Oversized Fit — All measurements in inches
           </caption>
@@ -118,6 +124,8 @@
             </tr>
           </tbody>
         </table>
+</div>
+       
         <small
           >Measurements are approximate and may vary by ± 0.5 inches.</small
         >
@@ -262,9 +270,14 @@
         </article>
       </section>
     </main>
-    <footer>
-      <p>&copy;2025 E-Com. All rights reserved.</p>
+    <footer id="footer">
+      <!-- Copyright information -->
+      <h3>&copy;2025 E-Com. All rights reserved.</h3>
+
+      <!-- Brand tagline -->
       <p><em>Wear the Code. Live the Street.</em></p>
+
+      <!-- Footer navigation links -->
       <nav>
         <ul>
           <li><a href="./E-Com.html">Home</a></li>
@@ -274,9 +287,10 @@
           <li><a href="./terms-conditions.html">Terms & Conditions</a></li>
         </ul>
       </nav>
-      <a href="">Instagram </a> | <a href="">Twitter </a> |<a href=""
-        >YouTube</a
-      >
+
+      <!-- Social media profile links -->
+      <a href="">Instagram </a> | <a href="">Twitter </a> |
+      <a href="">YouTube</a>
     </footer>
   </body>
 </html>
