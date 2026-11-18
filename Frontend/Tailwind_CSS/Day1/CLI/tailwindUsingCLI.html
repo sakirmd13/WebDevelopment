@@ -1,0 +1,215 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- ========================================= -->
+    <!-- STEP 1: Set character encoding -->
+    <!-- ========================================= -->
+    <meta charset="UTF-8">
+
+    <!-- STEP 2: Make the website responsive -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Tailwind CSS CLI Setup Guide</title>
+
+
+    <!-- ========================================= -->
+    <!-- STEP 10: Import generated CSS file -->
+    <!-- ========================================= -->
+    <!-- Make sure output.css is generated before opening this page -->
+    <link href="./output.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <!-- ========================================= -->
+    <!-- TAILWIND CSS CLI SETUP GUIDE -->
+    <!-- ========================================= -->
+
+    <h1 class="text-3xl font-bold text-amber-200">
+        Hello, Tailwind CSS! Setup
+    </h1>
+
+    <!--
+    ==================================================
+    STEP 1: CHECK NODE.JS INSTALLATION
+    ==================================================
+
+    Open your terminal and execute:
+
+        node -v
+
+    If Node.js is installed, it will display its version.
+
+    Example:
+        v22.x.x
+
+    If Node.js is not installed, proceed to Step 2.
+    -->
+
+
+    <!--
+    ==================================================
+    STEP 2: INSTALL NODE.JS
+    ==================================================
+
+    Visit the official Node.js website:
+
+    https://nodejs.org/
+
+    Download and install the LTS (Long Term Support) version.
+
+    Follow the installation instructions.
+    -->
+
+
+    <!--
+    ==================================================
+    STEP 3: VERIFY NODE.JS INSTALLATION
+    ==================================================
+
+    Close and reopen your terminal.
+
+    Execute these commands:
+
+        node -v
+        npm -v
+
+    Both commands should display their respective versions.
+
+    Note:
+    Use npm -v to check npm, not node -x.
+    -->
+
+
+    <!--
+    ==================================================
+    STEP 4: TROUBLESHOOTING
+    ==================================================
+
+    If you still encounter an error:
+
+    1. Copy the complete terminal error.
+    2. Search for the error on Google.
+    3. Follow a reliable solution.
+    4. Check the official Node.js documentation if needed.
+
+    Official website:
+    https://nodejs.org/en/download
+    -->
+
+
+    <!--
+    ==================================================
+    STEP 5: VERIFY AGAIN
+    ==================================================
+
+    After fixing the error, execute:
+
+        node -v
+        npm -v
+
+    Make sure both commands work successfully
+    before proceeding.
+    -->
+
+
+    <!--
+    ==================================================
+    STEP 6: OPEN TAILWIND CSS CLI DOCUMENTATION
+    ==================================================
+
+    Follow the official Tailwind CSS CLI installation guide:
+
+    https://tailwindcss.com/docs/installation/tailwind-cli
+    -->
+
+
+    <!--
+    ==================================================
+    STEP 7: INSTALL TAILWIND CSS
+    ==================================================
+
+    Open your project terminal and execute:
+
+        npm install tailwindcss @tailwindcss/cli
+
+    This installs Tailwind CSS and its CLI tool.
+    -->
+
+
+    <!--
+    ==================================================
+    STEP 8: CREATE input.css FILE
+    ==================================================
+
+    Create a file named input.css inside the src folder.
+
+    Folder structure:
+
+        project/
+        |
+        |-- src/
+        |   |-- input.css
+        |
+        |-- index.html
+
+    Add the following code inside src/input.css:
+
+        @import "tailwindcss";
+    -->
+
+
+    <!--
+    ==================================================
+    STEP 9: GENERATE output.css USING TAILWIND CLI
+    ==================================================
+
+    Execute this command in the project root directory:
+
+        npx @tailwindcss/cli -i ./src/input.css -o ./src/output.css --watch
+
+    Explanation:
+
+        -i      = Input CSS file
+        -o      = Output CSS file
+        --watch = Automatically detects changes
+
+    Keep this terminal running while developing.
+
+    Tailwind CLI will automatically generate output.css.
+    -->
+
+
+    <!--
+    ==================================================
+    STEP 10: CONNECT GENERATED CSS TO HTML
+    ==================================================
+
+    Add this link inside the HTML <head>:
+
+        <link href="./src/output.css" rel="stylesheet">
+
+    Now Tailwind CSS utility classes are ready to use.
+    -->
+
+
+    <!--
+    ==================================================
+    FINAL STEP: START BUILDING!
+    ==================================================
+
+    Example:
+
+        <h1 class="text-3xl font-bold text-amber-200">
+            Hello, Tailwind CSS!
+        </h1>
+
+    Happy Coding!
+    -->
+
+</body>
+
+</html>

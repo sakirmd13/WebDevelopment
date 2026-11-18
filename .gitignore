@@ -1,1 +1,7 @@
 Frontend/HTML/TOPIC/TAG/MediaTag/video/
+
+# Dependencies
+**/node_modules/
+
+# Generated build output
+**/output.css
