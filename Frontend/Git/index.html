@@ -8,86 +8,187 @@
 </head>
 <body>
 
-    <h1>Hello! Aapka Swagat Hai Git & GitHub Series Me</h1>
+    <div class="progress" id="progress"></div>
 
-    <!-- Step 1: Installation & Check -->
-    <h2>Step 1: Git Install Karein aur Version Check Karein</h2>
-    <p>Sabse pehle apne system me Git download aur install karein:</p>
-    <a href="https://git-scm.com" target="_blank">Download & Install Git</a>
-    
-    <p>Install karne ke baad terminal me Git ka version check karein:</p>
-    <code>git --version</code>
+    <header class="hero">
+        <p class="hero-tag">Git &amp; GitHub Series</p>
+        <h1>Hello! Aapka Swagat Hai Git &amp; GitHub Series Me</h1>
+        <p class="hero-sub">5 simple steps me Git seekho: install se lekar commit history tak.</p>
+    </header>
 
-    <!-- Step 2: Basic Terminal Commands -->
-    <h2>Step 2: Basic Terminal Commands (Folder & File Navigation)</h2>
-    
-    <h3>1. Apna current folder (location) kaise dekhein?</h3>
-    <code>pwd</code>
+    <nav class="steps-nav" id="stepsNav">
+        <a href="#step1">Step 1<span>Install</span></a>
+        <a href="#step2">Step 2<span>Terminal</span></a>
+        <a href="#step3">Step 3<span>Workflow</span></a>
+        <a href="#step4">Step 4<span>History</span></a>
+        <a href="#step5">Step 5<span>Extension</span></a>
+    </nav>
 
-    <h3>2. Naya folder (directory) kaise banayein?</h3>
-    <code>mkdir folder_name</code>
+    <main class="container">
 
-    <h3>3. Ek folder se dusre folder ke andar kaise jayein?</h3>
-    <code>cd folder_name</code>
+        <!-- Step 1: Installation & Check -->
+        <section class="step" id="step1">
+            <div class="step-head">
+                <span class="badge">1</span>
+                <h2>Step 1: Git Install Karein aur Version Check Karein</h2>
+            </div>
 
-    <h3>4. Ek step peeche (back folder me) kaise jayein?</h3>
-    <code>cd ..</code>
+            <p>Sabse pehle apne system me Git download aur install karein:</p>
+            <a class="btn" href="https://git-scm.com" target="_blank" rel="noopener">Download &amp; Install Git</a>
 
-    <h3>5. Nayi file kaise banayein?</h3>
-    <code>touch filename.html</code>
+            <p>Install karne ke baad terminal me Git ka version check karein:</p>
+            <code>git --version</code>
+        </section>
 
-    <h3>6. Folder ke andar ki sabhi files aur folders ki list kaise dekhein?</h3>
-    <code>ls</code>
+        <!-- Step 2: Basic Terminal Commands -->
+        <section class="step" id="step2">
+            <div class="step-head">
+                <span class="badge">2</span>
+                <h2>Step 2: Basic Terminal Commands (Folder &amp; File Navigation)</h2>
+            </div>
 
-    <h3>7. Hidden files (jaise .git) kaise dekhein?</h3>
-    <code>ls -a</code>
+            <div class="q">
+                <h3>1. Apna current folder (location) kaise dekhein?</h3>
+                <code>pwd</code>
+            </div>
 
-    <h3>8. Terminal me kisi file ka content kaise padhein?</h3>
-    <code>cat filename.html</code>
+            <div class="q">
+                <h3>2. Naya folder (directory) kaise banayein?</h3>
+                <code>mkdir folder_name</code>
+            </div>
 
-    <!-- Step 3: Git Workflow -->
-    <h2>Step 3: Git Repository Setup aur Basic Workflow</h2>
+            <div class="q">
+                <h3>3. Ek folder se dusre folder ke andar kaise jayein?</h3>
+                <code>cd folder_name</code>
+            </div>
 
-    <h3>1. Project folder me Git ko initialize (start) kaise karein?</h3>
-    <code>git init</code>
+            <div class="q">
+                <h3>4. Ek step peeche (back folder me) kaise jayein?</h3>
+                <code>cd ..</code>
+            </div>
 
-    <h3>2. Files ka current status (tracked/untracked) kaise check karein?</h3>
-    <code>git status</code>
+            <div class="q">
+                <h3>5. Nayi file kaise banayein?</h3>
+                <code>touch filename.html</code>
+                <p class="note">Windows PowerShell me <b>touch</b> kaam nahi karta. Git Bash use karein ya <b>New-Item filename.html</b> chalayein.</p>
+            </div>
 
-    <h3>3. Kisi ek specific file ko staging area me kaise add karein?</h3>
-    <code>git add filename.html</code>
+            <div class="q">
+                <h3>6. Folder ke andar ki sabhi files aur folders ki list kaise dekhein?</h3>
+                <code>ls</code>
+            </div>
 
-    <h3>4. Sabhi files ko ek sath staging area me kaise add karein?</h3>
-    <code>git add .</code>
+            <div class="q">
+                <h3>7. Hidden files (jaise .git) kaise dekhein?</h3>
+                <code>ls -a</code>
+            </div>
 
-    <h3>5. Galti se add hui file ko staging area se wapas kaise hatayein?</h3>
-    <code>git rm --cached filename.html</code>
+            <div class="q">
+                <h3>8. Terminal me kisi file ka content kaise padhein?</h3>
+                <code>cat filename.html</code>
+            </div>
+        </section>
 
-    <h3>6. Staged files ko permanently save (commit) kaise karein?</h3>
-    <code>git commit -m "Yahan apna meaningful commit message likhein"</code>
+        <!-- Step 3: Git Workflow -->
+        <section class="step" id="step3">
+            <div class="step-head">
+                <span class="badge">3</span>
+                <h2>Step 3: Git Repository Setup aur Basic Workflow</h2>
+            </div>
 
-    <!-- Step 4: History & Logs -->
-    <h2>Step 4: Commit History Check Karna</h2>
+            <div class="flow" aria-label="Git workflow">
+                <span>Working Folder</span><i>→</i>
+                <span>Staging Area</span><i>→</i>
+                <span>Commit</span>
+            </div>
 
-    <h3>1. Puri commit history detail me kaise dekhein?</h3>
-    <code>git log</code>
+            <div class="q">
+                <h3>1. Project folder me Git ko initialize (start) kaise karein?</h3>
+                <code>git init</code>
+            </div>
 
-    <h3>2. Commit history ko short (ek line) me kaise dekhein?</h3>
-    <code>git log --oneline</code>
+            <div class="q">
+                <h3>2. Files ka current status (tracked/untracked) kaise check karein?</h3>
+                <code>git status</code>
+            </div>
 
-    <h3>3. Terminal me log/history screen se bahar (quit) kaise aayein?</h3>
-    <p>Keyboard par sirf <strong>q</strong> button dabayein.</p>
-    <code>q</code>
+            <div class="q">
+                <h3>3. Kisi ek specific file ko staging area me kaise add karein?</h3>
+                <code>git add filename.html</code>
+            </div>
 
-    <h3>4. Kisi specific commit ki puri detail aur changes kaise dekhein?</h3>
-    <code>git show commit_id</code>
+            <div class="q">
+                <h3>4. Sabhi files ko ek sath staging area me kaise add karein?</h3>
+                <code>git add .</code>
+            </div>
 
-    <!-- Step 5: VS Code Extension -->
-    <h2>Step 5: Visual Tracking ke Liye Extension</h2>
-    <p>VS Code me branches aur commits ko visually dekhne ke liye yeh extension install karein:</p>
-    <code>Git Graph</code>
+            <div class="q">
+                <h3>5. Galti se add hui file ko staging area se wapas kaise hatayein?</h3>
+                <code>git rm --cached filename.html</code>
+                <p class="note">Yeh command tab sahi hai jab repo me pehla commit abhi nahi hua. Commit ke baad staging se hatane ke liye <b>git restore --staged filename.html</b> use karein.</p>
+            </div>
+
+            <div class="q">
+                <h3>6. Staged files ko permanently save (commit) kaise karein?</h3>
+                <code>git commit -m "Yahan apna meaningful commit message likhein"</code>
+            </div>
+        </section>
+
+        <!-- Step 4: History & Logs -->
+        <section class="step" id="step4">
+            <div class="step-head">
+                <span class="badge">4</span>
+                <h2>Step 4: Commit History Check Karna</h2>
+            </div>
+
+            <div class="q">
+                <h3>1. Puri commit history detail me kaise dekhein?</h3>
+                <code>git log</code>
+            </div>
+
+            <div class="q">
+                <h3>2. Commit history ko short (ek line) me kaise dekhein?</h3>
+                <code>git log --oneline</code>
+            </div>
+
+            <div class="q">
+                <h3>3. Terminal me log/history screen se bahar (quit) kaise aayein?</h3>
+                <p>Keyboard par sirf <strong>q</strong> button dabayein.</p>
+                <code>q</code>
+            </div>
+
+            <div class="q">
+                <h3>4. Kisi specific commit ki puri detail aur changes kaise dekhein?</h3>
+                <code>git show commit_id</code>
+                <p class="note"><b>commit_id</b> ki jagah <b>git log --oneline</b> me dikhne wala chhota code daalein, jaise <b>a1b2c3d</b>.</p>
+            </div>
+        </section>
+
+        <!-- Step 5: VS Code Extension -->
+        <section class="step" id="step5">
+            <div class="step-head">
+                <span class="badge">5</span>
+                <h2>Step 5: Visual Tracking ke Liye Extension</h2>
+            </div>
+
+            <p>VS Code me branches aur commits ko visually dekhne ke liye yeh extension install karein:</p>
+            <code>Git Graph</code>
+
+            <ol class="mini-steps">
+                <li>VS Code kholein</li>
+                <li>Left side me <b>Extensions</b> icon par click karein (ya <b>Ctrl+Shift+X</b>)</li>
+                <li><b>Git Graph</b> search karke <b>Install</b> dabayein</li>
+                <li>Neeche status bar me <b>Git Graph</b> button se graph khul jayega</li>
+            </ol>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <p>Happy Coding! 🚀</p>
+    </footer>
 
     <script src="./main.js"></script>
-    
+
 </body>
 </html>

@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+<header>
+    <h1>🐙 GitHub Complete Guide</h1>
+    <p>Account banane se lekar clone, push aur branch tak, step by step (Hinglish)</p>
+</header>
+
+<div class="wrap">
+
+    <nav>
+        <h2>📚 Index</h2>
+        <ol>
+            <li><a href="#s1">GitHub Account banana</a></li>
+            <li><a href="#s2">Git install karna</a></li>
+            <li><a href="#s3">Git ko identity batana</a></li>
+            <li><a href="#s4">Git ko GitHub se connect (SSH)</a></li>
+            <li><a href="#s5">Repository banana</a></li>
+            <li><a href="#s6">Repo clone karna</a></li>
+            <li><a href="#s7">Local project ko GitHub pe daalna</a></li>
+            <li><a href="#s8">Daily workflow</a></li>
+            <li><a href="#s9">Branch aur Pull Request</a></li>
+            <li><a href="#s10">.gitignore</a></li>
+            <li><a href="#s11">Basic Terminal Commands</a></li>
+            <li><a href="#s12">Git Repository Setup aur Workflow</a></li>
+            <li><a href="#s13">Commit History check karna</a></li>
+            <li><a href="#s14">VS Code me Git Graph</a></li>
+            <li><a href="#cheat">Cheat Sheet</a></li>
+            <li><a href="#errors">Common Errors</a></li>
+        </ol>
+    </nav>
+
+    <!-- 1 -->
+    <section id="s1">
+        <h2>1️⃣ GitHub Account kaise banaye</h2>
+        <ol>
+            <li>Browser me <b>github.com</b> kholo</li>
+            <li>Upar right me <b>Sign up</b> pe click karo</li>
+            <li><b>Email</b> daalo (jo regularly use karte ho)</li>
+            <li><b>Password</b> banao (strong rakho, 15+ characters ya 8+ with number aur letter)</li>
+            <li><b>Username</b> choose karo (professional rakho, jaise <code>mdsakir-dev</code>)</li>
+            <li>Verification puzzle solve karo</li>
+            <li>Email pe <b>6-digit code</b> aayega, wahan daalo</li>
+            <li>Account ready! ✅</li>
+        </ol>
+        <div class="note tip">💡 <b>Tip:</b> Settings → Password and authentication me jaake <b>2FA (Two-Factor Authentication)</b> on kar lo. Fintech developer ho, security zaroori hai.</div>
+    </section>
+
+    <!-- 2 -->
+    <section id="s2">
+        <h2>2️⃣ Git Install karna (Computer pe)</h2>
+        <p>GitHub website alag hai, <b>Git</b> tool alag hai. Pehle Git install karna padega.</p>
+
+        <h3>Windows</h3>
+        <ol>
+            <li><b>git-scm.com</b> pe jao</li>
+            <li>Download karo aur install karo (sab default options rakho)</li>
+        </ol>
+
+        <h3>Mac</h3>
+        <div class="code-block"><button class="copy">Copy</button><pre><code>brew install git</code></pre></div>
+
+        <h3>Linux (Ubuntu)</h3>
+        <div class="code-block"><button class="copy">Copy</button><pre><code>sudo apt update
+sudo apt install git</code></pre></div>
+
+        <h3>Check karo install hua ya nahi</h3>
+        <div class="code-block"><button class="copy">Copy</button><pre><code>git --version</code></pre></div>
+    </section>
+
+    <!-- 3 -->
+    <section id="s3">
+        <h2>3️⃣ Git ko apni Identity batao (One-time setup)</h2>
+        <p>Terminal kholo aur yeh 2 commands chalao:</p>
+        <div class="code-block"><button class="copy">Copy</button><pre><code>git config --global user.name "Md Sakir"
+git config --global user.email "tumhara-github-email@example.com"</code></pre></div>
+        <div class="note warn">⚠️ Email wahi daalo jo GitHub account me hai, warna commits tumhare profile pe nahi dikhenge.</div>
+        <p>Check karne ke liye:</p>
+        <div class="code-block"><button class="copy">Copy</button><pre><code>git config --list</code></pre></div>
+    </section>
+
+    <!-- 4 -->
+    <section id="s4">
+        <h2>4️⃣ Git ko GitHub se Connect karna (SSH Key, recommended)</h2>
+        <p>Isse har baar password nahi dena padega.</p>
+
+        <h3>Step 1: SSH key generate karo</h3>
+        <div class="code-block"><button class="copy">Copy</button><pre><code>ssh-keygen -t ed25519 -C "tumhara-github-email@example.com"</code></pre></div>
+        <ul>
+            <li>Enter dabate jao (default location accept karo)</li>
+            <li>Passphrase optional hai</li>
+        </ul>
+
+        <h3>Step 2: SSH agent start karo</h3>
+        <div class="code-block"><button class="copy">Copy</button><pre><code>eval "$(ssh-agent -s)"
+ssh-add ~/.ssh/id_ed25519</code></pre></div>
+
+        <h3>Step 3: Public key copy karo</h3>
+        <p><b>Mac:</b></p>
+        <div class="code-block"><button class="copy">Copy</button><pre><code>pbcopy &lt; ~/.ssh/id_ed25519.pub</code></pre></div>
+        <p><b>Linux:</b> output ko manually select karke copy karo</p>
+        <div class="code-block"><button class="copy">Copy</button><pre><code>cat ~/.ssh/id_ed25519.pub</code></pre></div>
+        <p><b>Windows (Git Bash):</b></p>
+        <div class="code-block"><button class="copy">Copy</button><pre><code>clip &lt; ~/.ssh/id_ed25519.pub</code></pre></div>
+
+        <h3>Step 4: GitHub me key add karo</h3>
+        <ol>
+            <li>GitHub pe login karo</li>
+            <li>Profile photo (top right) → <b>Settings</b></li>
+            <li>Left side me <b>SSH and GPG keys</b></li>
+            <li><b>New SSH key</b> button dabao</li>
+            <li><b>Title:</b> kuch bhi (jaise "My Laptop")</li>
+            <li><b>Key:</b> jo copy kiya wo paste karo</li>
+            <li><b>Add SSH key</b> pe click karo</li>
+        </ol>
+
+        <h3>Step 5: Connection test karo</h3>
+        <div class="code-block"><button class="copy">Copy</button><pre><code>ssh -T git@github.com</code></pre></div>
+        <p>Agar yeh message aaye to sab sahi hai:</p>
+        <div class="code-block"><pre><code>Hi username! You've successfully authenticated...</code></pre></div>
+    </section>
+
+    <!-- 5 -->
+    <section id="s5">
+        <h2>5️⃣ GitHub pe Repository (Repo) kaise banate hai</h2>
+        <ol>
+            <li>GitHub pe login karo</li>
+            <li>Top right me <b>+</b> icon → <b>New repository</b></li>
+            <li>Yeh fill karo:
+                <ul>
+                    <li><b>Repository name:</b> jaise <code>my-first-project</code></li>
+                    <li><b>Description:</b> (optional) project ke baare me</li>
+                    <li><b>Public / Private:</b> code secret hai to Private rakho</li>
+                    <li><b>Add a README file:</b> ✅ tick kar do</li>
+                    <li><b>.gitignore:</b> Python select karo (FastAPI ke liye)</li>
+                    <li><b>License:</b> MIT (optional)</li>
+                </ul>
+            </li>
+            <li><b>Create repository</b> pe click karo 🎉</li>
+        </ol>
+    </section>
+
+    <!-- 6 -->
+    <section id="s6">
+        <h2>6️⃣ Repo ko Clone kaise karte hai</h2>
+        <p>Clone matlab GitHub ka repo apne computer pe download karna.</p>
+        <ol>
+            <li>Repo page pe jao</li>
+            <li>Green <b>Code</b> button pe click karo</li>
+            <li><b>SSH</b> tab select karo</li>
+            <li>Link copy karo, jaise <code>git@github.com:mdsakir/my-first-project.git</code></li>
+            <li>Terminal me jahan folder chahiye wahan yeh chalao:</li>
+        </ol>
+        <div class="code-block"><button class="copy">Copy</button><pre><code>git clone git@github.com:mdsakir/my-first-project.git</code></pre></div>
+        <p>Folder ke andar jao:</p>
+        <div class="code-block"><button class="copy">Copy</button><pre><code>cd my-first-project</code></pre></div>
+    </section>
+
+    <!-- 7 -->
+    <section id="s7">
+        <h2>7️⃣ Local Project ko GitHub se Connect karna</h2>
+        <p>Maan lo tumhara FastAPI project pehle se laptop me hai:</p>
+        <div class="code-block"><button class="copy">Copy</button><pre><code># 1. Project folder me jao
+cd my-fastapi-project
+
+# 2. Git initialize karo
+git init
+
+# 3. Saari files add karo
+git add .
+
+# 4. Pehla commit karo
+git commit -m "Initial commit"
+
+# 5. Branch ka naam main rakho
+git branch -M main
+
+# 6. GitHub repo se connect karo
+git remote add origin git@github.com:mdsakir/my-fastapi-project.git
+
+# 7. Code push karo
+git push -u origin main</code></pre></div>
+        <div class="note warn">⚠️ Pehle GitHub pe <b>empty repo</b> bana lo (README ke bina), phir yeh commands chalao.</div>
+    </section>
+
+    <!-- 8 -->
+    <section id="s8">
+        <h2>8️⃣ Daily Workflow (Roz ka kaam)</h2>
+        <div class="code-block"><button class="copy">Copy</button><pre><code># Status dekho (kya change hua)
+git status
+
+# Changes stage karo
+git add .
+
+# Commit karo (message clear likho)
+git commit -m "Add user login API"
+
+# GitHub pe bhejo
+git push
+
+# GitHub se latest code lao
+git pull</code></pre></div>
+    </section>
+
+    <!-- 9 -->
+    <section id="s9">
+        <h2>9️⃣ Branch ka use (Professional tarika)</h2>
+        <div class="code-block"><button class="copy">Copy</button><pre><code># Nayi branch banao aur switch karo
+git checkout -b feature/payment-api
+
+# Kaam karo, phir commit karo
+git add .
+git commit -m "Add payment API"
+
+# Branch GitHub pe push karo
+git push -u origin feature/payment-api</code></pre></div>
+        <p>Phir GitHub pe jaake <b>Pull Request (PR)</b> banao, review ke baad <b>main</b> me merge karo.</p>
+    </section>
+
+    <!-- 10 -->
+    <section id="s10">
+        <h2>🔟 .gitignore ka dhyan rakho (FastAPI ke liye)</h2>
+        <p>Yeh files kabhi GitHub pe push <b>mat</b> karna:</p>
+        <div class="code-block"><button class="copy">Copy</button><pre><code>.env
+__pycache__/
+*.pyc
+venv/
+.venv/
+*.log</code></pre></div>
+        <div class="note danger">🔐 <b>Sabse important:</b> <code>.env</code> file me AWS keys aur DB passwords hote hai. Agar galti se push ho gaya to turant keys change karo.</div>
+    </section>
+
+    <!-- 11 -->
+    <section id="s11">
+        <h2>1️⃣1️⃣ Basic Terminal Commands (Folder &amp; File Navigation)</h2>
+
+        <h3>1. Apna current folder (location) kaise dekhein?</h3>
+        <div class="code-block"><button class="copy">Copy</button><pre><code>pwd</code></pre></div>
+
+        <h3>2. Naya folder (directory) kaise banayein?</h3>
+        <div class="code-block"><button class="copy">Copy</button><pre><code>mkdir folder_name</code></pre></div>
+
+        <h3>3. Ek folder se dusre folder ke andar kaise jayein?</h3>
+        <div class="code-block"><button class="copy">Copy</button><pre><code>cd folder_name</code></pre></div>
+
+        <h3>4. Ek step peeche (back folder me) kaise jayein?</h3>
+        <div class="code-block"><button class="copy">Copy</button><pre><code>cd ..</code></pre></div>
+
+        <h3>5. Nayi file kaise banayein?</h3>
+        <div class="code-block"><button class="copy">Copy</button><pre><code>touch filename.html</code></pre></div>
+
+        <h3>6. Folder ke andar ki sabhi files aur folders ki list kaise dekhein?</h3>
+        <div class="code-block"><button class="copy">Copy</button><pre><code>ls</code></pre></div>
+
+        <h3>7. Hidden files (jaise .git) kaise dekhein?</h3>
+        <div class="code-block"><button class="copy">Copy</button><pre><code>ls -a</code></pre></div>
+
+        <h3>8. Terminal me kisi file ka content kaise padhein?</h3>
+        <div class="code-block"><button class="copy">Copy</button><pre><code>cat filename.html</code></pre></div>
+        <div class="note tip">💡 Windows PowerShell me <code>touch</code> kaam nahi karta. <b>Git Bash</b> use karo ya <code>New-Item filename.html</code> chalao.</div>
+    </section>
+
+    <!-- 12 -->
+    <section id="s12">
+        <h2>1️⃣2️⃣ Git Repository Setup aur Basic Workflow</h2>
+
+        <h3>1. Project folder me Git ko initialize (start) kaise karein?</h3>
+        <div class="code-block"><button class="copy">Copy</button><pre><code>git init</code></pre></div>
+
+        <h3>2. Files ka current status (tracked/untracked) kaise check karein?</h3>
+        <div class="code-block"><button class="copy">Copy</button><pre><code>git status</code></pre></div>
+
+        <h3>3. Kisi ek specific file ko staging area me kaise add karein?</h3>
+        <div class="code-block"><button class="copy">Copy</button><pre><code>git add filename.html</code></pre></div>
+
+        <h3>4. Sabhi files ko ek sath staging area me kaise add karein?</h3>
+        <div class="code-block"><button class="copy">Copy</button><pre><code>git add .</code></pre></div>
+
+        <h3>5. Galti se add hui file ko staging area se wapas kaise hatayein?</h3>
+        <div class="code-block"><button class="copy">Copy</button><pre><code>git rm --cached filename.html</code></pre></div>
+        <div class="note tip">💡 Agar repo me pehla commit abhi tak nahi hua, tab yeh command sahi hai. Commit hone ke baad staging se hatane ke liye <code>git restore --staged filename.html</code> use karo, kyunki <code>git rm --cached</code> file ko Git ke tracking se hata deta hai.</div>
+
+        <h3>6. Staged files ko permanently save (commit) kaise karein?</h3>
+        <div class="code-block"><button class="copy">Copy</button><pre><code>git commit -m "Yahan apna meaningful commit message likhein"</code></pre></div>
+    </section>
+
+    <!-- 13 -->
+    <section id="s13">
+        <h2>1️⃣3️⃣ Commit History Check Karna</h2>
+
+        <h3>1. Puri commit history detail me kaise dekhein?</h3>
+        <div class="code-block"><button class="copy">Copy</button><pre><code>git log</code></pre></div>
+
+        <h3>2. Commit history ko short (ek line) me kaise dekhein?</h3>
+        <div class="code-block"><button class="copy">Copy</button><pre><code>git log --oneline</code></pre></div>
+
+        <h3>3. Terminal me log/history screen se bahar (quit) kaise aayein?</h3>
+        <p>Keyboard par sirf <b>q</b> button dabayein.</p>
+
+        <h3>4. Kisi specific commit ki puri detail aur changes kaise dekhein?</h3>
+        <div class="code-block"><button class="copy">Copy</button><pre><code>git show commit_id</code></pre></div>
+        <p><code>commit_id</code> ki jagah <code>git log --oneline</code> me dikhne wala chhota code daalo, jaise <code>a1b2c3d</code>.</p>
+    </section>
+
+    <!-- 14 -->
+    <section id="s14">
+        <h2>1️⃣4️⃣ Visual Tracking ke liye VS Code Extension</h2>
+        <p>VS Code me branches aur commits ko visually dekhne ke liye yeh extension install karo:</p>
+        <div class="code-block"><button class="copy">Copy</button><pre><code>Git Graph</code></pre></div>
+        <ol>
+            <li>VS Code kholo</li>
+            <li>Left side me <b>Extensions</b> icon pe click karo (ya <code>Ctrl+Shift+X</code>)</li>
+            <li><b>Git Graph</b> search karke <b>Install</b> dabao</li>
+            <li>Bottom status bar me <b>Git Graph</b> button se graph khul jayega</li>
+        </ol>
+    </section>
+
+    <!-- Cheat sheet -->
+    <section id="cheat">
+        <h2>📋 Quick Cheat Sheet</h2>
+        <table>
+            <thead><tr><th>Kaam</th><th>Command</th></tr></thead>
+            <tbody>
+                <tr><td>Repo clone</td><td><code>git clone &lt;url&gt;</code></td></tr>
+                <tr><td>Status check</td><td><code>git status</code></td></tr>
+                <tr><td>Files add</td><td><code>git add .</code></td></tr>
+                <tr><td>Commit</td><td><code>git commit -m "msg"</code></td></tr>
+                <tr><td>Push</td><td><code>git push</code></td></tr>
+                <tr><td>Pull</td><td><code>git pull</code></td></tr>
+                <tr><td>Nayi branch</td><td><code>git checkout -b naam</code></td></tr>
+                <tr><td>Branch badlo</td><td><code>git checkout naam</code></td></tr>
+                <tr><td>History dekho</td><td><code>git log --oneline</code></td></tr>
+            </tbody>
+        </table>
+    </section>
+
+    <!-- Errors -->
+    <section id="errors" class="err">
+        <h2>❗ Common Errors</h2>
+
+        <h3>1. Permission denied (publickey)</h3>
+        <p>SSH key GitHub me add nahi hui. Step 4 dobara karo.</p>
+
+        <h3>2. fatal: not a git repository</h3>
+        <p>Galat folder me ho. <code>cd</code> karke project folder me jao ya <code>git init</code> chalao.</p>
+
+        <h3>3. rejected - non-fast-forward</h3>
+        <p>Pehle <code>git pull</code> karo, phir <code>git push</code>.</p>
+    </section>
+
+</div>
+
+<script>
+    document.querySelectorAll('.copy').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+            var text = btn.parentElement.querySelector('code').innerText;
+            navigator.clipboard.writeText(text).then(function () {
+                btn.textContent = 'Copied ✓';
+                setTimeout(function () { btn.textContent = 'Copy'; }, 1500);
+            });
+        });
+    });
+</script>
+
+</body>
+</html>
