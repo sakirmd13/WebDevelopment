@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GitHub</title>
+    <title>Git and GitHub Complete Guide</title>
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
 
 <header>
     <h1>🐙 GitHub Complete Guide</h1>
-    <p>Account banane se lekar clone, push aur branch tak, step by step (Hinglish)</p>
+    <p>Git basics, collaboration, GitHub projects aur deployment — step by step (Hinglish)</p>
 </header>
 
 <div class="wrap">
@@ -32,6 +32,15 @@
             <li><a href="#s12">Git Repository Setup aur Workflow</a></li>
             <li><a href="#s13">Commit History check karna</a></li>
             <li><a href="#s14">VS Code me Git Graph</a></li>
+            <li><a href="#s15">Push, Pull aur Fetch</a></li>
+            <li><a href="#s16">Changes aur Remote dekhna</a></li>
+            <li><a href="#s17">Merge aur Conflict solve karna</a></li>
+            <li><a href="#s18">Stash se kaam temporarily save karna</a></li>
+            <li><a href="#s19">Changes undo karna</a></li>
+            <li><a href="#s20">Fork aur Pull Request workflow</a></li>
+            <li><a href="#s21">GitHub Issues aur collaboration</a></li>
+            <li><a href="#s22">Tags aur Releases</a></li>
+            <li><a href="#s23">GitHub Pages par site publish karna</a></li>
             <li><a href="#cheat">Cheat Sheet</a></li>
             <li><a href="#errors">Common Errors</a></li>
         </ol>
@@ -161,6 +170,15 @@ ssh-add ~/.ssh/id_ed25519</code></pre></div>
         <div class="code-block"><button class="copy">Copy</button><pre><code>git clone git@github.com:mdsakir/my-first-project.git</code></pre></div>
         <p>Folder ke andar jao:</p>
         <div class="code-block"><button class="copy">Copy</button><pre><code>cd my-first-project</code></pre></div>
+
+        <h3>Repo ko naya folder banaye bina current folder me clone karna</h3>
+        <p>Agar tum pehle se ek <b>empty folder</b> ke andar ho aur repo ka naam wala extra folder nahi banana chahte, command ke end me <code>.</code> lagao:</p>
+        <div class="code-block"><button class="copy">Copy</button><pre><code>git clone git@github.com:mdsakir/my-first-project.git .</code></pre></div>
+        <p>Yahan <code>.</code> ka matlab current folder hai. Pehle us folder me jao, phir clone command chalao.</p>
+        <div class="code-block"><button class="copy">Copy</button><pre><code>mkdir my-project
+cd my-project
+git clone git@github.com:mdsakir/my-first-project.git .</code></pre></div>
+        <div class="note warn">⚠️ Current folder empty hona chahiye. Agar usme pehle se files ya folders hain, Git clone fail ho sakta hai.</div>
     </section>
 
     <!-- 7 -->
@@ -322,6 +340,224 @@ venv/
         </ol>
     </section>
 
+    <!-- 15 -->
+    <section id="s15">
+        <h2>1️⃣5️⃣ Git Push, Pull aur Fetch</h2>
+        <p>Yeh commands tumhare local repository aur GitHub (remote repository) ke beech changes sync karne ke kaam aati hain.</p>
+
+        <h3>Push: local commits GitHub par bhejna</h3>
+        <p>Apne current branch ke committed changes remote repository par upload karo:</p>
+        <div class="code-block"><button class="copy">Copy</button><pre><code>git push origin main</code></pre></div>
+        <p>Pehli baar kisi branch ko push karte waqt upstream set karne ke liye:</p>
+        <div class="code-block"><button class="copy">Copy</button><pre><code>git push -u origin main</code></pre></div>
+        <div class="note tip">💡 <code>main</code> ki jagah apni current branch ka naam use karo. Push se pehle changes commit hone chahiye.</div>
+
+        <h3>Fetch: remote updates check karna, bina apne files badle</h3>
+        <p>GitHub se latest commits aur branch information lao. Isse tumhare working files ya current branch apne-aap change nahi hote:</p>
+        <div class="code-block"><button class="copy">Copy</button><pre><code>git fetch origin</code></pre></div>
+        <p>Apni local branch aur remote branch ke commits compare karne ke liye:</p>
+        <div class="code-block"><button class="copy">Copy</button><pre><code>git log --oneline HEAD..origin/main</code></pre></div>
+        <p>Updates ko dekhne ke baad apni current branch me merge karne ke liye:</p>
+        <div class="code-block"><button class="copy">Copy</button><pre><code>git merge origin/main</code></pre></div>
+
+        <h3>Pull: remote updates lana aur current branch me integrate karna</h3>
+        <p><code>git pull</code> remote se updates fetch karke tumhari current branch me integrate karta hai. Kaam shuru karne se pehle latest <code>main</code> lana ho to:</p>
+        <div class="code-block"><button class="copy">Copy</button><pre><code>git pull origin main</code></pre></div>
+        <div class="note warn">⚠️ Agar local changes hain, pehle unhe commit ya stash karo. Pull ke dauran merge conflict aaye to files me conflict resolve karke changes commit karo.</div>
+
+        <h3>Short summary</h3>
+        <ul>
+            <li><b>Push:</b> local commits → GitHub</li>
+            <li><b>Fetch:</b> GitHub ke updates check/download karo; working files unchanged rehte hain</li>
+            <li><b>Pull:</b> GitHub ke updates lao aur current branch me integrate karo</li>
+        </ul>
+    </section>
+
+    <!-- 16 -->
+    <section id="s16">
+        <h2>1️⃣6️⃣ Changes, Branches aur Remote check karna</h2>
+
+        <h3>Files me kya change hua hai?</h3>
+        <div class="code-block"><button class="copy">Copy</button><pre><code># Working files ke unstaged changes dekho
+git diff
+
+# Staged changes dekho, jo next commit me jayenge
+git diff --staged
+
+# Current branch aur working tree ka status dekho
+git status</code></pre></div>
+        <div class="note tip">💡 <code>git diff</code> tracked files ke changes dikhata hai. Nayi untracked files dekhne ke liye <code>git status</code> check karo.</div>
+
+        <h3>Branches list aur switch karna</h3>
+        <div class="code-block"><button class="copy">Copy</button><pre><code># Local branches list karo (* current branch hai)
+git branch
+
+# Existing branch par switch karo
+git switch main
+
+# Nayi branch banao aur us par switch karo
+git switch -c feature/header</code></pre></div>
+        <p>Purani <code>git checkout</code> command bhi chalti hai, lekin branch switch/create karne ke liye <code>git switch</code> zyada clear hai.</p>
+
+        <h3>Remote repository check karna</h3>
+        <p>Remote ka naam aam taur par <code>origin</code> hota hai. Yeh commands remote URL dekhne aur update karne ke kaam aati hain:</p>
+        <div class="code-block"><button class="copy">Copy</button><pre><code># Configured remote URLs dekho
+git remote -v
+
+# Remote ka URL badlo
+git remote set-url origin git@github.com:username/repository.git</code></pre></div>
+        <div class="note tip">💡 <code>origin</code> remote ka naam hai; URL me apne GitHub username aur repository ka naam daalo.</div>
+    </section>
+
+    <!-- 17 -->
+    <section id="s17">
+        <h2>1️⃣7️⃣ Branch Merge aur Conflict solve karna</h2>
+        <p>Feature branch ka kaam complete hone par use <code>main</code> me merge kiya ja sakta hai. Pehle feature branch ke commits save aur push karo, phir:</p>
+        <div class="code-block"><button class="copy">Copy</button><pre><code># Main branch par jao aur latest changes lao
+git switch main
+git pull origin main
+
+# Feature branch ko main me merge karo
+git merge feature/header
+
+# Updated main GitHub par bhejo
+git push origin main</code></pre></div>
+
+        <h3>Merge conflict aaye to kya karein?</h3>
+        <ol>
+            <li><code>git status</code> chala kar conflicted files dekho.</li>
+            <li>Har file kholo. Conflict markers <code>&lt;&lt;&lt;&lt;&lt;&lt;&lt;</code>, <code>=======</code>, aur <code>&gt;&gt;&gt;&gt;&gt;&gt;&gt;</code> ke beech apna final content decide karo.</li>
+            <li>Markers hata kar file save karo.</li>
+            <li>Resolved files stage karke merge commit complete karo.</li>
+        </ol>
+        <div class="code-block"><button class="copy">Copy</button><pre><code>git add filename
+git commit</code></pre></div>
+        <div class="note warn">⚠️ Conflict resolve karte waqt dusre person ke changes ko bina samjhe delete mat karo. Merge cancel karna ho to, resolution shuru karne se pehle <code>git merge --abort</code> chalao.</div>
+    </section>
+
+    <!-- 18 -->
+    <section id="s18">
+        <h2>1️⃣8️⃣ Stash: adhura kaam temporarily save karna</h2>
+        <p>Branch switch karni ho lekin current changes commit ke liye ready na hon, to unhe stash me temporarily rakh sakte ho:</p>
+        <div class="code-block"><button class="copy">Copy</button><pre><code># Changes ko message ke saath stash karo
+git stash push -m "header par kaam"
+
+# Branch switch karke dusra kaam karo
+git switch main
+
+# Wapas apni branch par jao
+git switch feature/header
+
+# Sabse recent stash wapas lao aur stash entry hatao
+git stash pop</code></pre></div>
+        <p>Stash entries dekhne ke liye <code>git stash list</code> use karo. Entry ko list me rakhte hue apply karna ho to <code>git stash apply</code> use karo.</p>
+        <div class="note tip">💡 Stash aam taur par tracked files ke changes save karta hai. Nayi untracked files bhi shamil karni hon to <code>git stash push -u -m "message"</code> chalao.</div>
+    </section>
+
+    <!-- 19 -->
+    <section id="s19">
+        <h2>1️⃣9️⃣ Changes Undo karna (safe commands)</h2>
+        <p>Undo command chalane se pehle <code>git status</code> dekho. Kuch undo commands local changes permanently hata sakti hain.</p>
+
+        <h3>Working file ke uncommitted changes discard karna</h3>
+        <div class="code-block"><button class="copy">Copy</button><pre><code>git restore filename</code></pre></div>
+        <div class="note danger">⚠️ Isse us file ke uncommitted edits delete ho jate hain. Pehle backup ya commit kar lo agar changes chahiye ho sakte hain.</div>
+
+        <h3>Staging se file hatana, lekin edits rakhna</h3>
+        <div class="code-block"><button class="copy">Copy</button><pre><code>git restore --staged filename</code></pre></div>
+
+        <h3>Existing commit ko safely undo karna</h3>
+        <p><code>git revert</code> ek naya commit banata hai jo purane commit ke changes ko reverse karta hai. Shared ya already-pushed branch par aam taur par yahi safer choice hai:</p>
+        <div class="code-block"><button class="copy">Copy</button><pre><code>git log --oneline
+git revert commit_id</code></pre></div>
+
+        <h3>Last commit ko edit karna</h3>
+        <p>Sirf tab use karo jab commit abhi remote par push nahi hua ho:</p>
+        <div class="code-block"><button class="copy">Copy</button><pre><code>git add filename
+git commit --amend</code></pre></div>
+        <div class="note warn">⚠️ Pushed commit ko amend karne se shared history badalti hai. Team se coordinate kiye bina pushed commit amend ya force-push mat karo.</div>
+    </section>
+
+    <!-- 20 -->
+    <section id="s20">
+        <h2>2️⃣0️⃣ Fork se Pull Request tak (Open-source workflow)</h2>
+        <p>Fork kisi aur ke GitHub repository ki tumhare account me alag copy hoti hai. Original repository par direct write access na ho, tab fork workflow use karo.</p>
+        <ol>
+            <li>GitHub par original repo kholo aur <b>Fork</b> button dabao.</li>
+            <li>Apne fork ka clone karo aur folder me jao.</li>
+            <li>Original repo ko <code>upstream</code> remote ke naam se add karo.</li>
+            <li>Alag branch me focused change karo, commit karo aur apne fork (<code>origin</code>) par push karo.</li>
+            <li>GitHub par apne fork se original repo ke liye Pull Request banao.</li>
+        </ol>
+        <div class="code-block"><button class="copy">Copy</button><pre><code># Apne fork ko clone karo
+git clone git@github.com:your-username/project.git
+cd project
+
+# Original repository ko upstream remote banao
+git remote add upstream git@github.com:original-owner/project.git
+
+# Change ke liye branch banao
+git switch -c fix/readme-typo
+
+# Change commit karke apne fork par bhejo
+git add .
+git commit -m "Fix README typo"
+git push -u origin fix/readme-typo</code></pre></div>
+        <p>Pull Request me change ka reason likho, relevant issue link karo, aur reviewers ke feedback par isi branch me follow-up commits push karo.</p>
+        <div class="note tip">💡 <code>origin</code> tumhara fork hai aur <code>upstream</code> original project. Local <code>main</code> update karne ke liye <code>git fetch upstream</code> karke reviewed changes merge karo.</div>
+    </section>
+
+    <!-- 21 -->
+    <section id="s21">
+        <h2>2️⃣1️⃣ GitHub Issues aur Team Collaboration</h2>
+        <p><b>Issues</b> bugs, feature requests, questions aur task discussion track karte hain.</p>
+        <ol>
+            <li>Repository ke <b>Issues</b> tab me jaakar <b>New issue</b> select karo.</li>
+            <li>Clear title aur steps/expected result ke saath description likho.</li>
+            <li>Relevant labels, assignee, aur project/milestone set karo (agar available hon).</li>
+            <li>Kaam ke liye branch banao; issue number ko branch ya PR description me mention karo.</li>
+        </ol>
+        <p>Pull Request description me <code>Closes #12</code> likhne se merge par isi repository ka issue automatically close ho sakta hai. <code>#12</code> ko apne issue number se replace karo.</p>
+        <h3>Pull Request review ka simple checklist</h3>
+        <ul>
+            <li>Change ka purpose aur test karne ke steps diye gaye hain.</li>
+            <li>Reviewers ne code aur automated checks dekhe hain.</li>
+            <li>Requested changes resolve hue hain aur checks pass hain.</li>
+            <li>Merge strategy project/team ke rules ke mutabik select hui hai.</li>
+        </ul>
+        <div class="note tip">💡 GitHub par <b>Settings → Branches</b> me branch protection rules laga kar PR review ya passing checks ko merge se pehle required bana sakte ho.</div>
+    </section>
+
+    <!-- 22 -->
+    <section id="s22">
+        <h2>2️⃣2️⃣ Tags aur GitHub Releases</h2>
+        <p>Tag kisi specific commit ko version naam se mark karta hai. Release us version ke saath notes aur downloadable files publish karne ka GitHub feature hai.</p>
+        <div class="code-block"><button class="copy">Copy</button><pre><code># Annotated version tag banao
+git tag -a v1.0.0 -m "First stable release"
+
+# Tag ko GitHub par bhejo
+git push origin v1.0.0
+
+# Existing tags dekho
+git tag</code></pre></div>
+        <p>Uske baad GitHub repository ke <b>Releases</b> section me jao, <b>Draft a new release</b> select karo, tag choose karo aur release notes likho.</p>
+        <div class="note warn">⚠️ Published version tag ko move ya delete karne se release history confuse ho sakti hai. Version number publish karne se pehle check karo.</div>
+    </section>
+
+    <!-- 23 -->
+    <section id="s23">
+        <h2>2️⃣3️⃣ GitHub Pages par Static Website Publish karna</h2>
+        <p>GitHub Pages HTML, CSS aur JavaScript wali static sites host kar sakta hai. Server-side backend (jaise FastAPI) is tarah host nahi hota.</p>
+        <ol>
+            <li>Website files repository me push karo. Entry file aam taur par <code>index.html</code> hoti hai.</li>
+            <li>GitHub par repo ke <b>Settings → Pages</b> kholo.</li>
+            <li><b>Build and deployment</b> ke Source me <b>Deploy from a branch</b> chuno.</li>
+            <li>Branch, aam taur par <code>main</code>, aur folder <code>/(root)</code> select karke <b>Save</b> karo.</li>
+            <li>Deployment complete hone ke baad Pages settings me diya gaya URL kholo.</li>
+        </ol>
+        <div class="note tip">💡 Project site ke URLs me repository ka naam path ka hissa ho sakta hai. Relative asset links use karo aur Settings → Pages me deployment status check karo.</div>
+    </section>
+
     <!-- Cheat sheet -->
     <section id="cheat">
         <h2>📋 Quick Cheat Sheet</h2>
@@ -332,11 +568,21 @@ venv/
                 <tr><td>Status check</td><td><code>git status</code></td></tr>
                 <tr><td>Files add</td><td><code>git add .</code></td></tr>
                 <tr><td>Commit</td><td><code>git commit -m "msg"</code></td></tr>
+                <tr><td>Changes dekho</td><td><code>git diff</code></td></tr>
                 <tr><td>Push</td><td><code>git push</code></td></tr>
                 <tr><td>Pull</td><td><code>git pull</code></td></tr>
+                <tr><td>Remote updates check (fetch)</td><td><code>git fetch origin</code></td></tr>
+                <tr><td>Remote URL dekho</td><td><code>git remote -v</code></td></tr>
                 <tr><td>Nayi branch</td><td><code>git checkout -b naam</code></td></tr>
+                <tr><td>Branch switch</td><td><code>git switch naam</code></td></tr>
+                <tr><td>Branch merge</td><td><code>git merge branch-name</code></td></tr>
+                <tr><td>Changes temporarily save</td><td><code>git stash</code></td></tr>
+                <tr><td>Stash wapas lao</td><td><code>git stash pop</code></td></tr>
+                <tr><td>Staging se file hatao</td><td><code>git restore --staged file</code></td></tr>
+                <tr><td>Commit safely undo</td><td><code>git revert commit_id</code></td></tr>
                 <tr><td>Branch badlo</td><td><code>git checkout naam</code></td></tr>
                 <tr><td>History dekho</td><td><code>git log --oneline</code></td></tr>
+                <tr><td>Version tag push</td><td><code>git push origin v1.0.0</code></td></tr>
             </tbody>
         </table>
     </section>
@@ -352,7 +598,19 @@ venv/
         <p>Galat folder me ho. <code>cd</code> karke project folder me jao ya <code>git init</code> chalao.</p>
 
         <h3>3. rejected - non-fast-forward</h3>
-        <p>Pehle <code>git pull</code> karo, phir <code>git push</code>.</p>
+        <p>Remote branch me aise commits hain jo tumhare local branch me nahi hain. Pehle <code>git status</code> check karo, phir remote changes fetch/pull karke zaroorat ho to conflict resolve karo; uske baad push karo.</p>
+
+        <h3>4. Merge conflict</h3>
+        <p><code>git status</code> se conflicted files dekho, markers resolve karo, files ko <code>git add</code> karo aur merge complete karne ke liye commit karo. Steps ke liye <a href="#s17">Merge aur Conflict section</a> dekho.</p>
+
+        <h3>5. The current branch has no upstream branch</h3>
+        <p>Pehli baar branch push karte waqt <code>git push -u origin branch-name</code> chalao. Isse remote tracking set hoti hai; aage <code>git push</code> aur <code>git pull</code> chala sakte ho.</p>
+
+        <h3>6. remote origin already exists</h3>
+        <p>Remote list check karo: <code>git remote -v</code>. URL badalna ho to <code>git remote set-url origin repository-url</code> use karo; same remote ko dobara add mat karo.</p>
+
+        <h3>7. Changes galti se kho gaye</h3>
+        <p>Agar commit hua tha to <code>git log --oneline</code> aur <code>git reflog</code> se recent history inspect karo. Recovery guaranteed nahi hoti; aage se important kaam commit ya stash karte raho.</p>
     </section>
 
 </div>
