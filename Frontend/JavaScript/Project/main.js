@@ -19,7 +19,7 @@ function formatOutput(value) {
     return String(value);
   }
 }
-function executeJavaScript(code) {
+function executeJavaScript(code, environment) {
   const lines = [];
   const sandboxConsole = {
     log(...values) {
@@ -34,14 +34,24 @@ function executeJavaScript(code) {
   };
 
   try {
-    const runCode = new Function("console", code);
-    runCode(sandboxConsole);
+    if (environment && Object.prototype.hasOwnProperty.call(environment, "document")) {
+      const runCode = new Function("console", "document", code);
+      runCode(sandboxConsole, environment.document);
+    } else {
+      const runCode = new Function("console", code);
+      runCode(sandboxConsole);
+    }
     return {
       text: lines.length ? lines.join("\n") : "Code successfully run hua.",
       color: "#86efac",
+      ok: true,
     };
   } catch (error) {
-    return { text: `${error.name}: ${error.message}`, color: "#fca5a5" };
+    return {
+      text: `${error.name}: ${error.message}`,
+      color: "#fca5a5",
+      ok: false,
+    };
   }
 }
 function runJavaScript() {

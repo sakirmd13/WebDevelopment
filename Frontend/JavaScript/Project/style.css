@@ -286,6 +286,124 @@ code {
   border-radius: 8px;
   margin: 0.8rem 0;
 }
+.topic-review {
+  margin-top: 1.25rem;
+  padding: 1rem;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: #f8fafc;
+}
+.topic-review h3 {
+  margin-top: 0.65rem;
+  font-size: 1rem;
+}
+.topic-review ol {
+  padding-left: 1.5rem;
+}
+.topic-review li {
+  margin: 0.45rem 0;
+}
+.topic-review details {
+  margin-top: 0.35rem;
+  padding: 0.4rem 0.65rem;
+  background: white;
+  border-radius: 8px;
+}
+.topic-review summary {
+  cursor: pointer;
+  font-weight: 650;
+}
+.topic-review details p {
+  margin: 0.4rem 0 0;
+}
+.practice-answer {
+  margin: 0.75rem 0 0.25rem;
+  padding: 0.75rem;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: white;
+}
+.practice-answer label {
+  display: block;
+  margin-bottom: 0.4rem;
+  font-weight: 650;
+  font-size: 0.9rem;
+}
+.practice-answer textarea {
+  display: block;
+  width: 100%;
+  min-height: 76px;
+  resize: vertical;
+  border: 1px solid #94a3b8;
+  border-radius: 8px;
+  padding: 0.7rem;
+  font: inherit;
+}
+.practice-answer .practice-code-editor {
+  min-height: 150px;
+  background: #0f172a;
+  color: #dbeafe;
+  font-family: Consolas, monospace;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  tab-size: 2;
+}
+.practice-answer textarea:focus {
+  outline: 2px solid #60a5fa;
+  outline-offset: 1px;
+}
+.practice-help {
+  color: var(--muted);
+  font-size: 0.82rem;
+  margin: 0.35rem 0;
+}
+.practice-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  margin-top: 0.55rem;
+}
+.practice-actions button {
+  padding: 0.5rem 0.8rem;
+}
+.practice-feedback {
+  font-weight: 700;
+}
+.practice-feedback.correct {
+  color: #047857;
+}
+.practice-feedback.wrong {
+  color: #b91c1c;
+}
+.practice-output {
+  min-height: 0;
+  max-height: 180px;
+  margin: 0.65rem 0 0;
+  white-space: pre-wrap;
+  color: #86efac;
+}
+.practice-output[hidden] {
+  display: none;
+}
+.practice-output.error {
+  color: #fca5a5;
+}
+.practice-sample {
+  margin-top: 0.6rem;
+}
+.practice-sample summary {
+  cursor: pointer;
+  color: #1d4ed8;
+}
+.practice-sample pre {
+  margin-top: 0.45rem;
+  white-space: pre-wrap;
+}
+.practice-sample p {
+  overflow-wrap: anywhere;
+  white-space: pre-wrap;
+}
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));

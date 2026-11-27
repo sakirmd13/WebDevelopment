@@ -89,6 +89,28 @@ console.log(4 * 2);</textarea>
                 <a class="sub" href="#typeof">typeof Operator</a>
                 <a href="#conversion">16. Type Conversion</a>
                 <a href="#template">17. Template Literals</a>
+                <a href="#arithmetic">18. Arithmetic Operators</a>
+                <a href="#operators">19. Other Operators</a>
+                <a class="sub" href="#comparison">Comparison & logical</a>
+                <a class="sub" href="#assignment">Assignment & compound assignment</a>
+                <a class="sub" href="#unary">Unary +, -, !</a>
+                <a class="sub" href="#pre-post">Pre/post increment & decrement</a>
+                <a class="sub" href="#modern-operators">Nullish, optional & spread</a>
+                <a href="#conditions">20. Conditions</a>
+                <a class="sub" href="#if-else">if, else if & else</a>
+                <a class="sub" href="#switch">switch</a>
+                <a class="sub" href="#ternary">Ternary operator</a>
+                <a href="#loops">21. Loops</a>
+                <a class="sub" href="#for-loop">for loop</a>
+                <a class="sub" href="#while-loop">while & do...while</a>
+                <a class="sub" href="#loop-control">for...of, for...in, break & continue</a>
+                <a href="#functions">22. Functions</a>
+                <a class="sub" href="#function-basics">Parameters & return</a>
+                <a class="sub" href="#arrow-functions">Function & arrow expressions</a>
+                <a href="#strings">23. Strings</a>
+                <a href="#arrays">24. Arrays</a>
+                <a href="#objects">25. Objects</a>
+                <a href="#error-handling">26. Errors & debugging</a>
                 <a href="#practice">Practice Tasks</a>
             </nav>
         </aside>
@@ -103,6 +125,17 @@ console.log(4 * 2);</textarea>
                     mein LiveScript aur phir JavaScript hua. JavaScript aur Java alag languages hain. JavaScript ko
                     standardize karne ke liye ECMAScript standard use hota hai.</p>
                 <p><code>.js</code> JavaScript files ka extension hai, jaise <code>main.js</code>.</p>
+                <div class="topic-review">
+                    <h3>Interview Questions (Medium–Hard)</h3>
+                    <ol>
+                        <li>ECMAScript aur JavaScript mein kya relation hai?
+                            <details><summary>Answer</summary><p>ECMAScript language ka standard/specification hai. JavaScript us standard ko implement karne wali language hai; browser aur Node.js apne runtime APIs bhi dete hain.</p></details>
+                        </li>
+                        <li>Kya JavaScript sirf browser mein chalti hai?
+                            <details><summary>Answer</summary><p>Nahi. Browser engines ke alawa Node.js jaise runtimes JavaScript ko server, terminal tools aur scripts mein chalate hain.</p></details>
+                        </li>
+                    </ol>
+                </div>
             </section>
             <section id="levels">
                 <h2>2. Low-level vs High-level language</h2>
@@ -121,6 +154,17 @@ console.log(total);</pre>
                     </div>
                 </div>
                 <p>JavaScript high-level language hai.</p>
+                <div class="topic-review">
+                    <h3>Interview Questions (Medium–Hard)</h3>
+                    <ol>
+                        <li>High-level language use karne ka fayda aur trade-off kya hai?
+                            <details><summary>Answer</summary><p>Abstraction se code readable aur portable hota hai; trade-off mein runtime, memory aur hardware-level control par kam direct control ho sakta hai. Engine optimization performance gap ko kam kar sakti hai.</p></details>
+                        </li>
+                        <li>Kya high-level language hamesha low-level language se slow hoti hai?
+                            <details><summary>Answer</summary><p>Nahi. Performance workload, runtime, algorithms aur optimizations par depend karti hai; modern engines hot code ko JIT compile kar sakte hain.</p></details>
+                        </li>
+                    </ol>
+                </div>
             </section>
             <section id="compiler">
                 <h2>3. Compiler vs Interpreter</h2>
@@ -138,6 +182,17 @@ console.log(total);</pre>
                 </div>
                 <div class="tip">Modern JS engines (jaise V8) parsing, bytecode aur JIT compilation jaise techniques
                     combine karte hain; JS engine ko sirf interpreter kehna oversimplification hai.</div>
+                <div class="topic-review">
+                    <h3>Interview Questions (Medium–Hard)</h3>
+                    <ol>
+                        <li>Modern JavaScript ko “sirf interpreted” kehna incomplete kyun hai?
+                            <details><summary>Answer</summary><p>Engine source ko parse karta, bytecode bana sakta aur frequently executed code ko JIT compile/optimize kar sakta hai. Exact pipeline engine par depend karti hai.</p></details>
+                        </li>
+                        <li>JIT optimization ke bawajood JavaScript engine ko runtime checks kyun karne padte hain?
+                            <details><summary>Answer</summary><p>JavaScript dynamic types aur runtime values allow karti hai. Engine assumptions ko guard karta hai; assumption invalid ho to optimized code deoptimize ho sakta hai.</p></details>
+                        </li>
+                    </ol>
+                </div>
             </section>
             <section id="why">
                 <h2>4. JavaScript kyu use karte hain?</h2>
@@ -149,6 +204,17 @@ console.log(total);</pre>
                     <li>Node.js ke through servers, scripts, tooling.</li>
                     <li>Testing, automation, games aur app ecosystems.</li>
                 </ul>
+                <div class="topic-review">
+                    <h3>Interview Questions (Medium–Hard)</h3>
+                    <ol>
+                        <li>Browser JavaScript aur Node.js JavaScript mein kya common hai aur kya alag?
+                            <details><summary>Answer</summary><p>Language semantics aur engine features largely common hote hain; host APIs alag hote hain. Browser DOM/window deta hai, jabki Node.js filesystem aur process jaise APIs deta hai.</p></details>
+                        </li>
+                        <li>Kya React ya Node.js JavaScript ke replacements hain?
+                            <details><summary>Answer</summary><p>Nahi. React UI library hai aur Node.js runtime; dono JavaScript ke upar ecosystem/tooling provide karte hain.</p></details>
+                        </li>
+                    </ol>
+                </div>
             </section>
             <section id="methods">
                 <h2>5. JavaScript run karne ke methods</h2>
@@ -163,6 +229,17 @@ console.log(total);</pre>
                 <p>JS code ko alag file mein likhkar HTML se link karte hain (section 8).</p>
                 <h3 id="node-method">Node.js</h3>
                 <p>Node.js JavaScript ko browser ke bahar run karne deta hai, jaise terminal scripts.</p>
+                <div class="topic-review">
+                    <h3>Interview Questions (Medium–Hard)</h3>
+                    <ol>
+                        <li>Inline script aur external script mein maintainability/performance ke trade-offs kya hain?
+                            <details><summary>Answer</summary><p>Inline chhote demos mein convenient hai, par reuse/caching mushkil karta hai. External scripts maintainable aur cacheable hote hain, lekin sahi loading order/configuration chahiye.</p></details>
+                        </li>
+                        <li><code>defer</code> aur <code>async</code> external scripts ke execution order mein kaise differ karte hain?
+                            <details><summary>Answer</summary><p><code>defer</code> HTML parse ke baad aur document order mein execute hota hai. <code>async</code> download complete hote hi execute hota hai; order guaranteed nahi hota.</p></details>
+                        </li>
+                    </ol>
+                </div>
             </section>
             <section id="node-install">
                 <h2>6. Node.js Installation — Windows</h2>
@@ -180,6 +257,17 @@ npm --version</pre>
                     <li>Commands dobara run karke verify karein.</li>
                 </ol>
                 <div class="warn">Installer/version ki screens badal sakti hain. Official website se hi download karein.
+                </div>
+                <div class="topic-review">
+                    <h3>Interview Questions (Medium–Hard)</h3>
+                    <ol>
+                        <li>Node.js LTS aur Current release mein se production ke liye aam taur par LTS kyun chunte hain?
+                            <details><summary>Answer</summary><p>LTS release ko lambi maintenance/support window milti hai aur production stability ke liye target kiya jata hai; Current mein naye features jaldi milte hain.</p></details>
+                        </li>
+                        <li>Installer ke baad <code>node</code> command kaam na kare to kya check karenge?
+                            <details><summary>Answer</summary><p>Installation complete hai ya nahi, Node install path PATH environment variable mein hai ya nahi, aur naya terminal session khola hai ya nahi check karein.</p></details>
+                        </li>
+                    </ol>
                 </div>
             </section>
             <section id="cli">
@@ -208,6 +296,17 @@ Hi</pre>
                     <li>JS file open karke Run Code ya right-click → Run Code.</li>
                 </ol>
                 <div class="tip">Beginners ko terminal mein <code>node main.js</code> chalana recommended hai.</div>
+                <div class="topic-review">
+                    <h3>Interview Questions (Medium–Hard)</h3>
+                    <ol>
+                        <li>REPL aur script execution mein state aur repeatability ka kya farq hai?
+                            <details><summary>Answer</summary><p>REPL session mein entered bindings agle commands ke liye persist kar sakti hain. Script fresh run mein file ka code execute karti hai, isliye repeatable workflow ke liye behtar hai.</p></details>
+                        </li>
+                        <li>Node REPL mein code chal raha hai, par <code>node file.js</code> mein nahi—kya investigate karenge?
+                            <details><summary>Answer</summary><p>File path/current directory, syntax, file ke missing setup/imports aur REPL-only variables check karein; REPL ka prior state file run mein available nahi hota.</p></details>
+                        </li>
+                    </ol>
+                </div>
             </section>
             <section id="linking">
                 <h2>8. HTML se JavaScript link</h2>
@@ -237,6 +336,17 @@ Hi</pre>
 &lt;/head&gt;</pre>
                 <p><code>defer</code> external JS download ko HTML parsing ke saath allow karta hai aur document parse
                     hone ke baad execute karta hai.</p>
+                <div class="topic-review">
+                    <h3>Interview Questions (Medium–Hard)</h3>
+                    <ol>
+                        <li>Head mein normal script DOM elements ko access karte waqt failure kyun de sakti hai?
+                            <details><summary>Answer</summary><p>Normal script parse ke waqt turant execute hoti hai; agar target DOM abhi parse nahi hua, query ko element nahi milega. Body-end placement ya <code>defer</code> is order ko solve karta hai.</p></details>
+                        </li>
+                        <li><code>defer</code> aur body ke end par script rakhne mein kya similarity/difference hai?
+                            <details><summary>Answer</summary><p>Dono DOM parse hone ke baad execution ensure kar sakte hain. <code>defer</code> file ko parallel download karta hai aur multiple deferred scripts ka order preserve karta hai.</p></details>
+                        </li>
+                    </ol>
+                </div>
             </section>
             <section id="first-program">
                 <h2>9. First Program</h2>
@@ -253,6 +363,22 @@ console.log("Name:", "Sakir", "Age:", 24);</pre>
                 <p>Semicolon statements ko terminate karta hai. JS mein ASI (Automatic Semicolon Insertion) kai jagah
                     semicolon insert kar deta hai, par consistent semicolon use clarity aur kuch edge cases mein
                     correctness ke liye achha hai.</p>
+                <div class="topic-review">
+                    <h3>Practice (2)</h3>
+                    <ol>
+                        <li>Price <code>12</code> aur quantity <code>3</code> se subtotal calculate karke <code>Subtotal: 36</code> print karein.</li>
+                        <li>Do statements ko semicolon ke saath aur bina semicolon likh kar ASI behavior inspect karein.</li>
+                    </ol>
+                    <h3>Interview Questions (Medium–Hard)</h3>
+                    <ol>
+                        <li>JavaScript mein statement aur expression ka kya farq hai?
+                            <details><summary>Answer</summary><p>Expression evaluate hokar value deta hai, jaise <code>2 + 3</code>. Statement ek action/instruction hai, jaise <code>let total = 5;</code>; statement ke andar expressions ho sakte hain.</p></details>
+                        </li>
+                        <li>ASI ke hote hue bhi semicolons consistently use karna kyun useful hai?
+                            <details><summary>Answer</summary><p>ASI ke kuch edge cases, jaise line-break ke baad <code>[</code> ya <code>(</code>, unexpected parsing de sakte hain. Consistent semicolons ambiguity kam karte hain.</p></details>
+                        </li>
+                    </ol>
+                </div>
             </section>
             <section id="comments">
                 <h2>10. Comments</h2>
@@ -262,6 +388,22 @@ console.log("Name:", "Sakir", "Age:", 24);</pre>
 /* Multi-line
  comment */</pre>
                 <p>VS Code line comment toggle: Windows/Linux Ctrl + /; Mac Cmd + / (keyboard layout par depend).</p>
+                <div class="topic-review">
+                    <h3>Practice (2)</h3>
+                    <ol>
+                        <li>Comments ke saath <code>add(a, b)</code> function likhein; <code>add(2, 4)</code> call karke <code>6</code> print karein.</li>
+                        <li>Ek code block ko comment out karke test karein; nested block comments kyu fail hote hain, note karein.</li>
+                    </ol>
+                    <h3>Interview Questions (Medium–Hard)</h3>
+                    <ol>
+                        <li>JavaScript block comments nested kyun nahi kiye ja sakte?
+                            <details><summary>Answer</summary><p><code>/* ... */</code> comments nested syntax support nahi karte; pehla <code>*/</code> comment close kar deta hai. Nested comment markers code ko unexpectedly active chhod sakte hain.</p></details>
+                        </li>
+                        <li>Comments code ko explain karne ke liye kab harmful ho sakte hain?
+                            <details><summary>Answer</summary><p>Jab comment implementation ko repeat kare ya code badalne par stale ho jaye. Intent/reason explain karein; confusing logic ko clear code mein refactor karna behtar hai.</p></details>
+                        </li>
+                    </ol>
+                </div>
             </section>
             <section id="variables">
                 <h2>11. Variable kya hota hai?</h2>
@@ -281,6 +423,22 @@ let age = 24;
 console.log("Name:", name, "| Age:", age);
 // Or:
 console.log(`Name: ${name}, Age: ${age}`);</pre>
+<div class="topic-review">
+    <h3>Practice (2)</h3>
+    <ol>
+        <li>Price <code>12</code> aur quantity <code>3</code> variables se <code>Subtotal: 36</code> print karein.</li>
+        <li><code>let</code> ko <code>1</code> se <code>2</code> update karein, <code>const</code> ko <code>1</code> rakhein; dono labeled values print karein.</li>
+    </ol>
+    <h3>Interview Questions (Medium–Hard)</h3>
+    <ol>
+        <li>JavaScript variable ko “box containing a value” kehna kyun oversimplification ho sakta hai?
+            <details><summary>Answer</summary><p>Variable ek binding/name hai jo value ko refer karta hai. Primitive values copy hoti hain, jabki objects ke case mein copied binding same object reference ko point kar sakti hai.</p></details>
+        </li>
+        <li>Binding aur value ke difference ko object example se samjhaiye.
+            <details><summary>Answer</summary><p><code>const user = {name: "A"}</code> mein <code>user</code> binding reassign nahi ho sakti, par referenced object ki <code>name</code> property mutate ho sakti hai.</p></details>
+        </li>
+    </ol>
+</div>
             </section>
             <section id="keywords">
                 <h2>12. var, let & const</h2>
@@ -326,6 +484,22 @@ skills.push("JavaScript"); // valid</pre>
                         syntax.</li>
                     <li><b>TypeError:</b> const binding reassign karna.</li>
                 </ul>
+                <div class="topic-review">
+                    <h3>Practice (2)</h3>
+                    <ol>
+                        <li>Block mein <code>var outer = "block var"</code>, <code>let local</code> aur <code>const fixed</code> declare karein; baad mein var print, let/const access errors ke naam print karein.</li>
+                        <li>TDZ access aur const reassignment ko alag <code>try/catch</code> mein run karke <code>ReferenceError</code> aur <code>TypeError</code> print karein.</li>
+                    </ol>
+                    <h3>Interview Questions (Medium–Hard)</h3>
+                    <ol>
+                        <li><code>var</code>, <code>let</code> aur <code>const</code> ki scope/hoisting mein kya differences hain?
+                            <details><summary>Answer</summary><p><code>var</code> function-scoped hota hai aur declaration par <code>undefined</code> se initialize hota hai. <code>let</code>/<code>const</code> block-scoped hote hain, TDZ mein rehte hain, aur declaration se pehle access par error dete hain.</p></details>
+                        </li>
+                        <li><code>const</code> object mutate ho sakta hai, par variable reassign kyun nahi?
+                            <details><summary>Answer</summary><p><code>const</code> binding ko nayi value/reference se reassign karne se rokta hai; referenced object ki internal properties ko freeze nahi karta.</p></details>
+                        </li>
+                    </ol>
+                </div>
             </section>
             <section id="naming">
                 <h2>13. Naming Rules</h2>
@@ -352,6 +526,22 @@ let score2 = 5;
                     <code>else</code>, <code>let</code>, <code>const</code>, <code>var</code>, <code>return</code>,
                     <code>class</code>, <code>while</code>, <code>for</code>, <code>function</code>, <code>new</code>,
                     <code>this</code>.</p>
+                <div class="topic-review">
+                    <h3>Practice (2)</h3>
+                    <ol>
+                        <li>Apne project ke liye paanch valid camelCase identifiers aur unke purpose likhein.</li>
+                        <li>Invalid identifiers ko correct karein: <code>2name</code>, <code>user-name</code>, <code>class</code>.</li>
+                    </ol>
+                    <h3>Interview Questions (Medium–Hard)</h3>
+                    <ol>
+                        <li>Identifier case-sensitive hone ka practical effect kya hai?
+                            <details><summary>Answer</summary><p><code>score</code> aur <code>Score</code> alag bindings hain; inconsistent capitalization se bugs aur confusing code ho sakta hai.</p></details>
+                        </li>
+                        <li>Identifier valid hone ke bawajood uska naam poor choice kab hota hai?
+                            <details><summary>Answer</summary><p>Jab naam vague, misleading, reserved-term jaisa confusing, ya project convention ke against ho. Naam purpose bataye aur consistency follow kare.</p></details>
+                        </li>
+                    </ol>
+                </div>
             </section>
             <section id="conventions">
                 <h2>14. Naming Conventions</h2>
@@ -368,6 +558,22 @@ let score2 = 5;
                 <h3 id="screaming">SCREAMING_SNAKE_CASE</h3>
                 <p>Uppercase words underscore se separate; constants ke naming convention mein use.</p>
                 <pre data-language="javascript">const MAX_LIMIT = 100;</pre>
+                <div class="topic-review">
+                    <h3>Practice (2)</h3>
+                    <ol>
+                        <li>Ek product ka naam camelCase, snake_case, PascalCase aur SCREAMING_SNAKE_CASE mein likhein.</li>
+                        <li>Teen function names aur teen constant names ko project mein consistent style mein rename karein.</li>
+                    </ol>
+                    <h3>Interview Questions (Medium–Hard)</h3>
+                    <ol>
+                        <li>Kya SCREAMING_SNAKE_CASE JavaScript mein constant ko immutable bana deta hai?
+                            <details><summary>Answer</summary><p>Nahi. Ye sirf naming convention hai. Immutability ke liye <code>const</code> binding use hoti hai; object contents phir bhi mutate ho sakte hain.</p></details>
+                        </li>
+                        <li>Class aur function names ke liye PascalCase/camelCase use karne ka faayda kya hai?
+                            <details><summary>Answer</summary><p>Consistent conventions se codebase scan/read karna aasaan hota hai aur developers class constructors ko functions/variables se jaldi distinguish karte hain.</p></details>
+                        </li>
+                    </ol>
+                </div>
             </section>
             <section id="datatypes">
                 <h2>15. Data Types</h2>
@@ -444,6 +650,22 @@ console.log(typeof {}); // object
 console.log(typeof []); // object
 console.log(typeof function(){}); // function
 console.log(typeof null); // object (quirk)</pre>
+                <div class="topic-review">
+                    <h3>Practice (2)</h3>
+                    <ol>
+                        <li><code>25</code>, <code>"text"</code>, <code>true</code>, <code>undefined</code>, <code>null</code>, <code>10n</code>, aur <code>Symbol("id")</code> par isi order mein <code>typeof</code> print karein.</li>
+                        <li>Isi order mein empty array, <code>Array.isArray([])</code>, <code>null</code>, aur function par <code>typeof</code>/<code>Array.isArray</code> results print karein.</li>
+                    </ol>
+                    <h3>Interview Questions (Medium–Hard)</h3>
+                    <ol>
+                        <li>Primitive value copy aur object assignment mein kya difference hai?
+                            <details><summary>Answer</summary><p>Primitive assign karne par value copy hoti hai. Object assign karne par reference copy hota hai, isliye dono bindings se same object mutate hota dikhega.</p></details>
+                        </li>
+                        <li><code>typeof null</code> aur <code>typeof []</code> ke results kya hain, aur array check kaise karenge?
+                            <details><summary>Answer</summary><p>Dono ka <code>typeof</code> <code>"object"</code> hai; null historical quirk hai. Array ke liye <code>Array.isArray(value)</code> use karein.</p></details>
+                        </li>
+                    </ol>
+                </div>
             </section>
             <section id="conversion">
                 <h2>16. Type Conversion</h2>
@@ -460,6 +682,22 @@ console.log("5" + 2); // "52"
 console.log("5" - 2); // 3</pre>
                 <div class="warn"><code>Number("hello")</code> NaN deta hai; <code>Boolean("false")</code> true deta
                     hai, kyunki non-empty strings truthy hoti hain.</div>
+                <div class="topic-review">
+                    <h3>Practice (2)</h3>
+                    <ol>
+                        <li><code>Number("25")</code>, <code>String(25)</code>, <code>Boolean(1)</code>, aur <code>Boolean(0)</code> ko alag-alag print karein.</li>
+                        <li><code>"5" + 2</code>, <code>"5" - 2</code>, <code>Boolean("")</code> aur <code>Number(null)</code> ke results predict karke verify karein.</li>
+                    </ol>
+                    <h3>Interview Questions (Medium–Hard)</h3>
+                    <ol>
+                        <li><code>"5" + 2</code> aur <code>"5" - 2</code> ke results alag kyun hote hain?
+                            <details><summary>Answer</summary><p><code>+</code> string operand milne par concatenation kar sakta hai, isliye <code>"52"</code>. <code>-</code> numeric operator hai aur operands ko number mein coerce karke <code>3</code> deta hai.</p></details>
+                        </li>
+                        <li><code>Number("")</code>, <code>Number(null)</code> aur <code>Number(undefined)</code> kya return karte hain?
+                            <details><summary>Answer</summary><p><code>Number("")</code> aur <code>Number(null)</code> <code>0</code> dete hain; <code>Number(undefined)</code> <code>NaN</code> deta hai.</p></details>
+                        </li>
+                    </ol>
+                </div>
             </section>
             <section id="template">
                 <h2>17. Template Literals</h2>
@@ -470,6 +708,548 @@ const age = 24;
 console.log(`My name is ${name} and my age is ${age}.`);
 console.log(`4 * 2 = ${4 * 2}`);
 console.log(`Next year age: ${age + 1}`);</pre>
+                <div class="topic-review">
+                    <h3>Practice (2)</h3>
+                    <ol>
+                        <li><code>Asha</code>, <code>Patel</code>, aur age <code>24</code> ko use karke <code>Hello, Asha Patel! Age: 24</code> print karein.</li>
+                        <li>Book ki price <code>10</code> aur quantity <code>3</code> use karke 3-line receipt print karein: Receipt, Item: Book, Total: 30.</li>
+                    </ol>
+                    <h3>Interview Questions (Medium–Hard)</h3>
+                    <ol>
+                        <li>Template literal mein <code>${...}</code> ke andar kya likh sakte hain?
+                            <details><summary>Answer</summary><p>Koi bhi valid JavaScript expression; uska result string mein convert hokar insert hota hai. Statements jaise <code>if</code> directly interpolation expression nahi hain.</p></details>
+                        </li>
+                        <li>Template literal aur string concatenation mein readability ka kya difference hai?
+                            <details><summary>Answer</summary><p>Template literal interpolation aur multiline text ko clear banata hai; concatenation simple cases mein theek hai, par multiple values/lines ke saath unreadable ho sakta hai.</p></details>
+                        </li>
+                    </ol>
+                </div>
+            </section>
+            <section id="arithmetic">
+                <h2>18. Arithmetic Operators</h2>
+                <p>Arithmetic operators numbers par calculations karte hain. <code>+</code> addition,
+                    <code>-</code> subtraction, <code>*</code> multiplication, <code>/</code> division,
+                    <code>%</code> remainder (modulus), aur <code>**</code> exponentiation ke liye use hote hain.
+                </p>
+                <pre data-language="javascript">const a = 10;
+const b = 3;
+
+console.log("Addition:", a + b);       // 13
+console.log("Subtraction:", a - b);    // 7
+console.log("Multiplication:", a * b); // 30
+console.log("Division:", a / b);       // 3.333...
+console.log("Remainder:", a % b);      // 1
+console.log("Exponent:", a ** b);      // 1000</pre>
+                <div class="tip"><code>%</code> remainder deta hai, jaise <code>10 % 3</code> ka result
+                    <code>1</code>. Kisi number ke even/odd hone ko check karne mein bhi useful hai.</div>
+                <pre data-language="javascript">const number = 8;
+console.log(number % 2); // 0, even number</pre>
+                <div class="topic-review">
+                    <h3>Practice (2)</h3>
+                    <ol>
+                        <li><code>a = 10</code> aur <code>b = 3</code> ke liye <code>+</code>, <code>-</code>, <code>*</code>, <code>/</code>, <code>%</code> aur <code>**</code> results labeled form mein print karein.</li>
+                        <li><code>8</code> even hai ya nahi check karein; <code>17</code> ko <code>5</code> se divide karke integer quotient aur remainder labeled form mein print karein.</li>
+                    </ol>
+                    <h3>Interview Questions (Medium–Hard)</h3>
+                    <ol>
+                        <li>JavaScript mein <code>10 / 0</code> aur <code>0 / 0</code> kya dete hain?
+                            <details><summary>Answer</summary><p><code>10 / 0</code> <code>Infinity</code> deta hai; <code>0 / 0</code> <code>NaN</code> deta hai. JavaScript number division by zero par aam taur par exception nahi throw karta.</p></details>
+                        </li>
+                        <li><code>0.1 + 0.2 === 0.3</code> false kyun hota hai?
+                            <details><summary>Answer</summary><p>Binary floating-point mein 0.1 aur 0.2 exact represent nahi hote, isliye sum mein tiny precision error hota hai. Decimal comparisons mein tolerance-based comparison use karein.</p></details>
+                        </li>
+                    </ol>
+                </div>
+            </section>
+            <section id="operators">
+                <h2>19. Comparison, Logical & Assignment Operators</h2>
+                <h3 id="comparison">Comparison & logical operators</h3>
+                <p>Comparison operators values compare karke boolean (<code>true</code>/<code>false</code>) dete hain.
+                    Aam taur par <code>===</code> aur <code>!==</code> use karein: ye value ke saath type bhi compare
+                    karte hain. <code>==</code> type conversion kar sakta hai, isliye beginners ko ise avoid karna
+                    chahiye.</p>
+                <pre data-language="javascript">console.log(5 > 3);        // true
+console.log(5 <= 5);       // true
+console.log(5 === "5");    // false: type bhi different hai
+console.log(5 == "5");     // true: type conversion hota hai
+console.log(5 !== 4);      // true</pre>
+                <p>Logical operators conditions combine karte hain: <code>&amp;&amp;</code> (AND), <code>||</code>
+                    (OR), aur <code>!</code> (NOT). AND mein dono conditions true honi chahiye; OR mein kam se kam ek
+                    true; NOT boolean ko reverse karta hai.</p>
+                <pre data-language="javascript">const age = 22;
+const hasId = true;
+
+console.log(age >= 18 && hasId); // true
+console.log(age < 18 || hasId);  // true
+console.log(!hasId);             // false</pre>
+                <h3 id="assignment">Assignment & compound assignment operators</h3>
+                <p><code>=</code> variable ko value assign karta hai. Compound assignment mein pehle current value ke
+                    saath operation hota hai, phir result usi variable mein assign hota hai:</p>
+                <ul>
+                    <li><code>x += y</code>: <code>x = x + y</code> (addition)</li>
+                    <li><code>x -= y</code>: <code>x = x - y</code> (subtraction)</li>
+                    <li><code>x *= y</code>: <code>x = x * y</code> (multiplication)</li>
+                    <li><code>x /= y</code>: <code>x = x / y</code> (division)</li>
+                    <li><code>x %= y</code>: <code>x = x % y</code> (remainder)</li>
+                    <li><code>x **= y</code>: <code>x = x ** y</code> (exponentiation)</li>
+                </ul>
+                <pre data-language="javascript">let score = 10;
+score = 12; // = assigns a new value
+console.log("=:", score); // 12
+
+score += 3;
+console.log("+=:", score); // 15
+score -= 5;
+console.log("-=:", score); // 10
+score *= 2;
+console.log("*=:", score); // 20
+score /= 4;
+console.log("/=:", score); // 5
+score %= 3;
+console.log("%=:", score); // 2
+score **= 3;
+console.log("**=:", score); // 8</pre>
+                <h3 id="unary">Unary plus, minus & logical NOT</h3>
+                <p>Unary operator ek operand par kaam karta hai. <code>+value</code> number conversion karta hai;
+                    <code>-value</code> number ka sign reverse karta hai; <code>!value</code> value ko boolean mein
+                    convert karke truthiness reverse karta hai.</p>
+                <pre data-language="javascript">const textNumber = "8";
+console.log(+textNumber); // 8
+console.log(-textNumber); // -8
+console.log(!true);       // false
+console.log(!0);          // true</pre>
+                <p><code>++</code> increment aur <code>--</code> decrement operators bhi unary hain; ye number ko
+                    ek se badhate ya ghatate hain.</p>
+                <h3 id="pre-post">Pre-increment, post-increment, pre-decrement & post-decrement</h3>
+                <ul>
+                    <li><code>++x</code> (prefix increment): pehle <code>x</code> ek se badhta hai, phir nayi value milti hai.</li>
+                    <li><code>x++</code> (postfix increment): pehle purani value milti hai, phir <code>x</code> ek se badhta hai.</li>
+                    <li><code>--x</code> (prefix decrement): pehle <code>x</code> ek se ghatta hai, phir nayi value milti hai.</li>
+                    <li><code>x--</code> (postfix decrement): pehle purani value milti hai, phir <code>x</code> ek se ghatta hai.</li>
+                </ul>
+                <pre data-language="javascript">let postInc = 5;
+console.log(postInc++); // 5: pehle old value use
+console.log(postInc);   // 6: phir increment
+
+let preInc = 5;
+console.log(++preInc);  // 6: pehle increment
+console.log(preInc);    // 6
+
+let postDec = 5;
+console.log(postDec--); // 5: pehle old value use
+console.log(postDec);   // 4: phir decrement
+
+let preDec = 5;
+console.log(--preDec);  // 4: pehle decrement
+console.log(preDec);    // 4</pre>
+                <div class="tip">Complex expressions mein <code>i++</code>/<code>++i</code> se side effects samajhna
+                    mushkil ho sakta hai. Pehle increment/decrement alag statement mein karna zyada readable hai.</div>
+                <pre data-language="javascript">let score = 10;
+score += 5; // score = score + 5
+score -= 2;
+score *= 2;
+score /= 2;
+console.log(score); // 13
+
+let count = 0;
+count++;
+count--;
+console.log(count); // 0</pre>
+               <p><code>%=</code> aur <code>**=</code> bhi compound assignment operators hain.</p>
+               <pre data-language="javascript">let remainder = 10;
+remainder %= 3;
+console.log(remainder); // 1
+
+let power = 2;
+power **= 3;
+console.log(power); // 8</pre>
+                <p>Operator precedence decide karta hai pehle kaunsa operation hoga. Confusion ho to parentheses use
+                    karein.</p>
+                <pre data-language="javascript">console.log(2 + 3 * 4);   // 14
+console.log((2 + 3) * 4); // 20</pre>
+               <h3 id="modern-operators">Nullish coalescing, optional chaining & spread</h3>
+               <p><code>??</code> sirf <code>null</code> ya <code>undefined</code> par fallback deta hai;
+                   <code>||</code> falsy values jaise <code>0</code> aur empty string par bhi fallback deta hai.
+                   <code>?.</code> missing/nullish property chain ko error ke bajaye <code>undefined</code> deta hai.
+                   Spread (<code>...</code>) iterable/object ko expand karta hai; object/array spread shallow copy
+                   banata hai.</p>
+               <pre data-language="javascript">console.log(0 || 10);  // 10
+console.log(0 ?? 10);  // 0
+
+const user = {};
+console.log(user.address?.city); // undefined
+
+const first = [1, 2];
+const combined = [...first, 3];
+console.log(combined); // [1, 2, 3]
+const original = { name: "Asha" };
+const copy = { ...original, age: 20 };
+console.log(copy);</pre>
+ <div class="topic-review">
+     <h3>Practice (5)</h3>
+     <ol>
+         <li>Age <code>25</code> aur membership <code>true</code> ke liye AND se eligibility check karein aur <code>Eligible: true</code> print karein.</li>
+         <li><code>0 || 10</code>, <code>0 ?? 10</code>, <code>"" || "x"</code>, <code>"" ?? "x"</code> compare karke <code>true true true true</code> print karein.</li>
+         <li><code>postInc = 5</code> aur <code>preInc = 5</code> par <code>postInc++</code>/<code>++preInc</code> lagayein; expression result aur final values alag-alag print karein.</li>
+         <li><code>postDec = 5</code> aur <code>preDec = 5</code> par <code>postDec--</code>/<code>--preDec</code> lagayein; expression result aur final values alag-alag print karein.</li>
+         <li><code>score = 10</code> se shuru karke <code>+= 3</code>, <code>-= 5</code>, <code>*= 2</code>, <code>/= 4</code>, <code>%= 3</code>, aur <code>**= 3</code> ek-ek karke apply karein aur har step ka result print karein.</li>
+     </ol>
+     <h3>Interview Questions (Medium–Hard)</h3>
+     <ol>
+         <li><code>==</code> aur <code>===</code> mein kya farq hai, aur default mein kaunsa prefer karna chahiye?
+             <details><summary>Answer</summary><p><code>==</code> comparison se pehle type coercion kar sakta hai; <code>===</code> type aur value dono compare karta hai. Predictable behavior ke liye aam taur par strict equality prefer hoti hai.</p></details>
+         </li>
+         <li>Logical AND/OR short-circuiting kaise karte hain, aur <code>??</code> kis case mein <code>||</code> se behtar hai?
+             <details><summary>Answer</summary><p>AND left operand falsy ho to wahi return karta hai; OR truthy left operand par rukta hai. <code>??</code> sirf nullish values par fallback karta hai, isliye valid <code>0</code> ya empty string ko preserve karta hai.</p></details>
+         </li>
+         <li><code>let n = 3; const old = n++; const current = ++n;</code> ke baad <code>old</code>, <code>current</code> aur <code>n</code> ki values kya hongi?
+             <details><summary>Answer</summary><p><code>old</code> 3 hai; postfix <code>n++</code> ke baad <code>n</code> 4 hota hai. Prefix <code>++n</code> usse pehle 5 karta hai aur wahi value return karta hai, isliye <code>current</code> aur final <code>n</code> dono 5 hain.</p></details>
+         </li>
+         <li>Loop mein <code>array[i++]</code> aur <code>array[++i]</code> ka access alag kyun ho sakta hai, aur complex expressions mein inka use risky kyun hai?
+             <details><summary>Answer</summary><p>Postfix pehle current index use karta hai aur baad mein badhata hai; prefix pehle badhata hai aur naya index use karta hai. Side effects evaluation ko less readable bana sakte hain, isliye index update ko separate statement mein rakhna safer hai.</p></details>
+         </li>
+         <li><code>x += y</code> aur <code>x = x + y</code> ka result aam taur par same ho sakta hai; compound form ka practical benefit kya hai?
+             <details><summary>Answer</summary><p>Compound form concise hota hai aur complex left-hand expression ko ek baar evaluate karta hai. Isliye side effects wale property/index expressions mein dono forms ka evaluation behavior alag ho sakta hai.</p></details>
+         </li>
+     </ol>
+ </div>
+            </section>
+            <section id="conditions">
+                <h2>20. Conditions: if, else if & else</h2>
+                <p>Condition ke basis par alag code chalane ke liye <code>if</code>, <code>else if</code> aur
+                    <code>else</code> use hote hain. Condition <code>true</code> ho to uska block chalta hai.
+                    Pehli matching condition ke baad baaki branches skip hoti hain.</p>
+                <h3 id="if-else">if, else if & else</h3>
+                <pre data-language="javascript">const marks = 76;
+
+if (marks >= 90) {
+  console.log("Grade A");
+} else if (marks >= 60) {
+  console.log("Pass");
+} else {
+  console.log("Try again");
+}</pre>
+                <p><code>else if</code> se extra conditions check karte hain; <code>else</code> tab chalta hai jab
+                    upar ki koi condition true na ho. <code>else</code> optional hai.</p>
+                <pre data-language="javascript">const age = 20;
+
+if (age >= 18) {
+  console.log("Adult");
+} else {
+  console.log("Not an adult");
+}</pre>
+                <h3 id="switch">switch statement</h3>
+                <p>Ek expression ki value ko kai exact cases ke saath compare karna ho to <code>switch</code> use
+                    kar sakte hain. Har case ke baad <code>break</code> aam taur par zaroori hai, warna agla case bhi
+                    chal sakta hai.</p>
+                <pre data-language="javascript">const day = "Saturday";
+
+switch (day) {
+  case "Saturday":
+  case "Sunday":
+    console.log("Weekend");
+    break;
+  case "Monday":
+    console.log("Week start");
+    break;
+  default:
+    console.log("Regular day");
+}</pre>
+                <h3 id="ternary">Ternary operator</h3>
+                <p>Simple condition ke basis par value choose karne ka short form:
+                    <code>condition ? valueIfTrue : valueIfFalse</code>. Complex logic ke liye normal
+                    <code>if/else</code> zyada readable hai.</p>
+                <pre data-language="javascript">const age = 17;
+const message = age >= 18 ? "Adult" : "Minor";
+console.log(message);</pre>
+                <div class="tip"><code>if</code> conditions mein truthy/falsy values bhi kaam karti hain. Jaise
+                    <code>0</code>, <code>""</code>, <code>null</code>, <code>undefined</code> aur
+                    <code>NaN</code> falsy hain; non-empty string aur objects (empty array/object bhi) truthy hain.</div>
+                <div class="topic-review">
+                    <h3>Practice (2)</h3>
+                    <ol>
+                        <li>Marks <code>85</code> par grade ranges check karein aur <code>B</code> print karein.</li>
+                        <li><code>switch</code> se <code>tea</code> par <code>Tea</code>, aur unknown option par <code>Unknown</code> print karein.</li>
+                    </ol>
+                    <h3>Interview Questions (Medium–Hard)</h3>
+                    <ol>
+                        <li><code>switch</code> case matching mein type coercion hoti hai? Fall-through kab hota hai?
+                            <details><summary>Answer</summary><p><code>switch</code> strict comparison ke equivalent matching karta hai. Matching case ke baad <code>break</code> na ho to execution agle case mein fall-through karta hai.</p></details>
+                        </li>
+                        <li><code>[]</code> aur <code>{}</code> conditions mein truthy kyun hain, aur common bug kya ho sakta hai?
+                            <details><summary>Answer</summary><p>JavaScript mein sab objects truthy hote hain, chahe empty hon. Empty array ko false samajhna bug hai; length ya explicit predicate check karein.</p></details>
+                        </li>
+                    </ol>
+                </div>
+            </section>
+            <section id="loops">
+                <h2>21. Loops</h2>
+                <p>Loop ek block of code ko baar-baar chalata hai. Loop ki condition aur update dhyan se likhein,
+                    warna loop rukega nahi.</p>
+                <h3 id="for-loop">for loop</h3>
+                <p><code>for</code> loop tab useful hai jab repetitions/count ka idea ho. Ismein starting value,
+                    condition aur har round ka update ek hi line mein hota hai.</p>
+                <pre data-language="javascript">for (let i = 1; i <= 5; i++) {
+  console.log("Count:", i);
+}</pre>
+                <h3 id="while-loop">while aur do...while loops</h3>
+                <p><code>while</code> condition true rehne tak chalta hai. <code>do...while</code> pehle code
+                    chalata hai, isliye condition false ho tab bhi ek baar zaroor run hota hai.</p>
+                <pre data-language="javascript">let count = 1;
+while (count <= 3) {
+  console.log("while:", count);
+  count++;
+}
+
+let number = 1;
+do {
+  console.log("do...while:", number);
+  number++;
+} while (number <= 2);</pre>
+                <div class="tip">Loop ke andar counter update karein, jaise <code>count++</code>, taaki condition
+                    aakhir mein false ho aur loop ruk jaaye.</div>
+                <h3 id="loop-control">for...of, for...in, break & continue</h3>
+                <p><code>for...of</code> array/string ke values par iterate karta hai. <code>for...in</code> object
+                    ki enumerable property keys deta hai. Loop ko beech mein rokne ke liye <code>break</code>, aur
+                    current round skip karke next par jaane ke liye <code>continue</code> use hota hai.</p>
+                <pre data-language="javascript">const colors = ["red", "green", "blue"];
+for (const color of colors) {
+  console.log(color);
+}
+
+const user = { name: "Sakir", age: 24 };
+for (const key in user) {
+  console.log(key, user[key]);
+}
+
+for (let i = 1; i <= 5; i++) {
+  if (i === 2) continue; // 2 skip
+  if (i === 4) break;    // loop stop
+  console.log(i);
+}</pre>
+                <div class="topic-review">
+                    <h3>Practice (2)</h3>
+                    <ol>
+                        <li><code>for</code> loop se 1–30 ke multiples of 3 print karein, aur 15 ko <code>continue</code> se skip karein.</li>
+                        <li><code>{ name: "Sakir", age: 24 }</code> ki keys/values ko <code>for...in</code> se, aur <code>["red", "green"]</code> values ko <code>for...of</code> se print karein.</li>
+                    </ol>
+                    <h3>Interview Questions (Medium–Hard)</h3>
+                    <ol>
+                        <li><code>for...in</code> aur <code>for...of</code> mein kya difference hai, aur array values ke liye kaunsa use karenge?
+                            <details><summary>Answer</summary><p><code>for...in</code> enumerable property keys deta hai; <code>for...of</code> iterable values deta hai. Array ke values iterate karne ke liye aam taur par <code>for...of</code> use karein.</p></details>
+                        </li>
+                        <li>Infinite loop ke common causes kya hain aur ise debug kaise karenge?
+                            <details><summary>Answer</summary><p>Condition kabhi false na hona, counter update miss/galat hona, ya state update na karna common causes hain. Loop variables/condition inspect karein aur breakpoint ya temporary logging se iterations trace karein.</p></details>
+                        </li>
+                    </ol>
+                </div>
+            </section>
+            <section id="functions">
+                <h2>22. Functions</h2>
+                <p>Function reusable code block hota hai. Use define karke zaroorat par call kar sakte hain; function
+                    input le sakta hai aur output return kar sakta hai.</p>
+                <h3 id="function-basics">Parameters, arguments & return</h3>
+                <p>Definition mein diye names <em>parameters</em>, call karte waqt di hui values <em>arguments</em>
+                    hoti hain. <code>return</code> function se value bahar bhejta hai aur function execution end karta
+                    hai.</p>
+                <pre data-language="javascript">function add(a, b) {
+  return a + b;
+}
+
+const total = add(4, 6); // 4 aur 6 arguments hain
+console.log(total);      // 10
+
+function greet(name = "friend") {
+  return `Hello, ${name}!`;
+}
+console.log(greet());</pre>
+                <h3 id="arrow-functions">Function expressions & arrow functions</h3>
+                <p>Function ko variable mein store bhi kar sakte hain. Arrow function iska concise form hai; ek
+                    expression return karna ho to braces aur <code>return</code> omit kar sakte hain.</p>
+                <pre data-language="javascript">const multiply = function (a, b) {
+  return a * b;
+};
+
+const square = number => number * number;
+console.log(multiply(3, 4));
+console.log(square(5));</pre>
+               <p>Rest parameter (<code>...</code>) function ko multiple arguments ko ek array ke roop mein receive
+                   karne deta hai.</p>
+               <pre data-language="javascript">function sum(...numbers) {
+ return numbers.reduce((total, number) => total + number, 0);
+}
+console.log(sum(1, 2, 3, 4));</pre>
+                <h3>Scope: global & local</h3>
+                <p>Scope batata hai variable kahan accessible hai. Function ke andar declare kiya variable us function
+                   ka local variable hota hai; function ke bahar declare kiya variable outer scope mein hota hai.</p>
+                <pre data-language="javascript">const message = "Outer scope";
+function showMessage() {
+  const localMessage = "Function ke andar";
+  console.log(message, localMessage);
+}
+showMessage();</pre>
+                <div class="topic-review">
+                    <h3>Practice (2)</h3>
+                    <ol>
+                        <li><code>toFahrenheit(25)</code> se Celsius ko Fahrenheit mein convert karke <code>77</code> return/print karein.</li>
+                        <li>Default array <code>[1, 2, 3]</code> lene wale arrow function se squares <code>1,4,9</code> aur count <code>3</code> print karein.</li>
+                    </ol>
+                    <h3>Interview Questions (Medium–Hard)</h3>
+                    <ol>
+                        <li>Function declaration aur function expression ke hoisting behavior mein kya farq hai?
+                            <details><summary>Answer</summary><p>Function declaration apne scope mein call se pehle available hoti hai. Function expression variable ke initialization se pehle callable nahi; <code>const</code>/<code>let</code> TDZ bhi apply hoti hai.</p></details>
+                        </li>
+                        <li>Arrow function aur normal function ke <code>this</code> behavior mein kya difference hai?
+                            <details><summary>Answer</summary><p>Normal function ka <code>this</code> call-site se bind hota hai; arrow function apna <code>this</code> nahi banata, lexical outer scope se leta hai.</p></details>
+                        </li>
+                    </ol>
+                </div>
+            </section>
+            <section id="strings">
+                <h2>23. Strings</h2>
+                <p>String text data hai. Single quotes, double quotes, ya backticks use kar sakte hain. Strings
+                    immutable hoti hain: methods nayi string return karte hain, original ko change nahi karte.</p>
+                <pre data-language="javascript">const text = "  JavaScript Basics  ";
+console.log(text.length);                 // spaces bhi count hote hain
+console.log(text.trim());                 // start/end spaces remove
+console.log(text.toUpperCase());
+console.log(text.includes("Script"));     // true
+console.log(text.slice(2, 12));            // "JavaScript"</pre>
+                <div class="topic-review">
+                    <h3>Practice (2)</h3>
+                    <ol>
+                        <li><code>"  JavaScript Basics  "</code> ko trim/lowercase karke <code>script</code> include hota hai ya nahi print karein.</li>
+                        <li><code>"A man a plan a canal Panama"</code> ke liye case aur non-alphanumeric characters ignore karke palindrome result print karein.</li>
+                    </ol>
+                    <h3>Interview Questions (Medium–Hard)</h3>
+                    <ol>
+                        <li>JavaScript strings immutable hone ka kya matlab hai?
+                            <details><summary>Answer</summary><p>String method original string ke characters mutate nahi karta; transformed value nayi string ke roop mein return hoti hai, jise variable mein assign karna padta hai.</p></details>
+                        </li>
+                        <li><code>"😊".length</code> hamesha user ko dikhne wale characters ki ginti kyun nahi deta?
+                            <details><summary>Answer</summary><p><code>length</code> UTF-16 code units count karta hai, grapheme clusters nahi. Kuch emoji multiple code units/code points se milkar bante hain; user-perceived characters ke liye <code>Intl.Segmenter</code> jaise tools chahiye.</p></details>
+                        </li>
+                    </ol>
+                </div>
+            </section>
+            <section id="arrays">
+                <h2>24. Arrays</h2>
+                <p>Array ek ordered list hai. Index <code>0</code> se start hota hai; <code>length</code> item count
+                    deta hai. <code>const</code> array ko reassign nahi kar sakte, lekin uske items update kar sakte
+                    hain.</p>
+                <pre data-language="javascript">const fruits = ["apple", "banana", "orange"];
+console.log(fruits[0]);       // apple
+console.log(fruits.length);   // 3
+fruits.push("mango");         // end mein add
+fruits.pop();                 // end se remove
+fruits[1] = "grape";          // item update
+console.log(fruits);</pre>
+                <p>Common methods: <code>push</code>/<code>pop</code> end se, <code>unshift</code>/<code>shift</code>
+                    start se item add/remove karte hain. <code>includes</code> item check karta hai;
+                    <code>slice</code> copy nikalta hai, jabki <code>splice</code> original array ko change karta
+                    hai.</p>
+                <pre data-language="javascript">const items = ["b", "c"];
+items.unshift("a");                // start mein add
+console.log(items.shift());        // "a", start se remove
+console.log(items.slice(0, 1));    // copy: ["b"]
+items.splice(1, 1, "new");         // original array ko change
+console.log(items);</pre>
+                <pre data-language="javascript">const numbers = [1, 2, 3, 4];
+const doubled = numbers.map(number => number * 2);
+const even = numbers.filter(number => number % 2 === 0);
+const total = numbers.reduce((sum, number) => sum + number, 0);
+numbers.forEach(number => console.log(number));
+console.log(doubled, even, total);</pre>
+                <p><code>map</code> har item ko transform karke naya array deta hai; <code>filter</code> condition
+                    pass karne wale items ka naya array deta hai; <code>forEach</code> har item par action chalata
+                    hai; <code>reduce</code> items ko combine karke ek value banata hai. In methods ko function
+                    callback diya jata hai.</p>
+                <div class="topic-review">
+                    <h3>Practice (2)</h3>
+                    <ol>
+                        <li><code>[1, 2, 3, 4]</code> se even values filter karke double karein; result <code>4,8</code> aur unchanged original print karein.</li>
+                        <li><code>[1, 2, 2, 3]</code> se unique values banayein aur unka total <code>reduce</code> se print karein.</li>
+                    </ol>
+                    <h3>Interview Questions (Medium–Hard)</h3>
+                    <ol>
+                        <li><code>map</code>, <code>filter</code> aur <code>forEach</code> ke outputs/uses kaise differ karte hain?
+                            <details><summary>Answer</summary><p><code>map</code> transformed array deta hai, <code>filter</code> matching items ka array deta hai, aur <code>forEach</code> sirf har item par callback chalata hai; ise transformation chain ke result ke liye use nahi karte.</p></details>
+                        </li>
+                        <li><code>slice</code> aur <code>splice</code> ke mutation behavior mein kya farq hai?
+                            <details><summary>Answer</summary><p><code>slice</code> original array ko nahi badalta aur shallow copy deta hai. <code>splice</code> original array ko add/remove/replace karke mutate karta hai.</p></details>
+                        </li>
+                    </ol>
+                </div>
+            </section>
+            <section id="objects">
+                <h2>25. Objects</h2>
+                <p>Object related data ko key-value properties mein rakhta hai. Property dot notation ya bracket
+                    notation se read/update kar sakte hain; bracket notation dynamic keys ke liye useful hai.</p>
+                <pre data-language="javascript">const student = {
+  name: "Sakir",
+  age: 24,
+  greet() {
+    return `Hi, I am ${this.name}`;
+  }
+};
+
+console.log(student.name);
+console.log(student["age"]);
+student.city = "Delhi"; // add property
+student.age = 25;       // update property
+console.log(student.greet());
+console.log(Object.keys(student));</pre>
+                <p>Object destructuring se properties ko variables mein nikaal sakte hain.</p>
+                <pre data-language="javascript">const product = { title: "Book", price: 250 };
+const { title, price } = product;
+console.log(title, price);</pre>
+                <div class="topic-review">
+                    <h3>Practice (2)</h3>
+                    <ol>
+                        <li><code>{ title: "Deep Work", price: 450 }</code> object read karein, price ko <code>500</code> update karke print karein.</li>
+                        <li><code>Pen</code> aur <code>Book</code> products ke array se destructuring aur <code>map</code> use karke titles print karein.</li>
+                    </ol>
+                    <h3>Interview Questions (Medium–Hard)</h3>
+                    <ol>
+                        <li>Spread syntax se object copy karne par nested object deep-copy hota hai?
+                            <details><summary>Answer</summary><p>Nahi. Spread shallow copy banata hai: top-level object naya hota hai, par nested objects ke references shared rehte hain.</p></details>
+                        </li>
+                        <li>Object method ko alag variable mein nikaal kar call karne par <code>this</code> unexpected kyun ho sakta hai?
+                            <details><summary>Answer</summary><p>Normal method ka <code>this</code> call-site par depend karta hai. <code>const fn = student.greet; fn()</code> mein receiver object lost ho sakta hai; <code>bind</code> ya receiver ke through call karein.</p></details>
+                        </li>
+                    </ol>
+                </div>
+            </section>
+            <section id="error-handling">
+                <h2>26. Errors & debugging basics</h2>
+                <p>Syntax error code parse hone se pehle, runtime error code chalne ke dauran aata hai. Console mein
+                    <code>console.log()</code>, <code>console.error()</code> aur browser ke DevTools breakpoints se
+                    values aur execution inspect kar sakte hain.</p>
+                <p><code>try...catch</code> runtime error ko handle karta hai. <code>finally</code> optional hai aur
+                    success ya error dono cases mein chalta hai. <code>throw</code> se apni error raise kar sakte hain.</p>
+                <pre data-language="javascript">try {
+  throw new Error("Something went wrong");
+} catch (error) {
+  console.log("Handled:", error.message);
+} finally {
+  console.log("Cleanup complete");
+}</pre>
+                <div class="topic-review">
+                    <h3>Practice (2)</h3>
+                    <ol>
+                        <li><code>Invalid input</code> error throw/catch karke message, <code>Handled</code>, aur finally mein <code>Cleanup</code> print karein.</li>
+                        <li>Function ko success aur failure dono paths par chala kar success/error message aur dono baar <code>Cleanup</code> print karein.</li>
+                    </ol>
+                    <h3>Interview Questions (Medium–Hard)</h3>
+                    <ol>
+                        <li><code>finally</code> kab execute hota hai, aur usmein <code>return</code> likhna risky kyun hai?
+                            <details><summary>Answer</summary><p><code>finally</code> try/catch ke baad aam taur par dono paths mein execute hota hai. Uska <code>return</code> pehle ke return ya thrown error ko override/suppress kar sakta hai.</p></details>
+                        </li>
+                        <li>Kya synchronous <code>try...catch</code> baad mein async callback mein aayi error ko pakad lega?
+                            <details><summary>Answer</summary><p>Nahi. Callback/promise baad mein execute ho sakta hai, jab try block khatam ho chuka ho. Async errors ke liye callback error handling ya promise ke <code>catch</code>/<code>try...await</code> pattern chahiye.</p></details>
+                        </li>
+                    </ol>
+                </div>
             </section>
             <section id="practice">
                 <h2>Practice Tasks</h2>
@@ -480,12 +1260,20 @@ console.log(`Next year age: ${age + 1}`);</pre>
                     <li>5 primitive values par typeof lagayein.</li>
                     <li>"10" + 5 aur "10" - 5 compare karein.</li>
                     <li>Template literal se multiplication expression print karein.</li>
+                    <li>Do numbers par sabhi arithmetic operators use karke results print karein.</li>
+                    <li>Age ke basis par if/else se adult ya minor print karein.</li>
+                    <li>for loop se 1 se 10 tak numbers print karein.</li>
+                    <li>Strict equality aur logical operators se do conditions check karein.</li>
+                    <li>Function bana kar do numbers ka average return karein.</li>
+                    <li>Array par map aur filter laga kar results print karein.</li>
+                    <li>Object bana kar uski properties read, update aur print karein.</li>
                 </ol>
             </section>
         </main>
     </div>
     <footer>JavaScript Fundamentals • Hinglish Course Notes</footer>
     <script src="./main.js"></script>
+    <script src="./practice.js"></script>
 </body>
 
 </html>
