@@ -225,4 +225,43 @@ courseSidebar.querySelectorAll("a").forEach((link) => {
   });
 });
 
+const prepChecklist = document.getElementById("prep-checklist");
+const prepProgress = document.getElementById("prep-progress");
+const prepStorageKey = "html-course-preparation";
+
+function readPrepState() {
+  try {
+    const saved = JSON.parse(localStorage.getItem(prepStorageKey) || "[]");
+    return Array.isArray(saved) ? saved : [];
+  } catch {
+    return [];
+  }
+}
+
+function updatePrepProgress() {
+  if (!prepChecklist || !prepProgress) return;
+
+  const checkboxes = [...prepChecklist.querySelectorAll('input[type="checkbox"]')];
+  const checked = checkboxes.filter((checkbox) => checkbox.checked);
+  prepProgress.textContent = `${checked.length}/${checkboxes.length} Completed`;
+
+  try {
+    localStorage.setItem(
+      prepStorageKey,
+      JSON.stringify(checked.map((checkbox) => checkbox.value))
+    );
+  } catch {
+    // Progress remains available for this page session if storage is blocked.
+  }
+}
+
+if (prepChecklist && prepProgress) {
+  const savedPrep = new Set(readPrepState());
+  prepChecklist.querySelectorAll('input[type="checkbox"]').forEach((checkbox) => {
+    checkbox.checked = savedPrep.has(checkbox.value);
+  });
+  prepChecklist.addEventListener("change", updatePrepProgress);
+  updatePrepProgress();
+}
+
 selectEditor("html");

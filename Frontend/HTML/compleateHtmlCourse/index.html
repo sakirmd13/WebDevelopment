@@ -26,6 +26,7 @@
             <h2>Course contents</h2>
             <nav aria-label="HTML course topics">
                 <a href="#start">Course ka overview</a>
+                <a href="#prerequisites">HTML start karne se pehle</a>
                 <a href="#web-basics">Web aur HTML basics</a>
                 <a href="#document">HTML document structure</a>
                 <a href="#elements">Elements, tags aur attributes</a>
@@ -38,9 +39,13 @@
                 <a href="#semantic">Semantic HTML</a>
                 <a href="#media">Audio, video aur iframe</a>
                 <a href="#advanced-elements">Interactive aur advanced tags</a>
+                <a href="#graphics-svg">SVG aur canvas graphics</a>
+                <a href="#html5-apis">HTML5 APIs aur Web Components</a>
                 <a href="#attributes">Attributes aur entities</a>
                 <a href="#accessibility">Accessibility</a>
                 <a href="#seo">SEO aur best practices</a>
+                <a href="#security">HTML security</a>
+                <a href="#html-css-js">HTML with CSS aur JavaScript</a>
                 <a href="#playground">Online HTML/CSS/JS playground</a>
                 <a href="#projects">6 mini projects + 1 big project</a>
                 <div class="sidebar-project-links">
@@ -52,6 +57,7 @@
                     <a href="#project-product-card">Mini 6: Product card</a>
                     <a href="#project-learnweb">Big: LearnWeb landing page</a>
                 </div>
+                <a href="#project-roadmap">Complete project roadmap</a>
                 <a href="#practice">Practice exercises</a>
                 <a href="#interview">Interview Q&amp;A</a>
                 <a href="#glossary">Glossary</a>
@@ -66,6 +72,7 @@
                     tak step-by-step seekhenge. Har code example ko copy ya run karke live preview dekhein; preview ko
                     band karne ka option bhi hai.</p>
                 <div class="hero-actions">
+                    <a href="#prerequisites">Preparation shuru karein</a>
                     <a href="#web-basics">Course shuru karein</a>
                     <a href="#playground">Code abhi try karein</a>
                     <a href="#interview">Interview questions dekhein</a>
@@ -96,12 +103,480 @@
                     presentation/style karta hai; JavaScript interaction aur logic deta hai.</div>
             </section>
 
+            <section id="prerequisites" class="course-section">
+                <h2>HTML start karne se pehle kya jaanna zaroori hai?</h2>
+                <p>HTML seekhne ke liye programming experience compulsory nahi hai, lekin computer, browser, file
+                    management aur basic coding terms ki understanding aapko learning aur practice mein fast help
+                    karegi.</p>
+
+                <h3>1. Computer fundamentals</h3>
+                <div class="card-grid">
+                    <article class="info-card">
+                        <h3>Computer kaise kaam karta hai</h3>
+                        <p>User input deta hai, CPU instructions process karta hai, memory temporary working data
+                            rakhti hai aur storage files ko save rakhti hai.</p>
+                    </article>
+                    <article class="info-card">
+                        <h3>Hardware aur software</h3>
+                        <p>Keyboard, mouse, monitor aur CPU hardware hain; Windows, browser aur VS Code software hain.</p>
+                    </article>
+                    <article class="info-card">
+                        <h3>Windows aur files</h3>
+                        <p>Folder banana, file/folder rename, copy, paste, delete aur ZIP extract karna seekhein.</p>
+                    </article>
+                    <article class="info-card">
+                        <h3>Extensions aur keyboard</h3>
+                        <p><code>.html</code>, <code>.css</code>, <code>.js</code> aur <code>.png</code> file type batate
+                            hain. Ctrl+C, Ctrl+V, Ctrl+S aur Ctrl+Z jaise shortcuts practice karein.</p>
+                    </article>
+                </div>
+                <div class="callout warning"><strong>Windows tip:</strong> Explorer ke <em>View &gt; Show &gt; File name
+                    extensions</em> option se extension dikhaein. <code>index.html.txt</code> jaise galat double
+                    extension se bachna zaroori hai.</div>
+                <h4>Computer work karne ka visual flow</h4>
+                <div class="visual-flow" aria-label="Computer input processing output flow">
+                    <div class="flow-step"><span>1</span><strong>Input</strong><small>Keyboard, mouse, microphone</small></div>
+                    <div class="flow-arrow" aria-hidden="true">→</div>
+                    <div class="flow-step"><span>2</span><strong>Processing</strong><small>CPU instructions execute</small></div>
+                    <div class="flow-arrow" aria-hidden="true">→</div>
+                    <div class="flow-step"><span>3</span><strong>Memory</strong><small>RAM temporary work area</small></div>
+                    <div class="flow-arrow" aria-hidden="true">→</div>
+                    <div class="flow-step"><span>4</span><strong>Output</strong><small>Monitor, speaker, file</small></div>
+                </div>
+                <h4>File aur folder mini example</h4>
+                <div class="folder-demo" aria-label="Website folder structure example">
+                    <div class="folder-name">📁 html-course</div>
+                    <div class="folder-child"><span>📄 index.html</span><small>Page structure aur content</small></div>
+                    <div class="folder-child"><span>📄 style.css</span><small>Colors, fonts aur layout</small></div>
+                    <div class="folder-child"><span>📄 main.js</span><small>Interaction aur logic</small></div>
+                    <div class="folder-child"><span>📁 images</span><small>Photo, icon aur graphics</small></div>
+                </div>
+                <details class="learning-detail">
+                    <summary>Practice: Windows mein ye tasks try karein</summary>
+                    <ul>
+                        <li><code>html-course</code> naam ka folder Desktop par banayein.</li>
+                        <li>Folder mein <code>index.html</code>, <code>style.css</code> aur <code>main.js</code> files rename/create karein.</li>
+                        <li>File name extensions on karke ensure karein ki <code>index.html.txt</code> nahi hai.</li>
+                        <li>Folder ko select karke Ctrl+C/Ctrl+V se duplicate karein, phir unwanted copy delete karein.</li>
+                        <li>Ek folder ko ZIP karke dusre location par extract karein.</li>
+                    </ul>
+                </details>
+
+                <h3>2. Internet aur browser knowledge</h3>
+                <ul>
+                    <li><strong>Internet:</strong> computers aur devices ko connect karne wala global network.</li>
+                    <li><strong>Website:</strong> browser mein rendered content aur resources ka collection.</li>
+                    <li><strong>Browser:</strong> URL se website resources fetch aur HTML/CSS/JS parse/render karta hai.
+                        Chrome, Firefox aur Edge common browsers hain.</li>
+                    <li><strong>Search engine:</strong> search keywords se relevant web pages find karta hai; browser aur
+                        search engine alag hain.</li>
+                    <li><strong>URL:</strong> resource ka address, jaise
+                        <code>https://example.com/courses/index.html</code>.</li>
+                    <li><strong>Domain name:</strong> website ka readable address, jaise <code>example.com</code>;
+                        DNS isse server IP address se map karta hai.</li>
+                    <li><strong>HTTP/HTTPS:</strong> HTTP basic web transfer protocol hai. HTTPS same communication ko
+                        TLS encryption ke saath secure karta hai.</li>
+                </ul>
+                <h4>Internet kaam kaise karta hai?</h4>
+                <p>Internet ek centralized "website computer" nahi hai. Ye interconnected routers, cables, fiber,
+                    satellites aur internet service providers (ISPs) ka global network hai. Data ek saath poora send
+                    nahi hota; woh small <strong>packets</strong> mein split, separately route aur destination par
+                    assemble hota hai.</p>
+                <div class="internet-network" aria-label="Visual flow of how the internet loads a website">
+                    <div class="network-device">
+                        <span class="network-icon" aria-hidden="true">💻</span>
+                        <strong>Aapka device</strong>
+                        <small>Browser URL mangta hai</small>
+                    </div>
+                    <div class="network-connection">
+                        <span class="packet packet-out" aria-hidden="true"></span>
+                        <span>Wi-Fi / cable</span>
+                    </div>
+                    <div class="network-device">
+                        <span class="network-icon" aria-hidden="true">📡</span>
+                        <strong>Router + ISP</strong>
+                        <small>Local network ko internet se jodta hai</small>
+                    </div>
+                    <div class="network-connection">
+                        <span class="packet packet-out" aria-hidden="true"></span>
+                        <span>ISP network</span>
+                    </div>
+                    <div class="network-device dns-node">
+                        <span class="network-icon" aria-hidden="true">🗂️</span>
+                        <strong>DNS server</strong>
+                        <small>Domain ko IP address mein badalta hai</small>
+                    </div>
+                    <div class="network-connection network-split" aria-hidden="true">
+                        <span></span>
+                    </div>
+                    <div class="network-device">
+                        <span class="network-icon" aria-hidden="true">🌐</span>
+                        <strong>Internet routers</strong>
+                        <small>Packets ko fastest available route se bhejte hain</small>
+                    </div>
+                    <div class="network-connection">
+                        <span class="packet packet-out" aria-hidden="true"></span>
+                        <span>Fiber / submarine cable</span>
+                    </div>
+                    <div class="network-device server-node">
+                        <span class="network-icon" aria-hidden="true">🖥️</span>
+                        <strong>Website server</strong>
+                        <small>HTML, CSS, images aur JS response karta hai</small>
+                    </div>
+                    <div class="network-connection reverse">
+                        <span class="packet packet-back" aria-hidden="true"></span>
+                        <span>Response packets</span>
+                    </div>
+                    <div class="network-device browser-node">
+                        <span class="network-icon" aria-hidden="true">🌍</span>
+                        <strong>Browser</strong>
+                        <small>Packets assemble → DOM/website render</small>
+                    </div>
+                </div>
+                <details class="learning-detail">
+                    <summary>Example: <code>example.com</code> kholne par step-by-step kya hota hai?</summary>
+                    <ol>
+                        <li><strong>Browser check karta hai:</strong> cache aur existing connection mein page resource available hai ya nahi.</li>
+                        <li><strong>DNS lookup hota hai:</strong> <code>example.com</code> jaise domain ko IP address, jaise <code>93.184.216.34</code>, mein resolve kiya jaata hai.</li>
+                        <li><strong>TCP/transport connection:</strong> browser aur server reliable ordered communication setup karte hain.</li>
+                        <li><strong>TLS handshake (HTTPS):</strong> browser server ki identity aur encryption ke liye secure keys verify karta hai.</li>
+                        <li><strong>HTTP request bheja jaata hai:</strong> browser <code>GET /</code> ya specific URL resource mangta hai.</li>
+                        <li><strong>Server response deta hai:</strong> HTML 200 status aur CSS, JavaScript, font aur images ke URLs return kar sakta hai.</li>
+                        <li><strong>Browser resources load karta hai:</strong> HTML parse, CSS apply aur JavaScript execute hoti hai.</li>
+                        <li><strong>Page render hota hai:</strong> browser DOM/CSSOM se layout aur pixels banakar screen par dikhata hai.</li>
+                    </ol>
+                </details>
+                <div class="packet-demo" aria-label="Data packets travel example">
+                    <div class="packet-source"><strong>One website response</strong><small>HTML file</small></div>
+                    <div class="packet-pieces" aria-hidden="true">
+                        <span>Packet 1</span><span>Packet 2</span><span>Packet 3</span>
+                    </div>
+                    <div class="packet-route">
+                        <strong>Different routes</strong>
+                        <small>Packets independently travel; reassembled in original order</small>
+                    </div>
+                    <div class="packet-destination"><strong>Browser</strong><small>Complete HTML page</small></div>
+                </div>
+                <p><strong>Client/Server:</strong> browser client request bhejta hai aur server request process karke
+                    HTML, CSS, JS ya data response karta hai. Local HTML file browser directly bhi open kar sakta hai,
+                    lekin Live Server se development URL milta hai aur refresh/workflow aasaan hota hai.</p>
+                <h4>Website request ka visual flow</h4>
+                <p>Is example mein browser ko <code>https://example.com/courses/html</code> par page chahiye. Blue arrows
+                    request ko browser se server tak, green arrows response ko wapas aate hue dikhate hain.</p>
+                <div class="http-journey" role="group" aria-label="Browser request and server response visual">
+                    <div class="journey-heading">
+                        <span>Step</span>
+                        <span>Client — aapka browser</span>
+                        <span class="journey-network-heading">Internet / network</span>
+                        <span>DNS / website server</span>
+                    </div>
+                    <div class="journey-row">
+                        <span class="journey-number">1</span>
+                        <div class="journey-card client-card">
+                            <strong>User URL enter karta hai</strong>
+                            <code>https://example.com/courses/html</code>
+                            <small>Browser pehle cache aur saved connection check karta hai.</small>
+                        </div>
+                        <div class="journey-transfer">
+                            <span class="journey-arrow" aria-hidden="true">→</span>
+                            <small>Domain lookup</small>
+                        </div>
+                        <div class="journey-card dns-card">
+                            <strong>DNS: domain → IP</strong>
+                            <code>example.com → server IP</code>
+                            <small>DNS resolver browser ko server ka network address batata hai.</small>
+                        </div>
+                    </div>
+                    <div class="journey-row response-row">
+                        <span class="journey-number">2</span>
+                        <div class="journey-card client-card">
+                            <strong>Browser ko IP address milta hai</strong>
+                            <code>IP address received</code>
+                            <small>Ab browser ko pata hai request kis server tak pahunchani hai.</small>
+                        </div>
+                        <div class="journey-transfer return-transfer">
+                            <span class="journey-arrow" aria-hidden="true">←</span>
+                            <small>DNS reply</small>
+                        </div>
+                        <div class="journey-card dns-card">
+                            <strong>DNS address wapas deta hai</strong>
+                            <code>Domain → server IP</code>
+                            <small>Uske baad browser server se HTTPS connection banata hai; TLS identity verify aur traffic encrypt karta hai.</small>
+                        </div>
+                    </div>
+                    <div class="journey-row">
+                        <span class="journey-number">3</span>
+                        <div class="journey-card client-card">
+                            <strong>HTTP request bheji jaati hai</strong>
+                            <code>GET /courses/html</code>
+                            <small>Request mein method, path, headers aur zarurat par body hoti hai.</small>
+                        </div>
+                        <div class="journey-transfer">
+                            <span class="journey-arrow" aria-hidden="true">→</span>
+                            <small>Encrypted request</small>
+                        </div>
+                        <div class="journey-card server-card">
+                            <strong>Website server request receive karta hai</strong>
+                            <small>Server route dhoondhta, zarurat par app/database se kaam karta, aur response taiyar karta hai.</small>
+                        </div>
+                    </div>
+                    <div class="journey-row response-row">
+                        <span class="journey-number">4</span>
+                        <div class="journey-card client-card">
+                            <strong>Browser response receive karta hai</strong>
+                            <small>Packets assemble hote hain; response mein HTML aur baaki resources ke links aa sakte hain.</small>
+                        </div>
+                        <div class="journey-transfer return-transfer">
+                            <span class="journey-arrow" aria-hidden="true">←</span>
+                            <small>Response packets</small>
+                        </div>
+                        <div class="journey-card server-card">
+                            <strong>HTTP response bheja jaata hai</strong>
+                            <code>200 OK · Content-Type: text/html</code>
+                            <small>Response mein status, headers aur page ka content hota hai.</small>
+                        </div>
+                    </div>
+                    <div class="journey-row">
+                        <span class="journey-number">5</span>
+                        <div class="journey-card client-card">
+                            <strong>Browser resources maangta hai</strong>
+                            <code>style.css · main.js · images</code>
+                            <small>HTML parse karke browser ko jo files milti hain, unke liye additional requests hoti hain.</small>
+                        </div>
+                        <div class="journey-transfer">
+                            <span class="journey-arrow" aria-hidden="true">⇄</span>
+                            <small>More requests + replies</small>
+                        </div>
+                        <div class="journey-card server-card">
+                            <strong>Server har resource return karta hai</strong>
+                            <small>CSS, JavaScript, images aur fonts alag responses ke roop mein aa sakte hain.</small>
+                        </div>
+                    </div>
+                    <div class="journey-render">
+                        <span class="journey-render-icon" aria-hidden="true">🖥️</span>
+                        <div>
+                            <strong>Browser page ko aapki screen par dikhata hai</strong>
+                            <small>HTML → DOM, CSS → styles/layout, JavaScript → interactions; phir browser pixels paint karta hai.</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="journey-legend" aria-label="Diagram legend">
+                    <span><i class="legend-swatch request-swatch"></i>Request: browser se bahar</span>
+                    <span><i class="legend-swatch response-swatch"></i>Response: browser ki taraf wapas</span>
+                </div>
+                <div class="callout"><strong>Yaad rakhein:</strong> Website kholna ek request-response nahi, aksar multiple
+                    rounds hote hain—pehle HTML, phir usmein referenced CSS, JavaScript, images aur fonts ke requests.</div>
+                <div class="mini-demo">
+                    <strong>URL parts ko explore karein:</strong>
+                    <div class="url-parts" aria-label="Parts of a URL">
+                        <span class="url-protocol" title="Protocol">https://</span><span class="url-domain"
+                            title="Domain name">example.com</span><span class="url-path"
+                            title="Server path">/courses/html/index.html</span>
+                    </div>
+                    <div class="demo-labels">
+                        <span><b>Protocol</b>: secure communication</span>
+                        <span><b>Domain</b>: website ka address</span>
+                        <span><b>Path</b>: server par file/location</span>
+                    </div>
+                </div>
+                <table>
+                    <thead>
+                        <tr><th>Question</th><th>Example answer</th><th>Browser ya search engine?</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Ye website kholi kaise?</td><td><code>https://example.com</code> address bar mein enter karein.</td><td>Browser</td></tr>
+                        <tr><td>HTML course kahan milega?</td><td>“HTML course in Hindi” search keywords enter karein.</td><td>Search engine</td></tr>
+                        <tr><td>Website ka exact page kya hai?</td><td>URL ka path <code>/courses/html</code> page location batata hai.</td><td>Browser/server</td></tr>
+                        <tr><td>HTTP aur HTTPS mein kya secure?</td><td>HTTPS TLS encryption ke saath connection secure karta hai.</td><td>Network protocol</td></tr>
+                    </tbody>
+                </table>
+
+                <h3>3. Basic coding concepts</h3>
+                <p>Programming compulsory precondition nahi hai, lekin ye words familiar hona useful hai:</p>
+                <ul>
+                    <li><strong>Programming/Coding:</strong> computer ko step-by-step instructions dena.</li>
+                    <li><strong>Syntax:</strong> language ka likhne ka exact rule.</li>
+                    <li><strong>Code editor:</strong> source code likhne ke liye specialized text editor, jaise VS Code.</li>
+                    <li><strong>Compiler:</strong> source code ko doosre format/executable mein translate karta hai;
+                        HTML browser ke saath generally compiler ki tarah seedha chalta nahi hai.</li>
+                    <li><strong>Interpreter:</strong> code ko run karte waqt instructions process karta hai; browser
+                        JavaScript ko engine ke through execute karta hai.</li>
+                    <li><strong>Debugging:</strong> expected aur actual behavior ka difference identify/fix karna.</li>
+                    <li><strong>Error:</strong> invalid syntax, wrong path, unsupported command ya runtime problem.</li>
+                    <li><strong>Comment:</strong> code ke notes; <code>&lt;!-- HTML comment --&gt;</code>, CSS
+                        <code>/* ... */</code> aur JS <code>// ...</code>.</li>
+                    <li><strong>Logic:</strong> input, condition aur action ke beech clear reasoning.</li>
+                    <li><strong>Case sensitivity:</strong> HTML tags aam taur par case-insensitive hote hain, lekin
+                        filenames, URLs aur JavaScript identifiers case-sensitive ho sakte hain. Consistent lowercase
+                        aur exact names use karein.</li>
+                </ul>
+                <h4>Coding terms ko example ke saath dekhein</h4>
+                <div class="concept-grid">
+                    <article><span class="concept-icon">⌨</span><h5>Syntax</h5><p><code>&lt;p&gt;Text&lt;/p&gt;</code> ek valid opening, content aur closing pattern hai.</p></article>
+                    <article><span class="concept-icon">📝</span><h5>Comment</h5><p><code>&lt;!-- section start --&gt;</code> browser par visible nahi hota.</p></article>
+                    <article><span class="concept-icon">⚠</span><h5>Error</h5><p><code>&lt;p&gt;Text</code> closing tag missing hai; browser repair bhi kar sakta hai.</p></article>
+                    <article><span class="concept-icon">🔍</span><h5>Debugging</h5><p>Wrong output dekho → DevTools open karo → element/path/error trace karo.</p></article>
+                    <article><span class="concept-icon">🧠</span><h5>Logic</h5><p>“Agar checkbox checked hai, to success message dikhao.”</p></article>
+                    <article><span class="concept-icon">Aa</span><h5>Case sensitivity</h5><p><code>Photo.jpg</code> aur <code>photo.jpg</code> alag filenames ho sakti hain.</p></article>
+                </div>
+                <div class="visual-flow debug-flow" aria-label="Debugging flow">
+                    <div class="flow-step"><span>1</span><strong>Observe</strong><small>Expected vs actual</small></div>
+                    <div class="flow-arrow" aria-hidden="true">→</div>
+                    <div class="flow-step"><span>2</span><strong>Find</strong><small>Console/DevTools</small></div>
+                    <div class="flow-arrow" aria-hidden="true">→</div>
+                    <div class="flow-step"><span>3</span><strong>Fix</strong><small>Small, focused change</small></div>
+                    <div class="flow-arrow" aria-hidden="true">→</div>
+                    <div class="flow-step"><span>4</span><strong>Verify</strong><small>Reload aur retest</small></div>
+                </div>
+
+                <h3>4. Required software aur tools</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Tool</th>
+                            <th>Purpose</th>
+                            <th>Setup</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Visual Studio Code</strong></td>
+                            <td>HTML, CSS aur JavaScript code likhne aur manage karne ka editor.</td>
+                            <td><a href="https://code.visualstudio.com/" target="_blank"
+                                    rel="noopener noreferrer">VS Code download karein</a></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Google Chrome</strong></td>
+                            <td>Page run, inspect aur responsive behavior test karne ke liye browser.</td>
+                            <td><a href="https://www.google.com/chrome/" target="_blank"
+                                    rel="noopener noreferrer">Chrome download karein</a></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Live Server extension</strong></td>
+                            <td>Local development server aur save par browser reload ke liye VS Code extension.</td>
+                            <td><a href="https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer"
+                                    target="_blank" rel="noopener noreferrer">Live Server install karein</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p>VS Code project folder ko <strong>Open Folder</strong> se kholein, HTML file banayein aur Live Server
+                    ka <strong>Open with Live Server</strong> option use karein. Live Server ke bina bhi Chrome mein
+                    HTML file open ho sakti hai.</p>
+                <h4>Development setup ka visual flow</h4>
+                <div class="visual-flow setup-flow" aria-label="Development setup flow">
+                    <div class="flow-step"><span>1</span><strong>Folder</strong><small>html-course folder</small></div>
+                    <div class="flow-arrow" aria-hidden="true">→</div>
+                    <div class="flow-step"><span>2</span><strong>VS Code</strong><small>Folder open karo</small></div>
+                    <div class="flow-arrow" aria-hidden="true">→</div>
+                    <div class="flow-step"><span>3</span><strong>Code</strong><small>index.html likho</small></div>
+                    <div class="flow-arrow" aria-hidden="true">→</div>
+                    <div class="flow-step"><span>4</span><strong>Live Server</strong><small>Save + reload</small></div>
+                    <div class="flow-arrow" aria-hidden="true">→</div>
+                    <div class="flow-step"><span>5</span><strong>Chrome</strong><small>Inspect + test</small></div>
+                </div>
+                <div class="code-example">
+                    <pre><code>&lt;!-- Desktop/html-course/index.html --&gt;
+&lt;!doctype html&gt;
+&lt;html lang="hi"&gt;
+&lt;head&gt;
+  &lt;meta charset="utf-8"&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+  &lt;title&gt;My First Page&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;Namaste, HTML!&lt;/h1&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                </div>
+
+                <h3>5. Basic technical terms</h3>
+                <table>
+                    <thead>
+                        <tr><th>Term</th><th>Meaning</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><strong>Frontend</strong></td><td>Browser mein visible UI aur interaction.</td></tr>
+                        <tr><td><strong>Backend</strong></td><td>Server-side logic, authentication aur data processing.</td></tr>
+                        <tr><td><strong>Database</strong></td><td>Structured ya semi-structured data ko store/manage karna.</td></tr>
+                        <tr><td><strong>UI</strong></td><td>User Interface—controls, layout aur visual components.</td></tr>
+                        <tr><td><strong>UX</strong></td><td>User Experience—page ko use karte waqt overall ease/value.</td></tr>
+                        <tr><td><strong>Responsive</strong></td><td>Mobile, tablet aur desktop sizes par usable layout.</td></tr>
+                        <tr><td><strong>DOM</strong></td><td>Browser ka parsed HTML document ka object/tree model.</td></tr>
+                        <tr><td><strong>Tag</strong></td><td><code>&lt;p&gt;</code>, <code>&lt;a&gt;</code> jaise markup syntax.</td></tr>
+                        <tr><td><strong>Attribute</strong></td><td>Element ki extra information, jaise <code>href</code> ya <code>alt</code>.</td></tr>
+                    </tbody>
+                </table>
+                <h4>Frontend se database tak ek visual example</h4>
+                <div class="stack-flow" aria-label="Frontend backend database flow">
+                    <div><strong>Frontend / UI</strong><small>Form aur button browser mein</small></div>
+                    <span aria-hidden="true">↓</span>
+                    <div><strong>Backend</strong><small>Request validate/process karta hai</small></div>
+                    <span aria-hidden="true">↓</span>
+                    <div><strong>Database</strong><small>User/course data save karta hai</small></div>
+                    <span aria-hidden="true">↑</span>
+                    <div><strong>Response</strong><small>Backend data browser ko bhejta hai</small></div>
+                </div>
+
+                <h3>6. HTML seekhne se pehle self-assessment</h3>
+                <p>Ye checklist progress local browser storage mein save hoti hai; complete karne ke baad HTML course
+                    shuru karein.</p>
+                <div id="prep-checklist" class="prep-checklist" aria-label="HTML preparation checklist">
+                    <label><input type="checkbox" name="prep" value="files-folders">
+                        Computer par files aur folders create kar sakta hoon.</label>
+                    <label><input type="checkbox" name="prep" value="extensions">
+                        File extensions aur file name extensions samajhta hoon.</label>
+                    <label><input type="checkbox" name="prep" value="browser-url">
+                        Browser aur URL ki basic understanding hai.</label>
+                    <label><input type="checkbox" name="prep" value="vscode">
+                        Visual Studio Code install kar liya hai.</label>
+                    <label><input type="checkbox" name="prep" value="chrome">
+                        Google Chrome install aur open kar sakta hoon.</label>
+                    <label><input type="checkbox" name="prep" value="create-file">
+                        Code editor mein HTML file create/save kar sakta hoon.</label>
+                    <label><input type="checkbox" name="prep" value="html-css-js">
+                        HTML, CSS aur JavaScript ka basic difference samajhta hoon.</label>
+                </div>
+                <p id="prep-progress" class="prep-progress" role="status" aria-live="polite">0/7 Completed</p>
+
+                <h3>7. HTML seekhne ka correct sequence</h3>
+                <div class="learning-roadmap" aria-label="HTML learning roadmap">
+                    <div class="roadmap-step complete"><span>1</span><strong>Computer</strong><small>Files, folders, OS</small></div>
+                    <div class="roadmap-step complete"><span>2</span><strong>Internet</strong><small>Browser, URL, server</small></div>
+                    <div class="roadmap-step"><span>3</span><strong>Coding basics</strong><small>Syntax, logic, debugging</small></div>
+                    <div class="roadmap-step"><span>4</span><strong>Tools</strong><small>VS Code, Chrome, Live Server</small></div>
+                    <div class="roadmap-step"><span>5</span><strong>HTML basics</strong><small>Introduction aur structure</small></div>
+                    <div class="roadmap-step"><span>6</span><strong>Document</strong><small>Head, body, metadata</small></div>
+                    <div class="roadmap-step"><span>7</span><strong>Tags</strong><small>Elements aur nesting</small></div>
+                    <div class="roadmap-step"><span>8</span><strong>Attributes</strong><small>Id, class, src, href</small></div>
+                    <div class="roadmap-step final"><span>9</span><strong>Practice</strong><small>Projects aur revision</small></div>
+                </div>
+                <div class="callout success"><strong>Ready ho?</strong> Checklist complete ho aur VS Code/Chrome open ho
+                    to next: <a href="#web-basics">Web aur HTML basics</a>.</div>
+            </section>
+
             <section id="web-basics" class="course-section">
                 <h2>1. Web aur HTML basics</h2>
                 <h3>HTML kya hai?</h3>
                 <p>HTML ka full form <strong>HyperText Markup Language</strong> hai. Ye markup language web page ke
                     content ko structure aur meaning deti hai—jaise heading, paragraph, link, image aur form. HTML
                     programming language nahi hai: ismein general-purpose loops ya conditions nahi hote.</p>
+                <h3>HTML ka brief history aur versions</h3>
+                <ul>
+                    <li><strong>1989-1991:</strong> Tim Berners-Lee ne World Wide Web aur HTML ke early ideas develop
+                        kiye.</li>
+                    <li><strong>HTML 2.0 (1995):</strong> HTML ke common features ko standardize karne wala early
+                        specification.</li>
+                    <li><strong>HTML 3.2 (1997):</strong> Tables, applets aur presentation-oriented features ko popular
+                        made.</li>
+                    <li><strong>HTML 4.01 (1999):</strong> Stronger structure aur separation of presentation/structure;
+                        strict/transitional frameset variants bhi aaye.</li>
+                    <li><strong>XHTML 1.0 (2000):</strong> HTML ko XML-like strict syntax mein express kiya; strict
+                        parsing aur lowercase tags common the.</li>
+                    <li><strong>HTML5 (2014):</strong> Semantic elements, audio/video, canvas, form controls aur APIs ka
+                        major modern milestone.</li>
+                    <li><strong>Modern HTML:</strong> WHATWG HTML Living Standard continuous update hota hai; browsers
+                        new features ko support status ke according implement karte hain.</li>
+                </ul>
                 <div class="card-grid">
                     <article class="info-card">
                         <h3>HTML</h3>
@@ -128,13 +603,15 @@
                 <h3>Apna pehla HTML file</h3>
                 <p>VS Code ya kisi text editor mein <code>index.html</code> naam ki file banayein. File extension
                     <code>.html</code> honi chahiye. Browser mein file kholkar result dekhein; code badalne ke baad page
-                    refresh karein.</p>
+                    refresh karein.
+                </p>
             </section>
 
             <section id="document" class="course-section">
                 <h2>2. HTML document ka basic structure</h2>
                 <p>Har normal HTML page mein document declaration, root <code>html</code>, metadata wala
-                    <code>head</code> aur visible content wala <code>body</code> hota hai.</p>
+                    <code>head</code> aur visible content wala <code>body</code> hota hai.
+                </p>
                 <div class="code-example">
                     <pre><code>&lt;!doctype html&gt;
 &lt;html lang="en"&gt;
@@ -152,7 +629,8 @@
                 <ul>
                     <li><code>&lt;!doctype html&gt;</code> browser ko modern HTML mode use karne ko kehta hai.</li>
                     <li><code>&lt;html lang="en"&gt;</code> root element hai. Page Hinglish/Hindi mein ho to
-                        <code>lang="hi"</code> ya content ke mutabik sahi language set karein.</li>
+                        <code>lang="hi"</code> ya content ke mutabik sahi language set karein.
+                    </li>
                     <li><code>&lt;head&gt;</code> mein title, metadata aur stylesheets jaise page-related information
                         aati hai.</li>
                     <li><code>&lt;body&gt;</code> mein page ka visible content hota hai.</li>
@@ -184,7 +662,8 @@
 &lt;/head&gt;</code></pre>
                 </div>
                 <p>JavaScript file load karne ke liye <code>script</code> use hota hai. External classic script ke liye
-                    <code>defer</code> aksar achha default hai; module scripts ka execution behavior alag hota hai.</p>
+                    <code>defer</code> aksar achha default hai; module scripts ka execution behavior alag hota hai.
+                </p>
                 <div class="code-example">
                     <pre><code>&lt;script src="main.js" defer&gt;&lt;/script&gt;
 &lt;script type="module" src="app.js"&gt;&lt;/script&gt;</code></pre>
@@ -218,7 +697,8 @@
                 </div>
                 <div class="callout warning"><strong>Galat nesting:</strong>
                     <code>&lt;p&gt;&lt;strong&gt;Text&lt;/p&gt;&lt;/strong&gt;</code>. Ismein tags ka closing order ulta
-                    hai.</div>
+                    hai.
+                </div>
                 <h3>Void elements</h3>
                 <p>Kuch elements ke andar child content nahi hota, isliye unka closing tag nahi hota. Inhe void elements
                     kehte hain.</p>
@@ -270,7 +750,8 @@
                             <th scope="row">Sections</th>
                             <td><code>address</code>, <code>article</code>, <code>aside</code>, <code>footer</code>,
                                 <code>header</code>, <code>h1</code>–<code>h6</code>, <code>hgroup</code>,
-                                <code>main</code>, <code>nav</code>, <code>section</code>, <code>search</code></td>
+                                <code>main</code>, <code>nav</code>, <code>section</code>, <code>search</code>
+                            </td>
                             <td>Page landmarks, headings, article/section groups aur search-related region.</td>
                         </tr>
                         <tr>
@@ -278,7 +759,8 @@
                             <td><code>blockquote</code>, <code>dd</code>, <code>div</code>, <code>dl</code>,
                                 <code>dt</code>, <code>figcaption</code>, <code>figure</code>, <code>hr</code>,
                                 <code>li</code>, <code>menu</code>, <code>ol</code>, <code>p</code>, <code>pre</code>,
-                                <code>ul</code></td>
+                                <code>ul</code>
+                            </td>
                             <td>Paragraphs, lists, quotations, figures aur grouped content.</td>
                         </tr>
                         <tr>
@@ -289,7 +771,8 @@
                                 <code>q</code>, <code>rp</code>, <code>rt</code>, <code>ruby</code>, <code>s</code>,
                                 <code>samp</code>, <code>small</code>, <code>span</code>, <code>strong</code>,
                                 <code>sub</code>, <code>sup</code>, <code>time</code>, <code>u</code>, <code>var</code>,
-                                <code>wbr</code></td>
+                                <code>wbr</code>
+                            </td>
                             <td>Links, emphasis, definitions, annotations, dates, code-related text aur bidirectional
                                 text.</td>
                         </tr>
@@ -301,7 +784,8 @@
                         <tr>
                             <th scope="row">Images/media</th>
                             <td><code>area</code>, <code>audio</code>, <code>img</code>, <code>map</code>,
-                                <code>picture</code>, <code>source</code>, <code>track</code>, <code>video</code></td>
+                                <code>picture</code>, <code>source</code>, <code>track</code>, <code>video</code>
+                            </td>
                             <td>Images, responsive image sources, image maps, audio/video aur captions.</td>
                         </tr>
                         <tr>
@@ -318,7 +802,8 @@
                             <th scope="row">Tables</th>
                             <td><code>caption</code>, <code>col</code>, <code>colgroup</code>, <code>table</code>,
                                 <code>tbody</code>, <code>td</code>, <code>tfoot</code>, <code>th</code>,
-                                <code>thead</code>, <code>tr</code></td>
+                                <code>thead</code>, <code>tr</code>
+                            </td>
                             <td>Tabular data, rows, cells, headers aur column groups.</td>
                         </tr>
                         <tr>
@@ -327,9 +812,11 @@
                                 <code>input</code>, <code>label</code>, <code>legend</code>, <code>meter</code>,
                                 <code>optgroup</code>, <code>option</code>, <code>output</code>, <code>progress</code>,
                                 <code>select</code>, <code>textarea</code>; newer customizable selects mein
-                                <code>selectedcontent</code></td>
+                                <code>selectedcontent</code>
+                            </td>
                             <td>User input, choices, grouping, progress aur calculated output.
-                                <code>selectedcontent</code> support browser ke hisaab se check karein.</td>
+                                <code>selectedcontent</code> support browser ke hisaab se check karein.
+                            </td>
                         </tr>
                         <tr>
                             <th scope="row">Interactive</th>
@@ -346,7 +833,8 @@
                 <div class="callout warning"><strong>Tag vs element:</strong> Upar tag names dikhaye gaye hain. SVG ka
                     <code>svg</code> aur MathML ka <code>math</code> markup HTML document mein embed ho sakta hai, lekin
                     woh HTML namespace ke built-in elements nahi hain. Custom elements jaise
-                    <code>&lt;user-card&gt;</code> Web Components se define hote hain.</div>
+                    <code>&lt;user-card&gt;</code> Web Components se define hote hain.
+                </div>
                 <div class="code-example">
                     <pre><code>&lt;svg viewBox="0 0 100 40" role="img" aria-labelledby="shape-title"&gt;
   &lt;title id="shape-title"&gt;Blue circle&lt;/title&gt;
@@ -363,7 +851,8 @@
                     <code>frameset</code>, <code>keygen</code>, <code>listing</code>, <code>menuitem</code>,
                     <code>noframes</code>, <code>param</code>, <code>plaintext</code>, <code>strike</code>,
                     <code>tt</code>, <code>xmp</code>, <code>marquee</code> jaise purane/obsolete tags modern pages mein
-                    use na karein. Meaning ke liye modern semantic tags aur appearance ke liye CSS chunein.</p>
+                    use na karein. Meaning ke liye modern semantic tags aur appearance ke liye CSS chunein.
+                </p>
             </section>
 
             <section id="text" class="course-section">
@@ -372,7 +861,8 @@
                 <p><code>h1</code> se <code>h6</code> tak headings document ki outline batati hain. Aam taur par
                     page/topic ka main heading <code>h1</code> hota hai; subsections ke liye logical order mein
                     <code>h2</code>, phir <code>h3</code> use karein. Sirf font size paane ke liye heading level na
-                    chunein—visual styling CSS se karein.</p>
+                    chunein—visual styling CSS se karein.
+                </p>
                 <div class="code-example">
                     <pre><code>&lt;h1&gt;Travel Guide&lt;/h1&gt;
   &lt;h2&gt;India&lt;/h2&gt;
@@ -439,14 +929,16 @@
 &lt;blockquote&gt;Practice se concepts clear hote hain.&lt;/blockquote&gt;</code></pre>
                 </div>
                 <p><code>b</code> aur <code>i</code> visual bold/italic hain; meaning batana ho to context ke mutabik
-                    <code>strong</code> aur <code>em</code> zyada upyogi hain.</p>
+                    <code>strong</code> aur <code>em</code> zyada upyogi hain.
+                </p>
                 <h3>Extra text semantics</h3>
                 <p><code>abbr</code> abbreviation, <code>cite</code> creative work ka title, <code>dfn</code> define
                     kiya ja raha term, <code>address</code> contact information, <code>kbd</code> user input,
                     <code>samp</code> program output, <code>var</code> variable, <code>time</code> machine-readable
                     date/time aur <code>data</code> machine-readable value deta hai. <code>bdi</code>/<code>bdo</code>
                     bidirectional text; <code>ruby</code>/<code>rt</code>/<code>rp</code> pronunciation annotations ke
-                    liye hain. <code>wbr</code> optional line-break opportunity batata hai.</p>
+                    liye hain. <code>wbr</code> optional line-break opportunity batata hai.
+                </p>
                 <div class="code-example">
                     <pre><code>&lt;p&gt;&lt;abbr title="HyperText Markup Language"&gt;HTML&lt;/abbr&gt; seekhein.&lt;/p&gt;
 &lt;p&gt;Book: &lt;cite&gt;The Web&lt;/cite&gt;; term: &lt;dfn&gt;markup&lt;/dfn&gt;.&lt;/p&gt;
@@ -481,11 +973,32 @@
 &lt;!-- Email link --&gt;
 &lt;a href="mailto:hello@example.com"&gt;Email bhejein&lt;/a&gt;
 
+&lt;!-- Telephone link --&gt;
+&lt;a href="tel:+919876543210"&gt;Call karein&lt;/a&gt;
+
+&lt;!-- File download; exact behaviour browser/server par depend karta hai --&gt;
+&lt;a href="brochure.pdf" download="company-brochure.pdf"&gt;Brochure download&lt;/a&gt;
+
 &lt;!-- New tab: external untrusted link ke liye rel bhi lagayein --&gt;
 &lt;a href="https://example.com" target="_blank" rel="noopener noreferrer"&gt;Nayi tab&lt;/a&gt;</code></pre>
                 </div>
                 <p>Same website ke links par aksar same tab behtar hota hai. Link text destination ko clear bataye;
                     “yahan click karein” jaise vague text se bachein.</p>
+                <h3>Bookmark links aur page navigation</h3>
+                <p>Bookmark/fragment link ke liye destination element par unique <code>id</code> dein aur anchor ka
+                    <code>href</code> <code>#id</code> rakhein. <code>nav</code> sirf page ke important link groups ke
+                    liye use karein.
+                </p>
+                <div class="code-example">
+                    <pre><code>&lt;nav aria-label="On this page"&gt;
+  &lt;a href="#section-one"&gt;Section one&lt;/a&gt;
+  &lt;a href="#section-two"&gt;Section two&lt;/a&gt;
+&lt;/nav&gt;
+
+&lt;h2 id="section-one"&gt;Section one&lt;/h2&gt;
+&lt;p&gt;Bookmark destination content.&lt;/p&gt;
+&lt;h2 id="section-two"&gt;Section two&lt;/h2&gt;</code></pre>
+                </div>
                 <h3>Relative aur absolute paths</h3>
                 <ul>
                     <li><code>images/photo.jpg</code> current folder se relative path.</li>
@@ -510,9 +1023,16 @@
                 </div>
                 <p>Apne project mein image file ka path aur spelling check karein. Width/height dene se browser layout
                     space pehle reserve kar sakta hai.</p>
+                <p><code>loading="lazy"</code> off-screen images ko deferred load kar sakta hai aur
+                    <code>decoding="async"</code> browser ko image decode optimize karne mein madad karta hai.
+                    Above-the-fold/LCP image ko lazy load na karein. Formats: JPEG photos, PNG transparency, GIF
+                    animation, WebP modern compression, aur SVG logos/icons ke liye useful hain. Original dimensions,
+                    appropriate compression aur responsive sizes image optimization ke basic steps hain.
+                </p>
                 <h3>Responsive images: picture, source aur srcset</h3>
                 <p>Alag screen/density ke liye browser ko image choices deni ho to
-                    <code>srcset</code>/<code>sizes</code> ya art direction ke liye <code>picture</code> use karein.</p>
+                    <code>srcset</code>/<code>sizes</code> ya art direction ke liye <code>picture</code> use karein.
+                </p>
                 <div class="code-example">
                     <pre><code>&lt;picture&gt;
   &lt;source media="(max-width: 600px)" srcset="images/portrait-small.jpg"&gt;
@@ -562,7 +1082,8 @@
                 </div>
                 <h3>Description list</h3>
                 <p>Term/label aur uski definition ya value ke pairs ke liye <code>dl</code>, <code>dt</code> aur
-                    <code>dd</code> ka use hota hai.</p>
+                    <code>dd</code> ka use hota hai.
+                </p>
                 <div class="code-example">
                     <pre><code>&lt;dl&gt;
   &lt;dt&gt;HTML&lt;/dt&gt;
@@ -572,6 +1093,22 @@
 &lt;/dl&gt;</code></pre>
                 </div>
                 <p>Ek list item ke andar nested list ho sakti hai. Har item ko sahi parent list ke andar rakhein.</p>
+                <div class="code-example">
+                    <pre><code>&lt;ol start="3" reversed&gt;
+  &lt;li&gt;Third item (3)&lt;/li&gt;
+  &lt;li&gt;Second item (2)&lt;/li&gt;
+  &lt;li&gt;First item (1)&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Frontend
+    &lt;ol&gt;
+      &lt;li&gt;HTML&lt;/li&gt;
+      &lt;li&gt;CSS&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+                </div>
                 <p><code>menu</code> command/action items ki list ke liye element hai aur aksar <code>ul</code> jaisa
                     render hota hai. Site navigation ke links ke liye <code>nav</code> ke andar normal list/anchors use
                     karna clear pattern hai.</p>
@@ -612,6 +1149,10 @@
                 </ul>
                 <p><code>colgroup</code> aur <code>col</code> columns ko group karne/metadata dene ke liye hain, data
                     cells ki jagah nahi lete.</p>
+                <p>Nested tables possible hain, lekin unki complexity accessibility aur responsive behavior badha deti
+                    hai. Prefer karein ki ek simple flat table rahe; narrow screens ke liye table ko
+                    <code>overflow-x: auto</code> ya card layout responsive CSS se provide karein.
+                </p>
                 <div class="code-example">
                     <pre><code>&lt;table&gt;
   &lt;caption&gt;Quarterly results&lt;/caption&gt;
@@ -703,7 +1244,8 @@
                         </tr>
                         <tr>
                             <td><code>date</code>, <code>month</code>, <code>week</code>, <code>time</code>,
-                                <code>datetime-local</code></td>
+                                <code>datetime-local</code>
+                            </td>
                             <td>Date/time controls</td>
                             <td>Supported range ke liye <code>min</code>/<code>max</code></td>
                         </tr>
@@ -733,7 +1275,8 @@
                     <code>maxlength</code>, <code>pattern</code>, <code>autocomplete</code>, <code>readonly</code>,
                     <code>disabled</code>, <code>placeholder</code>. Numeric/date controls mein <code>min</code>,
                     <code>max</code>, <code>step</code> kaam aate hain. Har type har browser mein bilkul same UI nahi
-                    dikhata.</p>
+                    dikhata.
+                </p>
                 <h3>Select, textarea, radio aur checkbox</h3>
                 <div class="code-example">
                     <pre><code>&lt;fieldset&gt;
@@ -745,8 +1288,10 @@
 &lt;label for="city"&gt;City&lt;/label&gt;
 &lt;select id="city" name="city"&gt;
   &lt;option value=""&gt;City chunein&lt;/option&gt;
-  &lt;option value="delhi"&gt;Delhi&lt;/option&gt;
-  &lt;option value="jaipur"&gt;Jaipur&lt;/option&gt;
+  &lt;optgroup label="North India"&gt;
+    &lt;option value="delhi"&gt;Delhi&lt;/option&gt;
+    &lt;option value="jaipur"&gt;Jaipur&lt;/option&gt;
+  &lt;/optgroup&gt;
 &lt;/select&gt;
 
 &lt;label for="message"&gt;Message&lt;/label&gt;
@@ -773,10 +1318,31 @@
                 </div>
                 <p>Button ke andar form mein <code>type</code> explicitly set karein: default submit behavior ho sakta
                     hai. <code>multiple</code> file ya select controls ko multiple values allow karta hai.</p>
+                <h3>Autofocus, readonly, disabled aur validation attributes</h3>
+                <div class="code-example">
+                    <pre><code>&lt;input type="text" name="username" minlength="3" maxlength="20"
+       pattern="[A-Za-z]+" autocomplete="username" required autofocus&gt;
+
+&lt;input type="text" name="account-id" value="WEB-1001" readonly&gt;
+&lt;input type="text" name="locked" value="Not editable" disabled&gt;
+
+&lt;input type="file" name="photos" accept="image/png,image/jpeg" multiple&gt;
+&lt;input type="number" name="quantity" min="1" max="10" step="1" value="1"&gt;</code></pre>
+                </div>
+                <ul>
+                    <li><code>readonly</code> submitted value ko still send karta hai; <code>disabled</code> us control
+                        ko
+                        form submission/interaction se alag karta hai.</li>
+                    <li><code>placeholder</code> temporary hint hai, label nahi; <code>autofocus</code> page load par
+                        focus move kar sakta hai isliye accessibility aur user flow dhyan se test karein.</li>
+                    <li><code>accept</code> file chooser ko guide karta hai, upload type ki server-side security check
+                        ki jagah nahi leta.</li>
+                </ul>
                 <h3>Customizable select ka newer pattern</h3>
                 <p><code>selectedcontent</code> customizable select ke andar currently selected option ka content
                     dikhane ke kaam aata hai. Ye newer feature hai; browser support verify karein aur basic
-                    <code>select</code>/<code>option</code> ko workable fallback rakhein.</p>
+                    <code>select</code>/<code>option</code> ko workable fallback rakhein.
+                </p>
                 <div class="code-example">
                     <pre><code>&lt;select name="course"&gt;
   &lt;button&gt;&lt;selectedcontent&gt;&lt;/selectedcontent&gt;&lt;/button&gt;
@@ -851,6 +1417,21 @@
 &lt;/hgroup&gt;</code></pre>
                 </div>
                 <p><code>div</code> generic container hai—jab koi semantic element suitable na ho tab use karein.</p>
+                <h3>Address aur time elements</h3>
+                <div class="code-example">
+                    <pre><code>&lt;address&gt;
+  HTML Seekho&lt;br&gt;
+  42 Learning Road, Jaipur&lt;br&gt;
+  &lt;a href="mailto:hello@example.com"&gt;hello@example.com&lt;/a&gt;
+&lt;/address&gt;
+
+&lt;p&gt;Next live class:
+  &lt;time datetime="2026-12-05T18:30:00+05:30"&gt;5 December, 6:30 PM IST&lt;/time&gt;
+&lt;/p&gt;</code></pre>
+                </div>
+                <p><code>address</code> nearest article/page ke owner ya contact information ko represent karta hai,
+                    har physical address ko generic address tag mein daalna zaroori nahi. <code>time datetime</code>
+                    machine-readable date/time deta hai.</p>
             </section>
 
             <section id="media" class="course-section">
@@ -870,9 +1451,15 @@
 &lt;video controls width="640" poster="images/preview.jpg"&gt;
   &lt;source src="video/lesson.mp4" type="video/mp4"&gt;
   &lt;track kind="captions" src="captions-en.vtt" srclang="en" label="English"&gt;
+  &lt;track kind="subtitles" src="subtitles-hi.vtt" srclang="hi" label="Hindi"&gt;
   Aapka browser video playback support nahi karta.
 &lt;/video&gt;</code></pre>
                 </div>
+                <p><code>autoplay</code>, <code>muted</code> aur <code>loop</code> playback behavior control karte hain.
+                    Modern browsers sound ke saath autoplay usually block karte hain; respectful UX ke liye controls aur
+                    user interaction default rakhein. <code>track kind="captions"</code> deaf/hard-of-hearing users ke
+                    liye dialogue/sounds provide karta hai, jabki <code>kind="subtitles"</code> translated dialogue
+                    provide karta hai.</p>
                 <h3>Iframe</h3>
                 <p><code>iframe</code> doosre page/document ko embed karta hai. Title zaroor dein. Unknown content ko
                     embed karte waqt <code>sandbox</code> permissions samajhkar hi set karein; sirf zarurat ke
@@ -882,11 +1469,17 @@
   src="https://example.com/embed"
   title="Example page preview"
   loading="lazy"
+  allow="fullscreen"
   sandbox
   width="600"
   height="400"&gt;
 &lt;/iframe&gt;</code></pre>
                 </div>
+                <p><code>allow</code> feature permissions specify karta hai aur <code>sandbox</code> embedded page ki
+                    capabilities restrict karta hai; <code>loading="lazy"</code> off-screen iframe ko defer kar sakta
+                    hai. YouTube aur Google Maps embed snippet mein provider ka required <code>allow</code> value aur
+                    privacy/cookie settings check karein. Cross-origin restrictions ke kaaran parent aur child page
+                    normally ek-doosre ke DOM ko freely access nahi kar sakte.</p>
                 <p><code>embed</code> aur <code>object</code> bhi external/embedded resources ke liye hain. Inka use
                     zaroorat par karein, fallback content dein, aur unknown files/plugins ko blindly trust na karein.
                 </p>
@@ -904,7 +1497,8 @@
                 <h3>Details aur summary</h3>
                 <p>Native expandable/collapsible disclosure ke liye <code>details</code> ke andar pehla
                     <code>summary</code> uska visible label hota hai. Open state ko <code>open</code> attribute se
-                    default khola ja sakta hai.</p>
+                    default khola ja sakta hai.
+                </p>
                 <div class="code-example">
                     <pre><code>&lt;details&gt;
   &lt;summary&gt;HTML ka full form kya hai?&lt;/summary&gt;
@@ -924,7 +1518,8 @@
                 <h3>Datalist, output, progress aur meter</h3>
                 <p><code>datalist</code> input suggestions deta hai, fixed selection list nahi. <code>progress</code>
                     task completion aur <code>meter</code> known range ke andar measurement dikhata hai.
-                    <code>output</code> calculation ka result batata hai.</p>
+                    <code>output</code> calculation ka result batata hai.
+                </p>
                 <div class="code-example">
                     <pre><code>&lt;label for="browser"&gt;Browser chunein ya type karein&lt;/label&gt;
 &lt;input id="browser" name="browser" list="browsers"&gt;
@@ -966,6 +1561,104 @@
                 </div>
                 <p><code>slot</code> custom elements/Web Components ke shadow DOM mein content placeholder hai; ise
                     normal page par custom element ke bahar likhne se slot behavior activate nahi hota.</p>
+            </section>
+
+            <section id="graphics-svg" class="course-section">
+                <h2>Graphics: SVG aur Canvas</h2>
+                <h3>SVG kya hai?</h3>
+                <p>SVG (Scalable Vector Graphics) XML-based 2D vector graphics format hai. Ye zoom par crisp rehta
+                    hai aur icons, diagrams, charts aur simple illustrations ke liye useful hai.</p>
+                <div class="code-example">
+                    <pre><code>&lt;svg viewBox="0 0 240 140" role="img" aria-labelledby="svg-title svg-desc"&gt;
+  &lt;title id="svg-title"&gt;Simple geometry scene&lt;/title&gt;
+  &lt;desc id="svg-desc"&gt;A blue circle, rectangle, ellipse and line.&lt;/desc&gt;
+  &lt;circle cx="45" cy="45" r="28" fill="#2563eb"&gt;&lt;/circle&gt;
+  &lt;rect x="90" y="18" width="70" height="55" rx="8" fill="#22c55e"&gt;&lt;/rect&gt;
+  &lt;ellipse cx="205" cy="45" rx="24" ry="35" fill="#f59e0b"&gt;&lt;/ellipse&gt;
+  &lt;line x1="20" y1="110" x2="220" y2="110" stroke="#334155" stroke-width="4"&gt;&lt;/line&gt;
+  &lt;polygon points="45,120 75,90 105,120" fill="#ec4899"&gt;&lt;/polygon&gt;
+  &lt;polyline points="120,120 150,95 180,125 210,90"
+            fill="none" stroke="#8b5cf6" stroke-width="5"&gt;&lt;/polyline&gt;
+  &lt;path d="M10 135 Q120 70 230 135" fill="none" stroke="#ef4444" stroke-width="4"&gt;&lt;/path&gt;
+&lt;/svg&gt;</code></pre>
+                </div>
+                <p>SVG elements ke common attributes <code>fill</code>, <code>stroke</code>, <code>stroke-width</code>,
+                    <code>viewBox</code>, <code>width</code>, <code>height</code> aur <code>transform</code> hain.
+                    External SVG ko <code>&lt;img src="icon.svg"&gt;</code> se embed kar sakte hain, ya inline SVG se
+                    styling/interaction zyada control milti hai.
+                </p>
+                <h3>Canvas aur 2D drawing context</h3>
+                <p>Canvas pixels par draw hota hai aur JavaScript 2D context se shapes, text aur images draw karta hai.
+                    Canvas ko SVG se zyada pixel/pixel control milti hai, lekin DOM accessibility automatically nahi
+                    milti; fallback text/description zaroor dein.</p>
+                <div class="code-example">
+                    <pre><code>&lt;canvas id="drawing" width="320" height="180"
+        aria-label="Blue rectangle and text demo"&gt;
+  Canvas chart nahi hai to text summary: 25 out of 100 complete.
+&lt;/canvas&gt;
+&lt;script&gt;
+  const canvas = document.querySelector("#drawing");
+  const ctx = canvas.getContext("2d");
+  ctx.fillStyle = "#2563eb";
+  ctx.fillRect(20, 20, 120, 60);
+  ctx.font = "24px sans-serif";
+  ctx.fillText("Hello Canvas", 20, 115);
+&lt;/script&gt;</code></pre>
+                </div>
+                <p><code>ctx.drawImage(image, x, y)</code> canvas par image draw karta hai; <code>arc()</code>,
+                    <code>rect()</code>, <code>fill()</code>, <code>stroke()</code> aur <code>fillText()</code> common
+                    drawing methods hain.
+                </p>
+            </section>
+
+            <section id="html5-apis" class="course-section">
+                <h2>HTML5 advanced features aur browser APIs</h2>
+                <h3>Web Storage</h3>
+                <p><code>localStorage</code> origin ke liye persistent key/value data rakhta hai;
+                    <code>sessionStorage</code> tab/session tak limited hota hai. Ye data secure secret ya
+                    authentication
+                    token store karne ke liye nahi—same-origin scripts/devtools se access ho sakta hai.
+                </p>
+                <div class="code-example">
+                    <pre><code>&lt;script&gt;
+  localStorage.setItem("theme", "dark");
+  const theme = localStorage.getItem("theme");
+  sessionStorage.setItem("draft", "HTML course");
+&lt;/script&gt;</code></pre>
+                </div>
+                <h3>Geolocation, Drag and Drop aur Web Workers</h3>
+                <ul>
+                    <li><strong>Geolocation:</strong> <code>navigator.geolocation.getCurrentPosition()</code> location
+                        permission ke baad return karta hai; HTTPS aur user consent important hain.</li>
+                    <li><strong>Drag and Drop:</strong> <code>draggable="true"</code>, <code>dragstart</code>,
+                        <code>dragover</code> aur <code>drop</code> events UI movement/file drop handle kar sakte hain.
+                        Keyboard alternative zaroor dein.
+                    </li>
+                    <li><strong>Web Workers:</strong> expensive JavaScript ko background thread mein run karte hain;
+                        worker directly DOM ko access nahi karta.</li>
+                    <li><strong>Server-Sent Events:</strong> server se one-way live updates ke liye
+                        <code>EventSource</code> use hota hai.
+                    </li>
+                </ul>
+                <h3>Custom elements, popover aur native dialog</h3>
+                <div class="code-example">
+                    <pre><code>&lt;button popovertarget="tips"&gt;Show tips&lt;/button&gt;
+&lt;aside id="tips" popover&gt;
+  &lt;h2&gt;HTML tip&lt;/h2&gt;
+  &lt;p&gt;Native HTML popovers browser-managed layering/focus aur dismiss behavior de sakte hain.&lt;/p&gt;
+&lt;/aside&gt;
+
+&lt;!-- Custom element name mein hyphen required hai --&gt;
+&lt;user-card name="Sakir"&gt;&lt;/user-card&gt;
+
+&lt;template id="user-card-template"&gt;
+  &lt;strong&gt;&lt;slot name="name"&gt;Guest&lt;/slot&gt;&lt;/strong&gt;
+&lt;/template&gt;</code></pre>
+                </div>
+                <p>Custom Elements reusable UI components banate hain. Shadow DOM/CSS encapsulation aur
+                    <code>&lt;slot&gt;</code> are Web Components ke core pieces hain. Browser support check karna abhi
+                    bhi zaroori hai.
+                </p>
             </section>
 
             <section id="attributes" class="course-section">
@@ -1031,6 +1724,12 @@
                             <td>Reusable styling ke liye external stylesheet prefer karein.</td>
                         </tr>
                         <tr>
+                            <td><code>accesskey</code></td>
+                            <td>Keyboard shortcut suggestion.</td>
+                            <td>Browser/system shortcuts collide kar sakte hain; accessible alternative design karein.
+                            </td>
+                        </tr>
+                        <tr>
                             <td><code>data-*</code></td>
                             <td>Custom data attribute.</td>
                             <td>Example: <code>data-product-id</code>.</td>
@@ -1053,7 +1752,8 @@
                     Tables: <code>scope</code>, <code>colspan</code>, <code>rowspan</code>. Script/resource loading:
                     <code>async</code>, <code>defer</code>, <code>type</code>, <code>integrity</code>,
                     <code>crossorigin</code>. Har attribute har tag par valid nahi hota—element documentation check
-                    karein.</p>
+                    karein.
+                </p>
                 <div class="code-example">
                     <pre><code>&lt;div id="notice" class="message" lang="en" dir="ltr"
      data-kind="tip" contenteditable="false"&gt;
@@ -1111,6 +1811,55 @@
                     <pre><code>&lt;p&gt;5 &amp;lt; 10, aur 10 &amp;gt; 5.&lt;/p&gt;
 &lt;p&gt;Tom &amp;amp; Jerry&lt;/p&gt;</code></pre>
                 </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Use</th>
+                            <th>Named/numbered entity</th>
+                            <th>Example</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Copyright</td>
+                            <td><code>&amp;copy;</code></td>
+                            <td>&copy; 2026</td>
+                        </tr>
+                        <tr>
+                            <td>Registered</td>
+                            <td><code>&amp;reg;</code></td>
+                            <td>&reg;</td>
+                        </tr>
+                        <tr>
+                            <td>Trademark</td>
+                            <td><code>&amp;trade;</code></td>
+                            <td>&trade;</td>
+                        </tr>
+                        <tr>
+                            <td>Rupee symbol</td>
+                            <td><code>&amp;#8377;</code> or UTF-8 text</td>
+                            <td>&#8377; 999</td>
+                        </tr>
+                        <tr>
+                            <td>Multiplication</td>
+                            <td><code>&amp;times;</code></td>
+                            <td>5 &times; 4</td>
+                        </tr>
+                        <tr>
+                            <td>Arrow</td>
+                            <td><code>&amp;rarr;</code></td>
+                            <td>HTML &rarr; Web Page</td>
+                        </tr>
+                        <tr>
+                            <td>Emoji</td>
+                            <td>Unicode character or numeric entity</td>
+                            <td>&#128512; / &#x1F600;</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p>UTF-8 document ke saath currency aur emoji ko seedhe Unicode characters mein likha ja sakta hai.
+                    HTML entities reserved characters aur visual symbols ko encode karne ke useful representations hain.
+                </p>
             </section>
 
             <section id="accessibility" class="course-section">
@@ -1136,6 +1885,23 @@
                 </div>
                 <p>Accessibility ko sirf ARIA attributes add karke solve nahi kiya ja sakta. Pehle semantic native HTML
                     use karein; ARIA tab add karein jab native element required meaning/behavior na de.</p>
+                <div class="code-example">
+                    <pre><code>&lt;button type="button" aria-label="Close notification"&gt;X&lt;/button&gt;
+
+&lt;section aria-labelledby="account-title"&gt;
+  &lt;h2 id="account-title"&gt;Account details&lt;/h2&gt;
+  &lt;p id="account-help"&gt;Use a unique username.&lt;/p&gt;
+  &lt;input aria-describedby="account-help" name="username"&gt;
+&lt;/section&gt;
+
+&lt;p role="status" aria-live="polite"&gt;Saved successfully.&lt;/p&gt;</code></pre>
+                </div>
+                <p><code>aria-label</code> direct accessible name deta hai, <code>aria-labelledby</code> existing text
+                    se
+                    name leta hai, aur <code>aria-describedby</code> extra description add karta hai. Focus management
+                    modal/dialog/custom widgets ke liye zaroori hai; tab navigation ko predictable aur visible
+                    <code>:focus</code> state dein.
+                </p>
             </section>
 
             <section id="seo" class="course-section">
@@ -1147,7 +1913,31 @@
   &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
   &lt;title&gt;Beginner HTML Guide | Example Site&lt;/title&gt;
   &lt;meta name="description" content="HTML basics ko examples ke saath seekhein."&gt;
+  &lt;link rel="canonical" href="https://example.com/html-guide"&gt;
+  &lt;meta name="robots" content="index, follow"&gt;
 &lt;/head&gt;</code></pre>
+                </div>
+                <h3>Social metadata, structured data aur sitemap</h3>
+                <p>Open Graph aur Twitter Card metadata links ko social networks par richer card bana sakti hai.
+                    <code>meta keywords</code> mostly obsolete legacy metadata hai aur modern ranking ka reliable factor
+                    nahi mana jaata. <code>sitemap.xml</code> search engines ko pages discover karne mein madad karta
+                    hai; canonical URL preferred duplicate/content URL batata hai.
+                </p>
+                <div class="code-example">
+                    <pre><code>&lt;meta property="og:title" content="Complete HTML Course"&gt;
+&lt;meta property="og:description" content="HTML ko Hinglish mein seekhein."&gt;
+&lt;meta property="og:type" content="website"&gt;
+&lt;meta property="og:image" content="https://example.com/course-cover.jpg"&gt;
+&lt;meta name="twitter:card" content="summary_large_image"&gt;
+
+&lt;script type="application/ld+json"&gt;
+{
+  "@context": "https://schema.org",
+  "@type": "Course",
+  "name": "Complete HTML Course",
+  "description": "Beginner-to-intermediate HTML course."
+}
+&lt;/script&gt;</code></pre>
                 </div>
                 <p>Page title ko specific aur useful rakhein. Description search result mein use ho sakti hai, lekin
                     search engines usse badal bhi sakte hain—ranking ka guaranteed shortcut nahi.</p>
@@ -1165,6 +1955,86 @@
                 </ul>
                 <p>Valid HTML bugs dhoondhne mein help karta hai, lekin validation pass hona accessibility, security,
                     design ya content quality ki guarantee nahi.</p>
+            </section>
+
+            <section id="security" class="course-section">
+                <h2>HTML security basics</h2>
+                <p>HTML user input ko exactly trust nahi kar sakti. XSS (Cross-Site Scripting) tab possible hota hai
+                    jab untrusted text ko HTML ke taur par browser mein parse kiya jaata hai. Browser mein dynamic HTML
+                    banate waqt <code>textContent</code>/<code>innerText</code> use karein ya server-side/contextual
+                    escaping use karein; raw <code>innerHTML</code> se bachein.</p>
+                <div class="code-example">
+                    <pre><code>&lt;p id="user-output"&gt;&lt;/p&gt;
+&lt;script&gt;
+  const untrustedText = "&lt;img src=x onerror=alert('xss')&gt;";
+  document.querySelector("#user-output").textContent = untrustedText;
+&lt;/script&gt;</code></pre>
+                </div>
+                <ul>
+                    <li><strong>HTML injection:</strong> untrusted HTML ko markup ke taur par render mat karein.</li>
+                    <li><strong>XSS prevention:</strong> output encode karein, trusted templating/DOM APIs use karein,
+                        aur server-side allowlists/validation rakhein.</li>
+                    <li><strong>Iframes:</strong> unknown third-party page ke liye restrictive <code>sandbox</code> aur
+                        minimal <code>allow</code> permission use karein.</li>
+                    <li><strong>External links:</strong> <code>target="_blank"</code> ke saath
+                        <code>rel="noopener noreferrer"</code> lagayein; <code>noopener</code> opener tab ko control
+                        karne se bachata hai.
+                    </li>
+                    <li><strong>Forms:</strong> browser validation ko security ke replacement ke taur par na lein;
+                        HTTPS, CSRF protection, server validation aur secure file handling bhi zaroori hain.</li>
+                    <li><strong>CSP:</strong> Content Security Policy scripts/styles ke allowed sources aur inline
+                        execution ko restrict kar sakti hai; CSP ko defense-in-depth ke taur par configure karein.</li>
+                    <li><strong>HTTPS:</strong> login, form aur embedded external resources ke liye encrypted transport
+                        aur mixed content avoid karna zaroori hai.</li>
+                </ul>
+            </section>
+
+            <section id="html-css-js" class="course-section">
+                <h2>HTML ko CSS aur JavaScript se connect karna</h2>
+                <h3>CSS integration</h3>
+                <p>External stylesheet reusable aur cacheable hai; <code>link</code> head mein rakhein. Internal CSS ek
+                    demo/page ke liye useful hai; inline <code>style</code> urgent overrides/demo ke liye limited
+                    rakhein.</p>
+                <div class="code-example">
+                    <pre><code>&lt;head&gt;
+  &lt;link rel="stylesheet" href="style.css"&gt;
+  &lt;style&gt;
+    body { font-family: system-ui, sans-serif; }
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;p style="color: blue;"&gt;Inline style example&lt;/p&gt;</code></pre>
+                </div>
+                <p>HTML par CSS selectors target karte hain: element <code>p</code>, class <code>.card</code>, id
+                    <code>#submit</code>, attributes <code>[type="email"]</code>, aur descendant/child combinations.
+                </p>
+                <h3>JavaScript integration aur DOM</h3>
+                <p>External JavaScript ko generally <code>&lt;script src="main.js" defer&gt;&lt;/script&gt;</code>
+                    se head/body end ke saath load karein. <code>async</code> independent scripts ke liye aur
+                    <code>defer</code> DOM-dependent scripts ke liye useful hai.
+                </p>
+                <div class="code-example">
+                    <pre><code>&lt;button id="greet" type="button"&gt;Greet&lt;/button&gt;
+&lt;p id="message"&gt;&lt;/p&gt;
+&lt;script src="main.js" defer&gt;&lt;/script&gt;
+
+&lt;!-- main.js --&gt;
+const button = document.querySelector("#greet");
+const message = document.querySelector("#message");
+button.addEventListener("click", () =&gt; {
+  message.textContent = "Namaste!";
+  message.classList.add("visible");
+});</code></pre>
+                </div>
+                <ul>
+                    <li><code>getElementById</code>/<code>querySelector</code> DOM elements select karte hain.</li>
+                    <li><code>textContent</code>, <code>innerHTML</code>, <code>classList</code> aur
+                        <code>setAttribute</code> content/classes/attributes update karte hain.
+                    </li>
+                    <li><code>addEventListener</code> click, submit, keyboard aur custom app events handle karta hai.
+                    </li>
+                    <li><code>defer</code> document parse ke baad execute karta hai; <code>async</code> download par
+                        independent timing deta hai.</li>
+                </ul>
             </section>
 
             <section id="playground" class="course-section">
@@ -1221,7 +2091,8 @@
                     <code>style.css</code> link/file nahi hai. Big project mein A–Z tag demo ke liye ek blank
                     <code>&lt;style&gt;&lt;/style&gt;</code> element hai; usmein CSS nahi hai.
                     <strong>Run Preview</strong> click karein; output usi ke neeche khulega. Preview band karne ke liye
-                    <strong>Close Preview</strong> use karein. Code ko Copy karke edit bhi kar sakte hain.</p>
+                    <strong>Close Preview</strong> use karein. Code ko Copy karke edit bhi kar sakte hain.
+                </p>
                 <article id="project-profile" class="project-card">
                     <h3>Mini project 1/6: Personal profile</h3>
                     <p>Semantic sections, navigation, headings, lists aur contact link practice karein. Code sirf HTML
@@ -1578,6 +2449,35 @@
                 </article>
             </section>
 
+            <section id="project-roadmap" class="course-section">
+                <h2>Complete HTML project roadmap</h2>
+                <div class="card-grid">
+                    <article class="info-card">
+                        <h3>Beginner projects</h3>
+                        <p>Personal profile page, resume/CV page, simple portfolio aur basic contact page.</p>
+                    </article>
+                    <article class="info-card">
+                        <h3>Intermediate projects</h3>
+                        <p>Restaurant website, product landing page, registration form, image gallery aur pricing page.
+                        </p>
+                    </article>
+                    <article class="info-card">
+                        <h3>Advanced projects</h3>
+                        <p>E-commerce structure, multi-page business website, admin dashboard structure, blog website
+                            aur social media UI structure.</p>
+                    </article>
+                </div>
+                <h3>Project completion checklist</h3>
+                <ul>
+                    <li>Doctype, lang, charset aur viewport complete hon.</li>
+                    <li>Heading hierarchy aur landmarks logical hon.</li>
+                    <li>Links, images, forms aur media ke required attributes present hon.</li>
+                    <li>Images responsive/optimized hon aur meaningful alt/captions hon.</li>
+                    <li>Keyboard, screen reader aur mobile viewport par basic testing ho.</li>
+                    <li>W3C validator se markup check ho aur browser console clean ho.</li>
+                </ul>
+            </section>
+
             <section id="practice" class="course-section">
                 <h2>18. Practice exercises</h2>
                 <ol>
@@ -1631,7 +2531,8 @@
                     <h3>7. Semantic HTML kya hota hai?</h3>
                     <p>Aise elements jo content ka role batate hain, jaise <code>nav</code>, <code>main</code>,
                         <code>article</code>. Ye structure ko readable aur assistive technology ke liye meaningful
-                        banate hain.</p>
+                        banate hain.
+                    </p>
                 </div>
                 <div class="question">
                     <h3>8. <code>div</code> aur <code>span</code> mein kya difference hai?</h3>
@@ -1646,7 +2547,8 @@
                 <div class="question">
                     <h3>10. Void element kya hai?</h3>
                     <p>Jis element ka child content/closing tag nahi hota, jaise <code>img</code>, <code>br</code>,
-                        <code>hr</code>, <code>input</code>.</p>
+                        <code>hr</code>, <code>input</code>.
+                    </p>
                 </div>
                 <div class="question">
                     <h3>11. <code>alt</code> attribute kyu important hai?</h3>
@@ -1666,7 +2568,8 @@
                 <div class="question">
                     <h3>14. HTML entities ka use kya hai?</h3>
                     <p>Reserved characters ya special symbols ko text ke roop mein dikhane ke liye, jaise
-                        <code>&amp;lt;</code> less-than sign ke liye.</p>
+                        <code>&amp;lt;</code> less-than sign ke liye.
+                    </p>
                 </div>
                 <div class="question">
                     <h3>15. Form mein <code>label</code> kaise associate karte hain?</h3>
@@ -1740,12 +2643,14 @@
                 <div class="question">
                     <h3>29. <code>target="_blank"</code> ke saath kya dhyan rakhein?</h3>
                     <p>User ko batayein ki link nayi tab kholega; external links ke liye
-                        <code>rel="noopener noreferrer"</code> ek achha explicit pattern hai.</p>
+                        <code>rel="noopener noreferrer"</code> ek achha explicit pattern hai.
+                    </p>
                 </div>
                 <div class="question">
                     <h3>30. Page language kaise specify karte hain?</h3>
                     <p>Root <code>html</code> element par suitable <code>lang</code>, jaise English ke liye
-                        <code>lang="en"</code> aur Hindi ke liye <code>lang="hi"</code>.</p>
+                        <code>lang="en"</code> aur Hindi ke liye <code>lang="hi"</code>.
+                    </p>
                 </div>
             </section>
 
