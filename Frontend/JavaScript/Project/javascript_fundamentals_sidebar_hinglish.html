@@ -9,11 +9,36 @@
 </head>
 
 <body>
-    <header><button id="menuBtn" onclick="toggleSidebar()">☰ Topics</button>
-        <div>
+    <header>
+        <button id="menuBtn" onclick="toggleSidebar()">☰ Topics</button>
+        <div class="header-title">
             <h1>JavaScript Fundamentals</h1><small>Complete Beginner Course • Hinglish</small>
         </div>
+        <button id="compilerBtn" type="button" onclick="toggleCompiler()">▶ Online Compiler</button>
     </header>
+    <div id="compilerPanel" class="compiler-panel" aria-hidden="true">
+        <div class="compiler-header">
+            <h2>JavaScript Online Compiler</h2>
+            <button id="compilerClose" type="button" onclick="toggleCompiler()" aria-label="Close compiler">×</button>
+        </div>
+        <div class="compiler-body">
+            <label for="codeEditor">Code</label>
+            <textarea id="codeEditor" spellcheck="false" aria-label="JavaScript code">console.log("Hello JavaScript!");
+
+let name = "Sakir";
+let age = 24;
+
+console.log(`Name: ${name}, Age: ${age}`);
+console.log(4 * 2);</textarea>
+            <div class="compiler-actions">
+                <button id="runCode" type="button" onclick="runJavaScript()">▶ Run Code</button>
+                <button id="clearOutput" type="button" onclick="clearOutput()">Clear</button>
+                <span>Shortcut: Ctrl + Enter</span>
+            </div>
+            <label for="codeOutput">Output</label>
+            <pre id="codeOutput" aria-live="polite">Output here dikhega...</pre>
+        </div>
+    </div>
     <div class="layout">
         <aside id="sidebar">
             <h2>📚 Course Topics</h2>
@@ -38,9 +63,9 @@
                 <a class="sub" href="#syntax">Syntax</a>
                 <a class="sub" href="#console">console.log()</a>
                 <a class="sub" href="#semicolon">Semicolon</a>
-                <a href="#variables">10. Variables</a>
+                <a href="#comments">10. Comments</a>
+                <a href="#variables">11. Variables</a>
                 <a class="sub" href="#visual-variable">Variable Animation</a>
-                <a class="sub" href="#comments">11. Comments</a>
                 <a class="sub" href="#multiple">Multiple Variables</a>
                 <a href="#keywords">12. var, let & const</a>
                 <a class="sub" href="#declaration">Declaration</a>
@@ -91,7 +116,7 @@ MOV AX, 1</pre>
                     <div class="card">
                         <h3>High-level</h3>
                         <p>Human-readable aur abstractions ke saath comparatively aasaan language.</p>
-                        <pre>let total = 10 + 20;
+                        <pre data-language="javascript">let total = 10 + 20;
 console.log(total);</pre>
                     </div>
                 </div>
@@ -129,9 +154,9 @@ console.log(total);</pre>
                 <h2>5. JavaScript run karne ke methods</h2>
                 <h3 id="browser">Browser Console</h3>
                 <p>Browser open → right click → Inspect → Console tab → code type → Enter.</p>
-                <pre>console.log("Hello JavaScript");</pre>
+                <pre data-language="javascript">console.log("Hello JavaScript");</pre>
                 <h3 id="script-tag">HTML inline script</h3>
-                <pre>&lt;script&gt;
+                <pre data-language="javascript">&lt;script&gt;
  console.log("Hello from HTML");
 &lt;/script&gt;</pre>
                 <h3 id="external-script">External JS file</h3>
@@ -201,7 +226,7 @@ Hi</pre>
 &lt;/body&gt;
 &lt;/html&gt;</pre>
                 <h3>main.js</h3>
-                <pre>console.log("JavaScript linked successfully!");</pre>
+                <pre data-language="javascript">console.log("JavaScript linked successfully!");</pre>
                 <p>HTML code HTML file mein, JS code JS file mein paste karein. HTML browser mein open karke Console
                     check karein.</p>
                 <h3 id="body-head">Script body ke end mein kyu, head mein kyu nahi?</h3>
@@ -215,43 +240,43 @@ Hi</pre>
             </section>
             <section id="first-program">
                 <h2>9. First Program</h2>
-                <pre>console.log("Hello World");</pre>
+                <pre data-language="javascript">console.log("Hello World");</pre>
                 <h3 id="syntax">Syntax</h3>
                 <p>Syntax code likhne ke language rules hote hain. JS statements, identifiers, operators, punctuation
                     aur expressions ke rules follow karta hai.</p>
                 <h3 id="console">console.log()</h3>
                 <p><code>console</code> console object, dot property/method access, <code>log()</code> output method.
                     Iska use console mein values, messages, debugging information dikhane ke liye hota hai.</p>
-                <pre>console.log("4 * 2 =", 4 * 2);
+                <pre data-language="javascript">console.log("4 * 2 =", 4 * 2);
 console.log("Name:", "Sakir", "Age:", 24);</pre>
                 <h3 id="semicolon">Semicolon ;</h3>
                 <p>Semicolon statements ko terminate karta hai. JS mein ASI (Automatic Semicolon Insertion) kai jagah
                     semicolon insert kar deta hai, par consistent semicolon use clarity aur kuch edge cases mein
                     correctness ke liye achha hai.</p>
             </section>
+            <section id="comments">
+                <h2>10. Comments</h2>
+                <p>Comments code ke notes/documentation hote hain, execute nahi hote.</p>
+                <pre data-language="javascript">// Single line comment
+
+/* Multi-line
+ comment */</pre>
+                <p>VS Code line comment toggle: Windows/Linux Ctrl + /; Mac Cmd + / (keyboard layout par depend).</p>
+            </section>
             <section id="variables">
-                <h2>10. Variable kya hota hai?</h2>
+                <h2>11. Variable kya hota hai?</h2>
                 <p>Variable ek named binding hai jiske through program value ko refer kar sakta hai. Analogy: label wale
                     box mein value rakhi hui samajh sakte hain.</p>
                 <h3>Syntax</h3>
-                <pre>let age = 24;</pre>
+                <pre data-language="javascript">let age = 24;</pre>
                 <p><code>let</code> binding declare karta hai; <code>age</code> identifier; <code>=</code> assignment
                     operator; <code>24</code> value.</p>
                 <h3 id="visual-variable">Variable animation</h3>
                 <div id="visualText">Animation ke liye button click karein.</div>
                 <p style="text-align:center"><button onclick="animateVariable()">Variable animation chalayein</button>
                 </p>
-            </section>
-            <section id="comments">
-                <h2>11. Comments</h2>
-                <p>Comments code ke notes/documentation hote hain, execute nahi hote.</p>
-                <pre>// Single line comment
-
-/* Multi-line
- comment */</pre>
-                <p>VS Code line comment toggle: Windows/Linux Ctrl + /; Mac Cmd + / (keyboard layout par depend).</p>
                 <h3 id="multiple">Ek line mein multiple variables print</h3>
-                <pre>let name = "Sakir";
+                <pre data-language="javascript">let name = "Sakir";
 let age = 24;
 console.log("Name:", name, "| Age:", age);
 // Or:
@@ -261,17 +286,17 @@ console.log(`Name: ${name}, Age: ${age}`);</pre>
                 <h2>12. var, let & const</h2>
                 <h3 id="declaration">Declaration</h3>
                 <p>Binding ka naam define karna.</p>
-                <pre>let city;</pre>
+                <pre data-language="javascript">let city;</pre>
                 <h3 id="initialization">Initialization</h3>
                 <p>Binding ko initial value dena.</p>
-                <pre>let city = "Delhi";</pre>
+                <pre data-language="javascript">let city = "Delhi";</pre>
                 <h3 id="updation">Updation</h3>
                 <p>Baad mein nayi value assign karna.</p>
-                <pre>city = "Patna";</pre>
+                <pre data-language="javascript">city = "Patna";</pre>
                 <h3 id="var">var</h3>
                 <p>Function-scoped, block scoped nahi. Redeclare aur reassign ho sakta hai; declaration scope mein hoist
                     hokar undefined se initialize hota hai.</p>
-                <pre>var score = 10;
+                <pre data-language="javascript">var score = 10;
 var score = 15; // allowed redeclaration
 score = 20; // reassignment
 if (true) {
@@ -282,14 +307,14 @@ console.log(test);</pre>
                     hain.</p>
                 <h3 id="let">let</h3>
                 <p>Block-scoped; reassign allowed, same scope mein redeclare nahi.</p>
-                <pre>let age = 24;
+                <pre data-language="javascript">let age = 24;
 age = 25; // valid
 // let age = 26; // SyntaxError in same scope</pre>
                 <p>Value change karni ho to let.</p>
                 <h3 id="const">const</h3>
                 <p>Block-scoped; declaration ke waqt initialize karna zaroori, binding reassign nahi. Objects/arrays ki
                     contents mutate ho sakti hain.</p>
-                <pre>const country = "India";
+                <pre data-language="javascript">const country = "India";
 // country = "Nepal"; // TypeError
 const skills = ["HTML", "CSS"];
 skills.push("JavaScript"); // valid</pre>
@@ -312,7 +337,7 @@ skills.push("JavaScript"); // valid</pre>
                     <li>Case-sensitive: age aur Age alag.</li>
                     <li>Reserved keywords jaise let, if, return, class identifier ke naam nahi.</li>
                 </ul>
-                <pre>// Valid
+                <pre data-language="javascript">// Valid
 let userName = "Sakir";
 let _count = 2;
 let $price = 100;
@@ -333,16 +358,16 @@ let score2 = 5;
                 <p>Conventions style guidelines hain, strict syntax rules nahi.</p>
                 <h3 id="camel">camelCase</h3>
                 <p>Words ke beech space nahi, next word ka first letter uppercase. Variables/functions mein common.</p>
-                <pre>let firstName = "Sakir";</pre>
+                <pre data-language="javascript">let firstName = "Sakir";</pre>
                 <h3 id="snake">snake_case</h3>
                 <p>Words underscore se separate. JS mein uncommon, lekin kuch projects/data context mein use.</p>
-                <pre>let first_name = "Sakir";</pre>
+                <pre data-language="javascript">let first_name = "Sakir";</pre>
                 <h3 id="pascal">PascalCase</h3>
                 <p>Har word capital se start. Classes aur React component names mein common.</p>
-                <pre>class StudentProfile {}</pre>
+                <pre data-language="javascript">class StudentProfile {}</pre>
                 <h3 id="screaming">SCREAMING_SNAKE_CASE</h3>
                 <p>Uppercase words underscore se separate; constants ke naming convention mein use.</p>
-                <pre>const MAX_LIMIT = 100;</pre>
+                <pre data-language="javascript">const MAX_LIMIT = 100;</pre>
             </section>
             <section id="datatypes">
                 <h2>15. Data Types</h2>
@@ -390,7 +415,7 @@ let score2 = 5;
                         <td>Unique symbol</td>
                     </tr>
                 </table>
-                <pre>let number = 42;
+                <pre data-language="javascript">let number = 42;
 let text = "Hello";
 let active = true;
 let empty = null;
@@ -398,18 +423,18 @@ let missing;
 let bigNumber = 9007199254740993n;
 let uniqueId = Symbol("id");</pre>
                 <h3 id="null-typeof">typeof null kyu object?</h3>
-                <pre>console.log(typeof null); // "object"</pre>
+                <pre data-language="javascript">console.log(typeof null); // "object"</pre>
                 <p>Historical JS quirk jo compatibility ke liye preserve kiya gaya. null primitive value hai, object
                     nahi.</p>
                 <h3 id="nonprimitive">Non-primitive / reference types</h3>
                 <p>Informal grouping: objects ek major category hain, arrays aur functions special object forms hain.
                 </p>
-                <pre>const student = { name: "Sakir", age: 24 };
+                <pre data-language="javascript">const student = { name: "Sakir", age: 24 };
 const colors = ["red", "blue", "green"];
 function greet() { console.log("Hello!"); }
 greet();</pre>
                 <h3 id="typeof">typeof operator</h3>
-                <pre>console.log(typeof 42); // number
+                <pre data-language="javascript">console.log(typeof 42); // number
 console.log(typeof "Hello"); // string
 console.log(typeof true); // boolean
 console.log(typeof undefined); // undefined
@@ -424,7 +449,7 @@ console.log(typeof null); // object (quirk)</pre>
                 <h2>16. Type Conversion</h2>
                 <p>Ek type ki value ko doosre type mein convert karna. Explicit conversion programmer karta hai;
                     implicit conversion JS operations ke dauran.</p>
-                <pre>// Explicit
+                <pre data-language="javascript">// Explicit
 console.log(Number("25")); // 25
 console.log(String(25)); // "25"
 console.log(Boolean(1)); // true
@@ -440,7 +465,7 @@ console.log("5" - 2); // 3</pre>
                 <h2>17. Template Literals</h2>
                 <p>Backticks <code>`</code> se string banate hain. <code>${...}</code> interpolation se
                     variable/expression embed kar sakte hain, multiline strings bhi.</p>
-                <pre>const name = "Sakir";
+                <pre data-language="javascript">const name = "Sakir";
 const age = 24;
 console.log(`My name is ${name} and my age is ${age}.`);
 console.log(`4 * 2 = ${4 * 2}`);
