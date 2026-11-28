@@ -107,6 +107,63 @@ document.querySelectorAll("aside a").forEach((a) =>
       document.getElementById("sidebar").classList.remove("open");
   }),
 );
+let scrollSpyFrame = null;
+let activeSidebarHash = null;
+
+function updateActiveSidebarLink() {
+  const headerHeight =
+    document.querySelector("header")?.getBoundingClientRect().height ?? 76;
+  const marker = headerHeight + 40;
+  const links = Array.from(document.querySelectorAll("aside a[href^='#']"));
+
+  let activeLink = null;
+  let closestDistance = Infinity;
+
+  links.forEach((link) => {
+    const target = document.querySelector(link.hash);
+    if (!target) return;
+
+    const distance = Math.abs(target.getBoundingClientRect().top - marker);
+    if (
+      target.getBoundingClientRect().top <= marker &&
+      distance < closestDistance
+    ) {
+      closestDistance = distance;
+      activeLink = link;
+    }
+  });
+
+  if (!activeLink) {
+    const firstVisible = links.find((link) => {
+      const target = document.querySelector(link.hash);
+      return target && target.getBoundingClientRect().top >= 0;
+    });
+    activeLink = firstVisible ?? links[0];
+  }
+
+  if (!activeLink) return;
+
+  document.querySelectorAll("aside a").forEach((link) => {
+    link.classList.toggle("active", link === activeLink);
+  });
+
+  if (activeSidebarHash !== activeLink.hash) {
+    activeSidebarHash = activeLink.hash;
+    activeLink.scrollIntoView({ block: "nearest" });
+  }
+}
+
+window.addEventListener(
+  "scroll",
+  () => {
+    if (scrollSpyFrame) cancelAnimationFrame(scrollSpyFrame);
+    scrollSpyFrame = requestAnimationFrame(updateActiveSidebarLink);
+  },
+  { passive: true },
+);
+window.addEventListener("resize", updateActiveSidebarLink);
+updateActiveSidebarLink();
+
 function animateVariable() {
   const el = document.getElementById("visualText");
   el.innerHTML = "";
