@@ -67,6 +67,7 @@ console.log(4 * 2);</textarea>
                 <a href="#variables">11. Variables</a>
                 <a class="sub" href="#visual-variable">Variable Animation</a>
                 <a class="sub" href="#multiple">Multiple Variables</a>
+                <a class="sub" href="#case-sensitive">Case Sensitive</a>
                 <a href="#keywords">12. var, let & const</a>
                 <a class="sub" href="#declaration">Declaration</a>
                 <a class="sub" href="#initialization">Initialization</a>
@@ -423,11 +424,22 @@ let age = 24;
 console.log("Name:", name, "| Age:", age);
 // Or:
 console.log(`Name: ${name}, Age: ${age}`);</pre>
+                <h3 id="case-sensitive">Case Sensitive</h3>
+                <p>JavaScript mein variable names case-sensitive hote hain. Capital aur small letters ko alag identifiers maana jaata hai.</p>
+                <pre data-language="javascript">let name = "Sakir";
+let Name = "Wasid";
+let NAME = "Danish";
+
+console.log(name);
+console.log(Name);
+console.log(NAME);</pre>
 <div class="topic-review">
-    <h3>Practice (2)</h3>
+    <h3>Practice (4)</h3>
     <ol>
         <li>Price <code>12</code> aur quantity <code>3</code> variables se <code>Subtotal: 36</code> print karein.</li>
         <li><code>let</code> ko <code>1</code> se <code>2</code> update karein, <code>const</code> ko <code>1</code> rakhein; dono labeled values print karein.</li>
+        <li><code>name</code>, <code>Name</code> aur <code>NAME</code> ko alag values dekar sabki values print karein.</li>
+        <li><code>studentName</code> declare karein aur capitalization galat likhne par ReferenceError ko observe karein.</li>
     </ol>
     <h3>Interview Questions (Medium–Hard)</h3>
     <ol>
