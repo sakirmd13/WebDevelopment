@@ -54,8 +54,17 @@ function executeJavaScript(code, environment) {
     };
   }
 }
+function toggleOutput() {
+  const output = document.getElementById("codeOutput");
+  const toggle = document.getElementById("outputToggle");
+  const isVisible = output.hidden;
+  output.hidden = !isVisible;
+  toggle.setAttribute("aria-expanded", String(isVisible));
+  toggle.textContent = isVisible ? "Hide output" : "Show output";
+}
 function runJavaScript() {
   const output = document.getElementById("codeOutput");
+  if (output.hidden) toggleOutput();
   output.textContent = "Running...";
   output.style.color = "#fde68a";
 
@@ -217,7 +226,7 @@ async function copyExampleCode(pre, button) {
     button.classList.remove("copied", "copy-failed");
   }, 1800);
 }
-function runExampleCode(pre, output) {
+function runExampleCode(pre, output, outputContainer) {
   let code = pre.textContent.trim();
   const scriptTag = code.match(/^<script(?:\s[^>]*)?>([\s\S]*?)<\/script>$/i);
   if (scriptTag) code = scriptTag[1];
@@ -225,7 +234,7 @@ function runExampleCode(pre, output) {
   const result = executeJavaScript(code);
   output.textContent = result.text;
   output.style.color = result.color;
-  output.hidden = false;
+  outputContainer.hidden = false;
 }
 document.querySelectorAll("main pre").forEach((pre) => {
   const wrapper = document.createElement("div");
@@ -236,6 +245,7 @@ document.querySelectorAll("main pre").forEach((pre) => {
   const actions = document.createElement("div");
   actions.className = "example-actions";
   let output;
+  let outputContainer;
 
   const button = document.createElement("button");
   button.type = "button";
@@ -251,14 +261,31 @@ document.querySelectorAll("main pre").forEach((pre) => {
     runButton.className = "run-example-button";
     runButton.textContent = "▶ Run";
     runButton.setAttribute("aria-label", "Run JavaScript example");
-    runButton.addEventListener("click", () => runExampleCode(pre, output));
     actions.appendChild(runButton);
+
+    outputContainer = document.createElement("div");
+    outputContainer.className = "example-output-container";
+    outputContainer.hidden = true;
 
     output = document.createElement("pre");
     output.className = "example-output";
     output.setAttribute("aria-live", "polite");
-    output.hidden = true;
-    wrapper.appendChild(output);
+    outputContainer.appendChild(output);
+
+    const closeOutputButton = document.createElement("button");
+    closeOutputButton.type = "button";
+    closeOutputButton.className = "example-output-close";
+    closeOutputButton.textContent = "×";
+    closeOutputButton.setAttribute("aria-label", "Close output");
+    closeOutputButton.addEventListener("click", () => {
+      outputContainer.hidden = true;
+      runButton.focus();
+    });
+    outputContainer.appendChild(closeOutputButton);
+    wrapper.appendChild(outputContainer);
+    runButton.addEventListener("click", () =>
+      runExampleCode(pre, output, outputContainer),
+    );
   }
 
   wrapper.appendChild(actions);

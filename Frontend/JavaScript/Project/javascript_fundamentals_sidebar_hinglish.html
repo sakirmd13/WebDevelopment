@@ -35,7 +35,11 @@ console.log(4 * 2);</textarea>
                 <button id="clearOutput" type="button" onclick="clearOutput()">Clear</button>
                 <span>Shortcut: Ctrl + Enter</span>
             </div>
-            <label for="codeOutput">Output</label>
+            <div class="output-header">
+                <label for="codeOutput">Output</label>
+                <button id="outputToggle" type="button" onclick="toggleOutput()" aria-controls="codeOutput"
+                    aria-expanded="true">Hide output</button>
+            </div>
             <pre id="codeOutput" aria-live="polite">Output here dikhega...</pre>
         </div>
     </div>
@@ -92,13 +96,20 @@ console.log(4 * 2);</textarea>
                 <a href="#template">17. Template Literals</a>
                 <a href="#arithmetic">18. Arithmetic Operators</a>
                 <a href="#operators">19. Other Operators</a>
-                <a class="sub" href="#comparison">Comparison & logical</a>
+                <a class="sub" href="#comparison">Comparison operators</a>
+                <a class="sub" href="#logical">Logical operators</a>
                 <a class="sub" href="#assignment">Assignment & compound assignment</a>
                 <a class="sub" href="#unary">Unary +, -, !</a>
                 <a class="sub" href="#pre-post">Pre/post increment & decrement</a>
+                <a class="sub" href="#precedence">Operator precedence</a>
                 <a class="sub" href="#modern-operators">Nullish, optional & spread</a>
                 <a href="#conditions">20. Conditions</a>
-                <a class="sub" href="#if-else">if, else if & else</a>
+                <a class="sub" href="#truthy-falsy">Truthy & Falsy</a>
+                <a class="sub" href="#if-statement">if statement</a>
+                <a class="sub" href="#else-if">else if statement</a>
+                <a class="sub" href="#else-statement">else statement</a>
+                <a class="sub" href="#nested-if-else">Nested if...else</a>
+                <a class="sub" href="#code-readability">Code readability</a>
                 <a class="sub" href="#switch">switch</a>
                 <a class="sub" href="#ternary">Ternary operator</a>
                 <a href="#loops">21. Loops</a>
@@ -777,8 +788,8 @@ console.log(number % 2); // 0, even number</pre>
                 </div>
             </section>
             <section id="operators">
-                <h2>19. Comparison, Logical & Assignment Operators</h2>
-                <h3 id="comparison">Comparison & logical operators</h3>
+                <h2>19. Operators</h2>
+                <h3 id="comparison">Comparison operators</h3>
                 <p>Comparison operators values compare karke boolean (<code>true</code>/<code>false</code>) dete hain.
                     Aam taur par <code>===</code> aur <code>!==</code> use karein: ye value ke saath type bhi compare
                     karte hain. <code>==</code> type conversion kar sakta hai, isliye beginners ko ise avoid karna
@@ -788,15 +799,55 @@ console.log(5 <= 5);       // true
 console.log(5 === "5");    // false: type bhi different hai
 console.log(5 == "5");     // true: type conversion hota hai
 console.log(5 !== 4);      // true</pre>
-                <p>Logical operators conditions combine karte hain: <code>&amp;&amp;</code> (AND), <code>||</code>
-                    (OR), aur <code>!</code> (NOT). AND mein dono conditions true honi chahiye; OR mein kam se kam ek
-                    true; NOT boolean ko reverse karta hai.</p>
-                <pre data-language="javascript">const age = 22;
-const hasId = true;
-
-console.log(age >= 18 && hasId); // true
-console.log(age < 18 || hasId);  // true
-console.log(!hasId);             // false</pre>
+                <h3 id="logical">Logical operators</h3>
+                <p>Logical operators conditions ko combine ya reverse karte hain. Neeche <code>true</code> ka matlab
+                    condition sahi hai aur <code>false</code> ka matlab condition galat hai.</p>
+                <h4>AND (<code>&amp;&amp;</code>) — dono conditions true honi chahiye</h4>
+                <p>AND ka result sirf tab <code>true</code> hota hai jab A aur B dono <code>true</code> hon.
+                    Jaise movie entry ke liye age 18+ <em>aur</em> valid ID dono zaroori hon.</p>
+                <table>
+                    <caption>AND truth table</caption>
+                    <tr><th scope="col">A</th><th scope="col">B</th><th scope="col">A &amp;&amp; B</th></tr>
+                    <tr><td>true</td><td>true</td><td>true</td></tr>
+                    <tr><td>true</td><td>false</td><td>false</td></tr>
+                    <tr><td>false</td><td>true</td><td>false</td></tr>
+                    <tr><td>false</td><td>false</td><td>false</td></tr>
+                </table>
+                <p><strong>Example:</strong> Ticket aur 18+ age dono hon tabhi movie entry milegi.</p>
+                <pre data-language="javascript">const hasTicket = true;
+const age = 20;
+console.log(hasTicket && age >= 18); // true: dono conditions true hain
+console.log(hasTicket && age < 18);  // false: age wali condition false hai</pre>
+                <h4>OR (<code>||</code>) — kam se kam ek condition true honi chahiye</h4>
+                <p>OR ka result <code>true</code> hota hai agar A ya B mein se koi ek, ya dono, <code>true</code>
+                    hon. Jaise discount ke liye student hona <em>ya</em> senior citizen hona kaafi hai.</p>
+                <table>
+                    <caption>OR truth table</caption>
+                    <tr><th scope="col">A</th><th scope="col">B</th><th scope="col">A || B</th></tr>
+                    <tr><td>true</td><td>true</td><td>true</td></tr>
+                    <tr><td>true</td><td>false</td><td>true</td></tr>
+                    <tr><td>false</td><td>true</td><td>true</td></tr>
+                    <tr><td>false</td><td>false</td><td>false</td></tr>
+                </table>
+                <p><strong>Example:</strong> Student ya senior citizen hone par discount milega.</p>
+                <pre data-language="javascript">const isStudent = false;
+const isSeniorCitizen = true;
+console.log(isStudent || isSeniorCitizen); // true: kam se kam ek true hai
+console.log(false || false);               // false: dono conditions false hain</pre>
+                <h4>NOT (<code>!</code>) — condition ko ulta karta hai</h4>
+                <p>NOT ek hi condition leta hai: <code>true</code> ko <code>false</code> aur <code>false</code> ko
+                    <code>true</code> bana deta hai. Jaise <code>!isShopClosed</code> ka matlab hai "shop band nahi
+                    hai".</p>
+                <table>
+                    <caption>NOT truth table</caption>
+                    <tr><th scope="col">A</th><th scope="col">!A</th></tr>
+                    <tr><td>true</td><td>false</td></tr>
+                    <tr><td>false</td><td>true</td></tr>
+                </table>
+                <p><strong>Example:</strong> Shop band nahi hai to shopping kar sakte hain.</p>
+                <pre data-language="javascript">const isShopClosed = false;
+console.log(!isShopClosed); // true: shop band nahi hai
+console.log(!true);         // false: true ulta hokar false hua</pre>
                 <h3 id="assignment">Assignment & compound assignment operators</h3>
                 <p><code>=</code> variable ko value assign karta hai. Compound assignment mein pehle current value ke
                     saath operation hota hai, phir result usi variable mein assign hota hai:</p>
@@ -878,10 +929,34 @@ console.log(remainder); // 1
 let power = 2;
 power **= 3;
 console.log(power); // 8</pre>
-                <p>Operator precedence decide karta hai pehle kaunsa operation hoga. Confusion ho to parentheses use
-                    karein.</p>
-                <pre data-language="javascript">console.log(2 + 3 * 4);   // 14
-console.log((2 + 3) * 4); // 20</pre>
+                <h3 id="precedence">Operator precedence</h3>
+                <p>Ek expression mein kai operators hon, to precedence batati hai ki pehle kaunsa operator chalega.
+                    Neeche common operators high se low priority mein hain. Parentheses <code>()</code> laga kar order
+                    ko explicitly control kar sakte hain.</p>
+                <table>
+                    <caption>Common operator precedence (high to low)</caption>
+                    <tr><th scope="col">Priority</th><th scope="col">Operators</th><th scope="col">Example</th></tr>
+                    <tr><td>Parentheses</td><td><code>()</code></td><td><code>(2 + 3) * 4</code></td></tr>
+                    <tr><td>1</td><td><code>**</code></td><td><code>2 ** 3</code></td></tr>
+                    <tr><td>2</td><td><code>!</code> (NOT)</td><td><code>!isReady</code></td></tr>
+                    <tr><td>3</td><td><code>* / %</code></td><td><code>6 * 2</code></td></tr>
+                    <tr><td>4</td><td><code>+ -</code></td><td><code>6 + 2</code></td></tr>
+                    <tr><td>5</td><td><code>&lt; &lt;= &gt; &gt;=</code></td><td><code>age &gt;= 18</code></td></tr>
+                    <tr><td>6</td><td><code>=== !==</code></td><td><code>age === 18</code></td></tr>
+                    <tr><td>7</td><td><code>&amp;&amp;</code> (AND)</td><td><code>isAdult &amp;&amp; hasId</code></td></tr>
+                    <tr><td>8</td><td><code>|| ??</code> (OR, nullish)</td><td><code>name || fallback</code></td></tr>
+                    <tr><td>9</td><td><code>?:</code> (ternary)</td><td><code>age &gt;= 18 ? "Adult" : "Minor"</code></td></tr>
+                    <tr><td>10 (lowest)</td><td><code>= += -=</code></td><td><code>score += 1</code></td></tr>
+                </table>
+                <p>Jaise multiplication, addition se pehle hota hai. Parentheses default order ko badal dete hain:</p>
+                <pre data-language="javascript">console.log(2 + 3 * 4);   // 14: pehle 3 * 4
+console.log((2 + 3) * 4); // 20: parentheses pehle
+console.log(true || false && false); // true: pehle &&, phir ||
+                console.log((true || false) && false); // false: parentheses pehle
+                console.log(2 ** 3 ** 2); // 512: ** right-to-left chalta hai</pre>
+                <div class="tip"><code>!</code> comparisons aur <code>&amp;&amp;</code>/<code>||</code> se pehle
+                                    evaluate hota hai. <code>??</code> ko <code>&amp;&amp;</code>/<code>||</code> ke saath use karte
+                                    waqt parentheses zaroor lagayein. Agar order unclear ho, parentheses use karein.</div>
                <h3 id="modern-operators">Nullish coalescing, optional chaining & spread</h3>
                <p><code>??</code> sirf <code>null</code> ya <code>undefined</code> par fallback deta hai;
                    <code>||</code> falsy values jaise <code>0</code> aur empty string par bhi fallback deta hai.
@@ -934,25 +1009,106 @@ console.log(copy);</pre>
                 <p>Condition ke basis par alag code chalane ke liye <code>if</code>, <code>else if</code> aur
                     <code>else</code> use hote hain. Condition <code>true</code> ho to uska block chalta hai.
                     Pehli matching condition ke baad baaki branches skip hoti hain.</p>
-                <h3 id="if-else">if, else if & else</h3>
+                <h3 id="truthy-falsy">Truthy & Falsy values</h3>
+                <p><code>if</code> condition mein JavaScript value ko boolean ke roop mein check karta hai. <code>0</code>
+                    <strong>falsy</strong> hai aur <code>1</code> <strong>truthy</strong> hai—yaani
+                    <code>Boolean(0)</code> false, <code>Boolean(1)</code> true. Number conversion mein
+                    <code>Number(true)</code> <code>1</code> aur <code>Number(false)</code> <code>0</code> deta hai;
+                    lekin <code>true</code> aur <code>1</code> alag types hain.</p>
+                <table>
+                    <caption>Common JavaScript falsy and truthy values</caption>
+                    <tr><th scope="col">Value</th><th scope="col">Boolean(value)</th><th scope="col">Category</th></tr>
+                    <tr><td><code>false</code>, <code>0</code>, <code>-0</code>, <code>0n</code></td><td>false</td><td>Falsy</td></tr>
+                    <tr><td><code>""</code>, <code>null</code>, <code>undefined</code>, <code>NaN</code></td><td>false</td><td>Falsy</td></tr>
+                    <tr><td><code>true</code>, <code>1</code>, <code>-1</code></td><td>true</td><td>Truthy</td></tr>
+                    <tr><td><code>"hello"</code>, <code>[]</code>, <code>{}</code></td><td>true</td><td>Truthy</td></tr>
+                </table>
+                <p>JavaScript mein in values ke alawa sab truthy hoti hain. Isliye empty string falsy hai, lekin empty
+                    array aur empty object truthy hain.</p>
+                <pre data-language="javascript">if (0) {
+  console.log("Truthy");
+} else {
+  console.log("0 falsy hai"); // yahi print hoga
+}
+
+if ("hello") {
+  console.log("Non-empty string truthy hai"); // yahi print hoga
+}
+
+console.log(Boolean(0), Boolean(1)); // false true
+console.log(Number(false), Number(true)); // 0 1</pre>
+                <h3 id="if-statement"><code>if</code> statement</h3>
+                <p><code>if</code> ke andar wali condition <code>true</code> ho tabhi uska code block chalta hai.
+                    Condition <code>false</code> ho to block skip ho jata hai.</p>
+                <pre data-language="javascript">const age = 20;
+
+if (age >= 18) {
+  console.log("Adult"); // condition true hai, isliye print hoga
+}</pre>
+                <h3 id="else-if"><code>else if</code> statement</h3>
+                <p>Pehla <code>if</code> false ho, tab <code>else if</code> ek aur condition check karta hai. Zarurat
+                    ke mutabik multiple <code>else if</code> branches laga sakte hain.</p>
                 <pre data-language="javascript">const marks = 76;
 
 if (marks >= 90) {
   console.log("Grade A");
 } else if (marks >= 60) {
-  console.log("Pass");
-} else {
-  console.log("Try again");
+  console.log("Pass"); // pehla false, yeh condition true
 }</pre>
-                <p><code>else if</code> se extra conditions check karte hain; <code>else</code> tab chalta hai jab
-                    upar ki koi condition true na ho. <code>else</code> optional hai.</p>
+                <h3 id="else-statement"><code>else</code> statement</h3>
+                <p><code>else</code> ki apni condition nahi hoti. Isse tab chalaya jata hai jab usi chain ka
+                    <code>if</code> aur koi bhi <code>else if</code> true na ho. <code>else</code> optional hai aur
+                    chain ke end mein aata hai.</p>
                 <pre data-language="javascript">const age = 20;
 
-if (age >= 18) {
-  console.log("Adult");
+if (age >= 21) {
+  console.log("Allowed");
 } else {
-  console.log("Not an adult");
+  console.log("Not allowed"); // condition false hai, isliye else chalega
 }</pre>
+                <h3 id="nested-if-else">Nested <code>if...else</code></h3>
+                <p>Jab ek <code>if...else</code> ke andar doosra <code>if...else</code> ho, use nested
+                    <code>if...else</code> kehte hain. Inner condition tabhi check hoti hai jab outer condition ka
+                    required path chale. Is example mein subscription check login ke baad hota hai.</p>
+                <pre data-language="javascript">const isLoggedIn = true;
+const hasSubscription = false;
+const wantsUpgrade = true;
+
+if (isLoggedIn) {
+  if (hasSubscription) {
+    console.log("You can access premium content");
+  } else {
+    if (wantsUpgrade) {
+      console.log("Please upgrade your subscription");
+    } else {
+      console.log("You don't have premium content");
+    }
+  }
+} else {
+  console.log("Please log in");
+}</pre>
+                <h3 id="code-readability">Code readability</h3>
+                <p>Readable code ko samajhna aur maintain karna aasaan hota hai. Nested example ko same decision
+                    order ke saath <code>else if</code> chain mein likhne se indentation kam ho sakti hai:</p>
+                <pre data-language="javascript">const isLoggedIn = true;
+const hasSubscription = false;
+const wantsUpgrade = true;
+
+if (!isLoggedIn) {
+  console.log("Please log in");
+} else if (hasSubscription) {
+  console.log("You can access premium content");
+} else if (wantsUpgrade) {
+  console.log("Please upgrade your subscription");
+} else {
+  console.log("You don't have premium content");
+}</pre>
+                <ul>
+                    <li>Har block ke andar consistent indentation rakhein.</li>
+                    <li><code>hasSubscription</code> jaise meaningful variable names use karein.</li>
+                    <li>Braces <code>{}</code> lagayein, chahe block mein ek hi statement ho.</li>
+                    <li>Bahut zyada nesting se bachein; same decision ke liye <code>else if</code> chain use karein.</li>
+                </ul>
                 <h3 id="switch">switch statement</h3>
                 <p>Ek expression ki value ko kai exact cases ke saath compare karna ho to <code>switch</code> use
                     kar sakte hain. Har case ke baad <code>break</code> aam taur par zaroori hai, warna agla case bhi
@@ -967,8 +1123,14 @@ switch (day) {
   case "Monday":
     console.log("Week start");
     break;
+  case "Tuesday":
+  case "Wednesday":
+  case "Thursday":
+  case "Friday":
+    console.log("Weekday");
+    break;
   default:
-    console.log("Regular day");
+    console.log("Invalid day");
 }</pre>
                 <h3 id="ternary">Ternary operator</h3>
                 <p>Simple condition ke basis par value choose karne ka short form:
@@ -977,9 +1139,6 @@ switch (day) {
                 <pre data-language="javascript">const age = 17;
 const message = age >= 18 ? "Adult" : "Minor";
 console.log(message);</pre>
-                <div class="tip"><code>if</code> conditions mein truthy/falsy values bhi kaam karti hain. Jaise
-                    <code>0</code>, <code>""</code>, <code>null</code>, <code>undefined</code> aur
-                    <code>NaN</code> falsy hain; non-empty string aur objects (empty array/object bhi) truthy hain.</div>
                 <div class="topic-review">
                     <h3>Practice (2)</h3>
                     <ol>
