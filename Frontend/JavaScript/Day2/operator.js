@@ -24,7 +24,25 @@
 
 // Post increment
 
+// let num=46
+// num++
+// console.log(num)
+
+// Pre increment
+// let num3=44
+// ++num3
+// console.log(num3)
+
+
+
+// Post decriment
+
 let num=46
-num++
+num--
 console.log(num)
+
+// Pre decriment
+let num3=44
+--num3
+console.log(num3)
 // Pre decriment

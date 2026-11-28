@@ -104,7 +104,10 @@ console.log(4 * 2);</textarea>
                 <a href="#loops">21. Loops</a>
                 <a class="sub" href="#for-loop">for loop</a>
                 <a class="sub" href="#while-loop">while & do...while</a>
-                <a class="sub" href="#loop-control">for...of, for...in, break & continue</a>
+                <a class="sub" href="#for-of">for...of Loop</a>
+                <a class="sub" href="#for-in">for...in Loop</a>
+                <a class="sub" href="#break">break Statement</a>
+                <a class="sub" href="#continue">continue Statement</a>
                 <a href="#functions">22. Functions</a>
                 <a class="sub" href="#function-basics">Parameters & return</a>
                 <a class="sub" href="#arrow-functions">Function & arrow expressions</a>
@@ -1020,31 +1023,59 @@ do {
 } while (number <= 2);</pre>
                 <div class="tip">Loop ke andar counter update karein, jaise <code>count++</code>, taaki condition
                     aakhir mein false ho aur loop ruk jaaye.</div>
-                <h3 id="loop-control">for...of, for...in, break & continue</h3>
-                <p><code>for...of</code> array/string ke values par iterate karta hai. <code>for...in</code> object
-                    ki enumerable property keys deta hai. Loop ko beech mein rokne ke liye <code>break</code>, aur
-                    current round skip karke next par jaane ke liye <code>continue</code> use hota hai.</p>
+               <h3 id="for-of">for...of Loop</h3>
+               <p><code>for...of</code> kisi iterable ke har value par ek baar execute hota hai. Arrays aur strings jaise iterables ke values nikalne ke liye ise use karte hain.</p>
                 <pre data-language="javascript">const colors = ["red", "green", "blue"];
 for (const color of colors) {
   console.log(color);
 }
 
-const user = { name: "Sakir", age: 24 };
+const word = "JS";
+for (const character of word) {
+ console.log(character);
+}</pre>
+
+               <h3 id="for-in">for...in Loop</h3>
+               <p><code>for...in</code> object ki enumerable property keys par iterate karta hai. Object ki value access karne ke liye bracket notation <code>object[key]</code> use hota hai.</p>
+               <pre data-language="javascript">const user = { name: "Sakir", age: 24 };
 for (const key in user) {
-  console.log(key, user[key]);
+ console.log(key, user[key]);
 }
 
-for (let i = 1; i <= 5; i++) {
-  if (i === 2) continue; // 2 skip
-  if (i === 4) break;    // loop stop
-  console.log(i);
-}</pre>
-                <div class="topic-review">
-                    <h3>Practice (2)</h3>
-                    <ol>
-                        <li><code>for</code> loop se 1–30 ke multiples of 3 print karein, aur 15 ko <code>continue</code> se skip karein.</li>
-                        <li><code>{ name: "Sakir", age: 24 }</code> ki keys/values ko <code>for...in</code> se, aur <code>["red", "green"]</code> values ko <code>for...of</code> se print karein.</li>
-                    </ol>
+// name Sakir
+// age 24</pre>
+               <div class="tip">Array ke values ke liye aam taur par <code>for...of</code> use karein; array ki property keys ke liye <code>for...in</code> kam predictable ho sakta hai.</div>
+
+               <h3 id="break">break Statement</h3>
+               <p><code>break</code> loop ko turant poora band kar deta hai. Jaise hi desired value mil jaati hai, remaining iterations execute nahi hoti.</p>
+               <pre data-language="javascript">const numbers = [10, 20, 30, 40];
+for (const number of numbers) {
+ if (number === 30) break;
+ console.log(number);
+}
+
+// 10
+// 20</pre>
+
+               <h3 id="continue">continue Statement</h3>
+               <p><code>continue</code> sirf current iteration skip karta hai aur next iteration par immediately jaata hai. Loop poora band nahi hota.</p>
+               <pre data-language="javascript">for (let i = 1; i <= 5; i++) {
+ if (i === 3) continue;
+ console.log(i);
+}
+
+// 1
+// 2
+// 4
+// 5</pre>
+               <div class="topic-review">
+                   <h3>Practice (4)</h3>
+                   <ol>
+                       <li><code>["HTML", "CSS", "JavaScript"]</code> ke har item ko <code>for...of</code> se print karein.</li>
+                       <li><code>{ name: "Sakir", age: 24 }</code> ki keys aur values ko <code>for...in</code> se print karein.</li>
+                       <li><code>[10, 20, 30, 40]</code> mein <code>30</code> milne par <code>break</code> laga kar loop stop karein.</li>
+                       <li>1 se 10 tak loop mein <code>continue</code> se even numbers skip karein aur sirf odd numbers print karein.</li>
+                   </ol>
                     <h3>Interview Questions (Medium–Hard)</h3>
                     <ol>
                         <li><code>for...in</code> aur <code>for...of</code> mein kya difference hai, aur array values ke liye kaunsa use karenge?
